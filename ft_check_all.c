@@ -6,19 +6,17 @@
 /*   By: vfil <vfil@student.unit.ua>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/14 14:53:18 by vfil              #+#    #+#             */
-/*   Updated: 2017/11/18 17:38:11 by vfil             ###   ########.fr       */
+/*   Updated: 2017/11/22 14:01:55 by vfil             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-char		**ft_check_all(char *str)
+char	**ft_check_all(char *str)
 {
 	int			count_tt;
 	int			i;
 	char		**tt_set;
-//	t_tetrim	*tt;
-//	int			sq_size;
 
 	count_tt = ft_count_tetriminos(str);
 	if (!(ft_check_end(str)) || !(count_tt) || count_tt > 26)
@@ -33,23 +31,17 @@ char		**ft_check_all(char *str)
 			return (0);
 		i++;
 	}
-//	tt = ft_parse_coord(tt_set, count_tt); 
-//	coord_print(tt, count_tt);
-//	ft_fill(tt, count_tt);
-//	coord_print(tt, count_tt);
-	//tt_set = ft_convert_tt(tt_set);
-//	ft_show(tt, count_tt, ft_sqrt_mod(count_tt));
 	return (tt_set);
 }
 
-int	ft_check_end(char *str)
+int		ft_check_end(char *str)
 {
 	while (*str)
 		str++;
 	return ((*(str - 2) == '\n' && *(str - 1) == '\n') ? 0 : 1);
 }
 
-int	ft_check_nob(char **tt_set)
+int		ft_check_nob(char **tt_set)
 {
 	int	is_ok;
 	int i;
@@ -72,9 +64,6 @@ int	ft_check_nob(char **tt_set)
 			is_ok = 0;
 		i++;
 	}
-	//test
-//	ft_putstr("Number of blocks is ");
-//	ft_putstr(is_ok == 1 ? "OK\n" : "NOT OK\n");
 	return (is_ok);
 }
 
@@ -96,9 +85,8 @@ int		ft_check_neighbor(char *str)
 
 	var.i = 0;
 	var.d = 0;
-	while (str[var.i])
+	while (str[var.i] && ((var.j = 0) == 0))
 	{
-		var.j = 0;
 		if (str[var.i] == '#' && ((var.k = 0) == 0))
 		{
 			while (str[var.j])
@@ -106,7 +94,8 @@ int		ft_check_neighbor(char *str)
 				if (str[var.j] == '#' && ft_difference(var.i, var.j))
 					var.k = 1;
 				var.j++;
-				if (str[var.j] == '#' && var.k == 1 && ft_difference(var.i, var.j))
+				if (str[var.j] == '#' && var.k == 1 &&
+						ft_difference(var.i, var.j))
 					var.d = 1;
 			}
 			if (!var.k)

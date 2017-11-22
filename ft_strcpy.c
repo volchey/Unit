@@ -1,21 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sqrt_mod.c                                      :+:      :+:    :+:   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vchechai <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/16 18:16:09 by vchechai          #+#    #+#             */
-/*   Updated: 2017/11/21 17:00:02 by vfil             ###   ########.fr       */
+/*   Created: 2017/11/06 12:44:02 by vchechai          #+#    #+#             */
+/*   Updated: 2017/11/06 12:45:13 by vchechai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_sqrt_mod(int count)
-{
-	int	res;
+#include "libft.h"
 
-	res = 2;
-	while (res * res < count * 4)
-		res++;
-	return (res);
+char	*ft_strcpy(char *dst, const char *src)
+{
+	int	i;
+
+	i = 0;
+	while (src[i] != '\0')
+	{
+		dst[i] = src[i];
+		i++;
+	}
+	dst[i] = '\0';
+	return (dst);
 }

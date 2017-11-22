@@ -1,21 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sqrt_mod.c                                      :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vchechai <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/16 18:16:09 by vchechai          #+#    #+#             */
-/*   Updated: 2017/11/21 17:00:02 by vfil             ###   ########.fr       */
+/*   Created: 2017/11/06 12:25:05 by vchechai          #+#    #+#             */
+/*   Updated: 2017/11/22 14:23:19 by vchechai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_sqrt_mod(int count)
-{
-	int	res;
+#include "fillit.h"
 
-	res = 2;
-	while (res * res < count * 4)
-		res++;
-	return (res);
+void	ft_bzero(void *s, size_t n)
+{
+	unsigned char *s0;
+
+	s0 = (unsigned char*)s;
+	while (n--)
+	{
+		*s0 = '\0';
+		s0++;
+	}
 }

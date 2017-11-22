@@ -1,21 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sqrt_mod.c                                      :+:      :+:    :+:   */
+/*   ft_strsub.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vchechai <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/16 18:16:09 by vchechai          #+#    #+#             */
-/*   Updated: 2017/11/21 17:00:02 by vfil             ###   ########.fr       */
+/*   Created: 2017/11/06 15:33:50 by vchechai          #+#    #+#             */
+/*   Updated: 2017/11/06 16:04:02 by vchechai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_sqrt_mod(int count)
-{
-	int	res;
+#include "libft.h"
 
-	res = 2;
-	while (res * res < count * 4)
-		res++;
+char	*ft_strsub(char const *s, unsigned int start, size_t len)
+{
+	char	*res;
+	size_t	i;
+
+	res = NULL;
+	i = 0;
+	if (s && s[start] && (res = (char*)malloc(sizeof(char) * (len + 1))))
+	{
+		while (i < len && s[start])
+		{
+			res[i] = s[start];
+			i++;
+			start++;
+		}
+		res[i] = '\0';
+	}
 	return (res);
 }

@@ -1,21 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sqrt_mod.c                                      :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vchechai <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/16 18:16:09 by vchechai          #+#    #+#             */
-/*   Updated: 2017/11/21 17:00:02 by vfil             ###   ########.fr       */
+/*   Created: 2017/11/06 15:51:48 by vchechai          #+#    #+#             */
+/*   Updated: 2017/11/06 15:52:07 by vchechai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_sqrt_mod(int count)
-{
-	int	res;
+#include "libft.h"
 
-	res = 2;
-	while (res * res < count * 4)
-		res++;
-	return (res);
+void	ft_putstr(char const *s)
+{
+	if (s)
+		while (*s)
+		{
+			ft_putchar(*s);
+			s++;
+		}
 }

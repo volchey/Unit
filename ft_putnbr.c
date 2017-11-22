@@ -1,21 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sqrt_mod.c                                      :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vchechai <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/16 18:16:09 by vchechai          #+#    #+#             */
-/*   Updated: 2017/11/21 17:00:02 by vfil             ###   ########.fr       */
+/*   Created: 2017/11/06 15:52:52 by vchechai          #+#    #+#             */
+/*   Updated: 2017/11/06 15:54:01 by vchechai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_sqrt_mod(int count)
-{
-	int	res;
+#include "libft.h"
 
-	res = 2;
-	while (res * res < count * 4)
-		res++;
-	return (res);
+void	ft_putnbr(int n)
+{
+	long int	nb;
+	long int	i;
+
+	nb = n;
+	i = 1;
+	if (nb < 0)
+	{
+		ft_putchar('-');
+		nb *= -1;
+	}
+	while (nb / i > 9)
+		i *= 10;
+	while (i > 0)
+	{
+		ft_putchar(nb / i + '0');
+		nb %= i;
+		i /= 10;
+	}
 }

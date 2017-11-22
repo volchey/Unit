@@ -1,21 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sqrt_mod.c                                      :+:      :+:    :+:   */
+/*   ft_strnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vchechai <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/16 18:16:09 by vchechai          #+#    #+#             */
-/*   Updated: 2017/11/21 17:00:02 by vfil             ###   ########.fr       */
+/*   Created: 2017/11/06 15:22:07 by vchechai          #+#    #+#             */
+/*   Updated: 2017/11/06 15:22:44 by vchechai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_sqrt_mod(int count)
-{
-	int	res;
+#include "libft.h"
 
-	res = 2;
-	while (res * res < count * 4)
-		res++;
-	return (res);
+char	*ft_strnew(size_t size)
+{
+	char	*s;
+
+	s = (char*)malloc(sizeof(char) * (size + 1));
+	if (s != NULL)
+		ft_bzero(s, size + 1);
+	return (s);
 }

@@ -6,13 +6,13 @@
 /*   By: vchechai <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/16 14:54:18 by vchechai          #+#    #+#             */
-/*   Updated: 2017/11/18 17:34:03 by vfil             ###   ########.fr       */
+/*   Updated: 2017/11/21 15:47:13 by vfil             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-t_tetrim		*ft_parse_coord(char **str, int	count)
+t_tetrim	*ft_parse_coord(char **str, int count)
 {
 	t_tetrim	*arr;
 	t_var		var;
@@ -39,28 +39,4 @@ t_tetrim		*ft_parse_coord(char **str, int	count)
 		var.i++;
 	}
 	return (arr);
-}
-
-void	coord_print(t_tetrim *arr, int count)
-{
-	int	i;
-	int k;
-
-	i = 0;
-	while (i < count)
-	{
-		k = 0;
-		while (k < 4)
-		{
-			ft_putstr("x: ");
-			ft_putnbr(arr[i].block[k].x);
-			ft_putchar('\t');
-			ft_putstr("y: ");
-			ft_putnbr(arr[i].block[k].y);
-			ft_putchar('\n');
-			k++;
-		}
-		ft_putchar('\n');
-		i++;
-	}
 }

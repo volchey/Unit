@@ -6,55 +6,60 @@
 /*   By: vfil <vfil@student.unit.ua>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/17 16:13:07 by vfil              #+#    #+#             */
-/*   Updated: 2017/11/18 17:36:14 by vfil             ###   ########.fr       */
+/*   Updated: 2017/11/21 16:36:31 by vfil             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
+int		ft_check_char(t_tetrim *tt, int y, int x, int count)
+{
+	int		i;
+	int		j;
+
+	i = 0;
+	while (i < count)
+	{
+		j = 0;
+		while (j < 4)
+		{
+			if (tt[i].block[j].x == x && tt[i].block[j].y == y)
+				return (i);
+			j++;
+		}
+		i++;
+	}
+	return (-19);
+}
+
+void	ft_putarr(char **res)
+{
+	while (*res)
+	{
+		ft_putstr(*res);
+		res++;
+	}
+}
+
 void	ft_show(t_tetrim *tt, int count, int sq_size)
 {
 	char	**res;
-	int		i;
-	int		j;
-	int		k;
-	int		t;
-	int		d;
+	t_var	var;
 
-	i = 0;
+	var.i = 0;
 	res = (char**)malloc(sizeof(char*) * (sq_size + 1));
-	while (i < sq_size)
+	while (var.i < sq_size)
 	{
-		j = 0;
-		res[i] = (char*)malloc(sizeof(char) * (sq_size + 2));
-		while (j < sq_size)
+		var.j = 0;
+		res[var.i] = (char*)malloc(sizeof(char) * (sq_size + 2));
+		while (var.j < sq_size)
 		{
-			t = 0;
-			res[i][j] = '.';
-			while (t < count)
-			{
-				d = 0;
-				while (d < 4)
-				{
-					if (tt[t].block[d].x == j && tt[t].block[d].y == i)
-						res[i][j] = 'A' + t;
-					d++;
-				}
-				t++;
-			}
-			j++;
+			res[var.i][var.j] = ('A' + ft_check_char(tt, var.i, var.j, count));
+			var.j++;
 		}
-		res[i][j] = '\n';
-		j++;
-		res[i][j] = '\0';
-		i++;
+		res[var.i][var.j++] = '\n';
+		res[var.i++][var.j] = '\0';
 	}
-	res[i] = 0;
-	k = 0;
-	while (k < sq_size)
-	{
-		ft_putstr(res[k]);
-		k++;
-	}
-	ft_putchar('\n');
+	res[var.i] = 0;
+	ft_putarr(res);
 }
