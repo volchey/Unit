@@ -3,14 +3,12 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vchechai <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: vfil <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/06 12:44:02 by vchechai          #+#    #+#             */
-/*   Updated: 2017/11/06 12:45:13 by vchechai         ###   ########.fr       */
+/*   Created: 2017/10/26 21:52:42 by vfil              #+#    #+#             */
+/*   Updated: 2017/11/09 17:38:17 by vfil             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libft.h"
 
 char	*ft_strcpy(char *dst, const char *src)
 {

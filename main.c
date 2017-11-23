@@ -6,7 +6,7 @@
 /*   By: vfil <vfil@student.unit.ua>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/13 10:55:11 by vfil              #+#    #+#             */
-/*   Updated: 2017/11/22 14:01:57 by vfil             ###   ########.fr       */
+/*   Updated: 2017/11/22 18:53:06 by vfil             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,16 @@ void		ft_start(t_tetrim *tt, int count_tt, int *sq_size)
 		i++;
 	}
 	ft_fill(tt, count_tt, sq_size);
+}
+
+int	ft_sqrt_mod(int count)
+{
+	int	res;
+
+	res = 2;
+	while (res * res < count * 4)
+		res++;
+	return (res);
 }
 
 int			main(int ac, char **av)

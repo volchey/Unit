@@ -6,14 +6,15 @@
 /*   By: vfil <vfil@student.unit.ua>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/13 11:23:30 by vfil              #+#    #+#             */
-/*   Updated: 2017/11/21 16:55:47 by vfil             ###   ########.fr       */
+/*   Updated: 2017/11/22 17:27:39 by vfil             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FILLIT_H
 # define FILLIT_H
 
-# include "libft.h"
+# include <stdlib.h>
+# include <unistd.h>
 # include <fcntl.h>
 
 typedef struct	s_var
@@ -35,6 +36,15 @@ typedef struct	s_tetrim
 	t_coord		block[4];
 }				t_tetrim;
 
+void			ft_bzero(void *s, size_t n);
+void			ft_putchar(char c);
+void			ft_putstr(char const *s);
+void			ft_putchar_fd(char c, int fd);
+void			ft_putstr_fd(char const *s, int fd);
+void			ft_arriter(char **s, void (*f)(void *));
+char			*ft_strcpy(char *dst, const char *src);
+char			*ft_strnew(size_t size);
+char			*ft_strsub(char const *s, unsigned int start, size_t len);
 int				ft_count_tetriminos(char *str);
 char			*ft_read_file(char *name);
 char			**ft_parse_tt(char *s, int n_o_t);

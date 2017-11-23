@@ -3,23 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vchechai <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: vfil <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/06 12:25:05 by vchechai          #+#    #+#             */
-/*   Updated: 2017/11/22 14:23:19 by vchechai         ###   ########.fr       */
+/*   Created: 2017/10/29 13:28:42 by vfil              #+#    #+#             */
+/*   Updated: 2017/11/09 16:47:39 by vfil             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fillit.h"
+#include "libft.h"
 
 void	ft_bzero(void *s, size_t n)
 {
-	unsigned char *s0;
+	unsigned char *s2;
 
-	s0 = (unsigned char*)s;
+	s2 = (unsigned char*)s;
 	while (n--)
 	{
-		*s0 = '\0';
-		s0++;
+		*s2 = '\0';
+		s2++;
 	}
 }

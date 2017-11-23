@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_parse_tetriminos.c                              :+:      :+:    :+:   */
+/*   ft_parse.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vfil <vfil@student.unit.ua>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/13 13:50:26 by vfil              #+#    #+#             */
-/*   Updated: 2017/11/18 17:35:16 by vfil             ###   ########.fr       */
+/*   Created: 2017/11/22 18:02:49 by vfil              #+#    #+#             */
+/*   Updated: 2017/11/22 18:08:23 by vfil             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,26 +36,31 @@ char	**ft_parse_tt(char *s, int n_o_t)
 	return (tt_set);
 }
 
-char	**ft_convert_tt(char **tt_set)
+t_tetrim	*ft_parse_coord(char **str, int count)
 {
-	char	c;
-	int		i;
-	int		j;
+	t_tetrim	*arr;
+	t_var		var;
 
-	c = 'A';
-	i = 0;
-	if (!tt_set && !*tt_set)
-		return (NULL);
-	while (tt_set[i])
+	var.i = 0;
+	if (!(arr = (t_tetrim*)malloc(sizeof(t_tetrim) * count)))
+		return (0);
+	while (str[var.i])
 	{
-		j = 0;
-		while (tt_set[i][j])
+		var.k = 0;
+		var.j = 0;
+		var.d = 0;
+		while (str[var.i][var.k])
 		{
-			if (tt_set[i][j] == '#')
-				tt_set[i][j] = c + i;
-			j++;
+			if (str[var.i][var.k] == '\n')
+				var.d++;
+			if (str[var.i][var.k] == '#')
+			{
+				arr[var.i].block[var.j].x = var.k % 5;
+				arr[var.i].block[var.j++].y = var.d;
+			}
+			var.k++;
 		}
-		i++;
+		var.i++;
 	}
-	return (tt_set);
+	return (arr);
 }

@@ -6,7 +6,7 @@
 /*   By: vchechai <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/18 12:12:32 by vchechai          #+#    #+#             */
-/*   Updated: 2017/11/21 16:54:50 by vfil             ###   ########.fr       */
+/*   Updated: 2017/11/22 17:49:21 by vfil             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,8 +44,10 @@ int			ft_verify(t_tetrim *tt, int i, int *sq_size, int count_tt)
 void		ft_fill(t_tetrim *tt, int count, int *sq_size)
 {
 	t_var	var;
+	t_coord	max;
 
 	var.i = 1;
+	max = ft_find_max_xy(&tt[0], sq_size);
 	while (var.i < count)
 	{
 		var.k = 1;

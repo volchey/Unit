@@ -6,7 +6,7 @@
 /*   By: vfil <vfil@student.unit.ua>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/17 12:39:24 by vfil              #+#    #+#             */
-/*   Updated: 2017/11/21 17:12:39 by vfil             ###   ########.fr       */
+/*   Updated: 2017/11/22 17:58:15 by vfil             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ t_coord		ft_find_max_xy(t_tetrim *tt, int *sq_size)
 			max.y = tt->block[i].y;
 		i++;
 	}
-	if (max.x > *sq_size - 1 || max.y > *sq_size - 1)
+	while (max.x > *sq_size - 1 || max.y > *sq_size - 1)
 		*sq_size += 1;
 	return (max);
 }
