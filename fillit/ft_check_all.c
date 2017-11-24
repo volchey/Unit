@@ -6,7 +6,7 @@
 /*   By: vfil <vfil@student.unit.ua>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/14 14:53:18 by vfil              #+#    #+#             */
-/*   Updated: 2017/11/22 17:59:48 by vfil             ###   ########.fr       */
+/*   Updated: 2017/11/23 17:04:52 by vfil             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,7 @@ char	**ft_check_all(char *str)
 	count_tt = ft_count_tetriminos(str);
 	if (!(ft_check_end(str)) || !(count_tt) || count_tt > 26)
 		return (0);
-	tt_set = ft_parse_tt(str, count_tt);
-	if (!(ft_check_nob(tt_set)))
+	if (!(tt_set = ft_parse_tt(str, count_tt)) || !(ft_check_nob(tt_set)))
 		return (0);
 	i = 0;
 	while (tt_set[i])

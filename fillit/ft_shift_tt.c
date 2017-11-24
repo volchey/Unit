@@ -6,13 +6,13 @@
 /*   By: vfil <vfil@student.unit.ua>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/17 12:39:24 by vfil              #+#    #+#             */
-/*   Updated: 2017/11/22 17:58:15 by vfil             ###   ########.fr       */
+/*   Updated: 2017/11/23 14:45:17 by vfil             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-t_coord		ft_find_minxy(t_tetrim *tt)
+t_coord		ft_find_min_xy(t_tetrim *tt)
 {
 	int			i;
 	t_coord		min;
@@ -57,7 +57,7 @@ void		ft_shift_x2start(t_tetrim *tt)
 	int			i;
 	t_coord		min;
 
-	min = ft_find_minxy(tt);
+	min = ft_find_min_xy(tt);
 	while (min.x > 0)
 	{
 		i = 0;
@@ -75,7 +75,7 @@ void		ft_shift_y2start(t_tetrim *tt)
 	int			i;
 	t_coord		min;
 
-	min = ft_find_minxy(tt);
+	min = ft_find_min_xy(tt);
 	while (min.y > 0)
 	{
 		i = 0;
@@ -95,7 +95,7 @@ int			ft_shift_tt(t_tetrim *tt, int *sq_size)
 	t_coord	min;
 
 	i = 0;
-	min = ft_find_minxy(tt);
+	min = ft_find_min_xy(tt);
 	max = ft_find_max_xy(tt, sq_size);
 	while (i < 4)
 	{

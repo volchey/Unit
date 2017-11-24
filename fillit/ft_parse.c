@@ -6,13 +6,13 @@
 /*   By: vfil <vfil@student.unit.ua>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/22 18:02:49 by vfil              #+#    #+#             */
-/*   Updated: 2017/11/22 18:08:23 by vfil             ###   ########.fr       */
+/*   Updated: 2017/11/23 17:16:01 by vfil             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-char	**ft_parse_tt(char *s, int n_o_t)
+char		**ft_parse_tt(char *s, int n_o_t)
 {
 	char	**tt_set;
 	int		symb;
@@ -44,9 +44,8 @@ t_tetrim	*ft_parse_coord(char **str, int count)
 	var.i = 0;
 	if (!(arr = (t_tetrim*)malloc(sizeof(t_tetrim) * count)))
 		return (0);
-	while (str[var.i])
+	while (str[var.i] && ((var.k = 0) == 0))
 	{
-		var.k = 0;
 		var.j = 0;
 		var.d = 0;
 		while (str[var.i][var.k])
@@ -62,5 +61,6 @@ t_tetrim	*ft_parse_coord(char **str, int count)
 		}
 		var.i++;
 	}
+	ft_arriter(str, &free);
 	return (arr);
 }

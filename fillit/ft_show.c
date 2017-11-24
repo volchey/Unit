@@ -6,7 +6,7 @@
 /*   By: vfil <vfil@student.unit.ua>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/17 16:13:07 by vfil              #+#    #+#             */
-/*   Updated: 2017/11/22 18:53:04 by vfil             ###   ########.fr       */
+/*   Updated: 2017/11/23 17:44:24 by vfil             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,11 @@ void	ft_show(t_tetrim *tt, int count, int sq_size)
 	while (var.i < sq_size)
 	{
 		var.j = 0;
-		res[var.i] = (char*)malloc(sizeof(char) * (sq_size + 2));
+		if (!(res[var.i] = (char*)malloc(sizeof(char) * (sq_size + 2))))
+		{
+			ft_arriter(res, &free);
+			exit(0);
+		}
 		while (var.j < sq_size)
 		{
 			res[var.i][var.j] = ('A' + ft_check_char(tt, var.i, var.j, count));

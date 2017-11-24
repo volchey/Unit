@@ -6,7 +6,7 @@
 /*   By: vfil <vfil@student.unit.ua>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/13 11:23:30 by vfil              #+#    #+#             */
-/*   Updated: 2017/11/22 17:27:39 by vfil             ###   ########.fr       */
+/*   Updated: 2017/11/24 15:23:24 by vchechai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,29 +39,31 @@ typedef struct	s_tetrim
 void			ft_bzero(void *s, size_t n);
 void			ft_putchar(char c);
 void			ft_putstr(char const *s);
-void			ft_putchar_fd(char c, int fd);
-void			ft_putstr_fd(char const *s, int fd);
 void			ft_arriter(char **s, void (*f)(void *));
 char			*ft_strcpy(char *dst, const char *src);
 char			*ft_strnew(size_t size);
 char			*ft_strsub(char const *s, unsigned int start, size_t len);
-int				ft_count_tetriminos(char *str);
+void			ft_strdel(char **as);
 char			*ft_read_file(char *name);
-char			**ft_parse_tt(char *s, int n_o_t);
+void			ft_start(t_tetrim *tt, int count_tt, int *sq_size);
+int				ft_sqrt_mod(int count);
+int				ft_count_tetriminos(char *str);
 char			**ft_check_all(char *str);
-int				ft_check_neighbor(char *str);
-int				ft_check_nob(char	**tt_set);
 int				ft_check_end(char *str);
+int				ft_check_nob(char	**tt_set);
+int				ft_difference(int i, int j);
+int				ft_check_neighbor(char *str);
+char			**ft_parse_tt(char *s, int n_o_t);
 t_tetrim		*ft_parse_coord(char **str, int count);
+t_coord			ft_find_min_xy(t_tetrim *tt);
+t_coord			ft_find_max_xy(t_tetrim *tt, int *sq_size);
 void			ft_shift_x2start(t_tetrim *tt);
 void			ft_shift_y2start(t_tetrim *tt);
-t_coord			ft_find_max_xy(t_tetrim *tt, int *sq_size);
 int				ft_shift_tt(t_tetrim *tt, int *sq_size);
-t_coord			ft_find_minxy(t_tetrim *tt);
-int				ft_sqrt_mod(int count);
+int				ft_check_char(t_tetrim *tt, int y, int x, int count);
+void			ft_putarr(char **res);
 void			ft_show(t_tetrim *tt, int count, int sq_size);
-int				ft_verify(t_tetrim *tt, int i, int *sq_size, int count_tt);
-void			ft_fill(t_tetrim *tt, int count, int *sq_size);
-void			ft_start(t_tetrim *tt, int count_tt, int *sq_size);
+int				ft_verify(t_tetrim *tt, int i);
+void			ft_fill(t_tetrim *tt, int *sq_size, int count);
 
 #endif
