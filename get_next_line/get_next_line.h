@@ -6,7 +6,7 @@
 /*   By: vchechai <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/30 16:43:48 by vchechai          #+#    #+#             */
-/*   Updated: 2017/12/05 19:58:57 by vchechai         ###   ########.fr       */
+/*   Updated: 2017/12/06 14:44:49 by vchechai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,7 @@
 # include <fcntl.h>
 # include <stdlib.h>
 # include "libft/libft.h"
-# define BUFF_SIZE 100000
-
-typedef struct		s_file
-{
-	char			*str;
-//	int				fd;
-//	struct s_list	*next;
-}					t_file;
+# define BUFF_SIZE 32
 
 int						get_next_line(const int fd, char **line);
 

@@ -6,52 +6,65 @@
 /*   By: vchechai <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/30 16:36:03 by vchechai          #+#    #+#             */
-/*   Updated: 2017/12/05 19:59:22 by vchechai         ###   ########.fr       */
+/*   Updated: 2017/12/07 10:46:37 by vchechai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-int		get_new_line(int fd, char **str, char **line)
+int				get_new_line(int fd, char **str, char **line)
 {
-	int		ret;
-	char	*c;
-	char	arr[BUFF_SIZE + 1];
+	int			ret;
+	char		*c;
+	char		*buf;
+	char		arr[BUFF_SIZE + 1];
 
 	*line = ft_strnew(0);
 	c = 0;
-	while ((ret = read(fd, arr, BUFF_SIZE)))
+	while ((ret = read(fd, arr, BUFF_SIZE)) && ret != -1)
 	{
 		arr[ret] = '\0';
 		if ((c = ft_strchr(arr, '\n')))
 		{
-			*line = ft_strjoin(*line, ft_strsub(arr, 0, (c - arr)));
+			buf = ft_strjoin(*line, ft_strsub(arr, 0, (c - arr)));
+			free(*line);
+			*line = buf;
+//			ft_strdel(&buf);
 			*str = ft_strdup(c + 1);
 			return (ret);
 		}
+		*str = 0;
 		*line = ft_strjoin(*line, arr);
+		if (ret != BUFF_SIZE)
+			return (1);
 	}
 	return (ret);
 }
 
-int		check_content(int fd, char **str, char **line)
+int				check_content(int fd, char **str, char **line)
 {
-	char	*c;
-	int		x;
+	char		*c;
+	int			x;
 
 	c = ft_strchr(*str, '\n');
 	if (c)
 	{
 		*line = ft_strsub(*str, 0, (c - *str));
-		*str = ft_strsub(*str, (c - *str) + 1, BUFF_SIZE);
+		*str = ft_strdup(c + 1);
 	}
 	else
 	{
 		c = *str;
 		x = get_new_line(fd, str, line);
-		if (x == 0 || x == -1)
+		if (x == -1)
 			return (x);
 		*line = ft_strjoin(c, *line);
+		if (x == 0 && **line && *line)
+		{
+			*str = 0;
+			return (1);
+		}
+		return (x);
 	}
 	return (1);
 }
@@ -62,6 +75,8 @@ int					get_next_line(const int fd, char **line)
 	t_list			*list;
 	int				x;
 
+	if (fd < 0 || !line)
+		return (-1);
 	list = buf;
 	while (list && (int)list->content_size != fd)
 		list = list->next;
