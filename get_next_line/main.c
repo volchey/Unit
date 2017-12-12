@@ -6,7 +6,7 @@
 /*   By: vchechai <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/30 18:45:24 by vchechai          #+#    #+#             */
-/*   Updated: 2017/12/07 10:27:39 by vchechai         ###   ########.fr       */
+/*   Updated: 2017/12/09 16:04:03 by vchechai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int	main(int ac, char **av)
 		i = 0;
 		while (i < 4)
 		{
-			res = get_next_line(fd1, &arr);
+			res = get_next_line(fd, &arr);
 			ft_putstr(arr);
 			ft_putchar('\n');
 			i++;
@@ -51,13 +51,13 @@ int	main(int ac, char **av)
 		while (res && res != -1)
 		{
 			res = get_next_line(fd, &arr);
-			ft_putstr(arr);
+//			ft_putstr(arr);
 			ft_putchar('\n');
 		}
 //		res = get_next_line(fd, &arr);
 //		ft_putstr(arr);
 //		ft_putchar('\n');
-//		system("leaks get_next_line");
+		system("leaks get_next_line");
 		close(fd1);
 		close(fd);
 	}
