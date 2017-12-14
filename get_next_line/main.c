@@ -6,7 +6,7 @@
 /*   By: vchechai <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/30 18:45:24 by vchechai          #+#    #+#             */
-/*   Updated: 2017/12/13 18:10:54 by vchechai         ###   ########.fr       */
+/*   Updated: 2017/12/14 16:40:24 by vchechai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,13 +26,13 @@ int	main(int ac, char **av)
 		i = 0;
 		fd = open(av[1], O_RDONLY);
 		fd1 = open(av[2], O_RDONLY);
-		while (i < 4)
+/*		while (i < 4)
 		{
 			res = get_next_line(fd1, &arr);
 			ft_putstr(arr);
 			ft_putchar('\n');
 			i++;
-		}/*
+		}
 		ft_putchar('\n');
 		ft_putchar('\n');
 		i = 0;
@@ -44,17 +44,17 @@ int	main(int ac, char **av)
 			i++;
 		}
 		ft_putchar('\n');
-		ft_putchar('\n');
+		ft_putchar('\n');*/
 		while (res && res != -1)
 		{
 			res = get_next_line(fd, &arr);
 			ft_putstr(arr);
 			ft_strdel(&arr);
 			ft_putchar('\n');
-		}*/
-		res = get_next_line(fd, &arr);
-		ft_putstr(arr);
-		ft_putchar('\n');
+		}
+//		res = get_next_line(fd, &arr);
+//		ft_putstr(arr);
+//		ft_putchar('\n');
 //		system("leaks get_next_line");
 		close(fd1);
 		close(fd);

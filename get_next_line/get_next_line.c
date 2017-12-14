@@ -6,7 +6,7 @@
 /*   By: vchechai <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/30 16:36:03 by vchechai          #+#    #+#             */
-/*   Updated: 2017/12/13 19:00:27 by vchechai         ###   ########.fr       */
+/*   Updated: 2017/12/14 16:40:39 by vchechai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,9 @@ int					get_new_line(int fd, char **str)
 		arr = *str;
 		*str = ft_strjoin(arr, buf);
 		ft_strdel(&arr);
-		if (ft_strchr(buf, '\n') || ret != BUFF_SIZE)
-		{
-			ft_strdel(&buf);
-			return (ret);
-		}
 		ft_strdel(&buf);
+		if (ft_strchr(*str, '\n') || ret != BUFF_SIZE)
+			return (ret);
 		buf = ft_strnew(BUFF_SIZE + 1);
 	}
 	ft_strdel(&buf);
@@ -68,8 +65,6 @@ int					get_next_line(const int fd, char **line)
 	x = 0;
 	if (fd < 0 || !line)
 		return (-1);
-	if (!buf)
-		buf = ft_lstnew("", fd);
 	list = buf;
 	while (list && (int)list->content_size != fd)
 		list = list->next;
@@ -78,8 +73,6 @@ int					get_next_line(const int fd, char **line)
 		list = ft_lstnew("", fd);
 		ft_lstadd(&buf, list);
 	}
-//	if (!list->content_size)
-//		list->content_size = fd;
 	if (!list->content || (!(ft_strchr((char*)list->content, '\n'))))
 		x = get_new_line(list->content_size, (char**)&list->content);
 	if (list->content && x >= 0)
