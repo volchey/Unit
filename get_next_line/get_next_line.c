@@ -6,14 +6,13 @@
 /*   By: vchechai <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/30 16:36:03 by vchechai          #+#    #+#             */
-/*   Updated: 2017/12/14 16:40:39 by vchechai         ###   ########.fr       */
+/*   Updated: 2017/12/19 13:37:27 by vchechai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
-#include <stdio.h>
 
-int					get_new_line(int fd, char **str)
+static int			get_new_line(int fd, char **str)
 {
 	int				ret;
 	char			*arr;
@@ -35,7 +34,7 @@ int					get_new_line(int fd, char **str)
 	return (ret);
 }
 
-int					check_static_str(char **str, char **line)
+static int			check_static_str(char **str, char **line)
 {
 	char			*c;
 	char			*buf;
@@ -70,7 +69,8 @@ int					get_next_line(const int fd, char **line)
 		list = list->next;
 	if (!list)
 	{
-		list = ft_lstnew("", fd);
+		list = ft_lstnew("", 1);
+		list->content_size = fd;
 		ft_lstadd(&buf, list);
 	}
 	if (!list->content || (!(ft_strchr((char*)list->content, '\n'))))

@@ -6,7 +6,7 @@
 #    By: vchechai <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/12/01 10:40:02 by vchechai          #+#    #+#              #
-#    Updated: 2017/12/02 14:03:55 by vchechai         ###   ########.fr        #
+#    Updated: 2017/12/16 16:18:11 by vchechai         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ MAIN = main.c
 
 SRC = get_next_line.c
 
-FLAGS = -Wall -Wextra -Werror
+FLAGS = -Wall -Wextra -Werror -g -fsanitize=address 
 
 .PHONY: all clean fclean re
 

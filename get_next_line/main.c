@@ -6,7 +6,7 @@
 /*   By: vchechai <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/30 18:45:24 by vchechai          #+#    #+#             */
-/*   Updated: 2017/12/14 16:40:24 by vchechai         ###   ########.fr       */
+/*   Updated: 2017/12/16 16:13:08 by vchechai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,10 +52,11 @@ int	main(int ac, char **av)
 			ft_strdel(&arr);
 			ft_putchar('\n');
 		}
-//		res = get_next_line(fd, &arr);
+//		res = get_next_line(3, &arr);
+//		ft_putnbr(res);
 //		ft_putstr(arr);
 //		ft_putchar('\n');
-//		system("leaks get_next_line");
+//		system("leaks get_next_line");*/
 		close(fd1);
 		close(fd);
 	}
