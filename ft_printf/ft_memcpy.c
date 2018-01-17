@@ -1,25 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vchechai <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/01/11 15:37:36 by vchechai          #+#    #+#             */
-/*   Updated: 2018/01/11 17:50:47 by vchechai         ###   ########.fr       */
+/*   Created: 2017/11/06 12:26:57 by vchechai          #+#    #+#             */
+/*   Updated: 2017/11/06 12:36:23 by vchechai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include "libft.h"
 
-int main()
+void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	char	*str;
+	unsigned char	*dst0;
+	unsigned char	*src0;
+	size_t			i;
 
-	str = ft_strnew(2);
-	str[0] = 'H';
-	ft_printf("Hello: %d %cs %s %p %u\n", 5, 'i', "incredible", str, 4000000000);
-//	printf("Hello: %d %cs %s %p %u", 5, 'i', "incredible", str, 400000000);
-//	system("leaks a.out");
+	dst0 = (unsigned char*)dst;
+	src0 = (unsigned char*)src;
+	i = 0;
+	while (i < n)
+	{
+		dst0[i] = src0[i];
+		i++;
+	}
+	return (dst);
 }

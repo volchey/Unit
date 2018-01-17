@@ -25,12 +25,23 @@ typedef struct		s_list
 	struct s_list	*next;
 }					t_list;
 
-typedef	union		s_type
+typedef	union		s_format
 {
-	int 			d;
+	int 			minus;
+	int 			plus;
+	int 			null;
+	int 			hesh;
+	int 			space;
 }					t_type;
 
-void	set_chr(char **str, char c, int *i);
+char				*ft_unitoa(unsigned int n);
+char				*ft_hex_itoa(long int x);
+char				*ft_chr_to_str(char c);
+void 				ft_chrjoin(char **str, char c);
+void				get_flag(char *s, int *i);
+void				get_width(char *s, int *i);
+void				get_precision(char *s, int *i);
+void				set_arg(const char *s, char **str, va_list ap, int *i);
 void				set_integer(char **str, int nb, int *i);
 int					ft_printf(const char *restrict format, ...);
 void				*ft_memset(void *b, int c, size_t len);

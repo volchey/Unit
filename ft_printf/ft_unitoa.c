@@ -1,25 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_unitoa.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vchechai <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/01/11 15:37:36 by vchechai          #+#    #+#             */
-/*   Updated: 2018/01/11 17:50:47 by vchechai         ###   ########.fr       */
+/*   Created: 2018/01/16 18:18:51 by vchechai          #+#    #+#             */
+/*   Updated: 2018/01/16 18:20:59 by vchechai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include "libft.h"
 
-int main()
+static char	*ft_to_str(unsigned int n, long int i, int len)
 {
-	char	*str;
+	long int	j;
+	char		*arr;
 
-	str = ft_strnew(2);
-	str[0] = 'H';
-	ft_printf("Hello: %d %cs %s %p %u\n", 5, 'i', "incredible", str, 4000000000);
-//	printf("Hello: %d %cs %s %p %u", 5, 'i', "incredible", str, 400000000);
-//	system("leaks a.out");
+	j = 0;
+	arr = ft_strnew(len + 1);
+	if (arr == NULL)
+		return (arr);
+	while (i > 0)
+	{
+		arr[j] = n / i + '0';
+		n %= i;
+		i /= 10;
+		j++;
+	}
+	arr[j] = '\0';
+	return (arr);
+}
+
+char		*ft_unitoa(unsigned int n)
+{
+	long int	i;
+	int			len;
+
+	i = 1;
+	len = 0;
+	while (n / i > 9)
+	{
+		i *= 10;
+		len++;
+	}
+	return (ft_to_str(n, i, len));
 }

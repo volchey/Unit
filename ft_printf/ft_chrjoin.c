@@ -1,25 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_chrjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vchechai <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/01/11 15:37:36 by vchechai          #+#    #+#             */
-/*   Updated: 2018/01/11 17:50:47 by vchechai         ###   ########.fr       */
+/*   Created: 2018/01/15 16:36:32 by vchechai          #+#    #+#             */
+/*   Updated: 2018/01/15 16:37:03 by vchechai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include "libft.h"
 
-int main()
+void 		ft_chrjoin(char **str, char c)
 {
-	char	*str;
+	int 	size;
+	char	*buf;
 
-	str = ft_strnew(2);
-	str[0] = 'H';
-	ft_printf("Hello: %d %cs %s %p %u\n", 5, 'i', "incredible", str, 4000000000);
-//	printf("Hello: %d %cs %s %p %u", 5, 'i', "incredible", str, 400000000);
-//	system("leaks a.out");
+	size = ft_strlen(*str);
+	buf = (char*)malloc(sizeof(char) * (size + 1));
+	buf = ft_strcpy(buf, *str);
+	buf[size] = c;
+	buf[size + 1] = '\0';
+	ft_strdel(str);
+	*str = buf;
 }
