@@ -25,23 +25,30 @@ typedef struct		s_list
 	struct s_list	*next;
 }					t_list;
 
-typedef	union		s_format
+typedef	struct		s_format
 {
-	int 			minus;
-	int 			plus;
-	int 			null;
-	int 			hesh;
-	int 			space;
-}					t_type;
+	char 			flag;
+	int 			width;
+	int 			precision;
+	char 			*variable;
+}					t_format;
 
+char				*ft_unistr(int *ptr);
+unsigned char		*ft_unichar(unsigned int value);
+int 				ft_power(int value, int power);
+char				*ft_binary(int value);
+char				*ft_wchar_tdup(wchar_t *s1);
+char				*ft_get_address(long int n);
+char				*ft_oct_itoa(int n);
 char				*ft_unitoa(unsigned int n);
 char				*ft_hex_itoa(long int x);
+char				*ft_upphex_itoa(long int x);
 char				*ft_chr_to_str(char c);
 void 				ft_chrjoin(char **str, char c);
-void				get_flag(char *s, int *i);
-void				get_width(char *s, int *i);
-void				get_precision(char *s, int *i);
-void				set_arg(const char *s, char **str, va_list ap, int *i);
+void				get_flag(char *s);
+void				get_width(char *sint);
+void				get_precision(char *s);
+int					set_arg(const char *s, char **str, va_list ap);
 void				set_integer(char **str, int nb, int *i);
 int					ft_printf(const char *restrict format, ...);
 void				*ft_memset(void *b, int c, size_t len);

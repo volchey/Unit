@@ -1,49 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_unistr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vchechai <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/06 12:41:54 by vchechai          #+#    #+#             */
-/*   Updated: 2017/11/06 17:49:50 by vchechai         ###   ########.fr       */
+/*   Created: 2018/01/20 13:21:27 by vchechai          #+#    #+#             */
+/*   Updated: 2018/01/20 13:47:48 by vchechai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *s1)
+char		*ft_unistr(int *ptr)
 {
-	char	*dst;
 	int		i;
+	size_t	size;
+	char	*str;
+	char	*buf;
 
 	i = 0;
-	dst = (char*)malloc(sizeof(char) * (ft_strlen(s1) + 1));
-	if (dst == NULL)
-		return (dst);
-	while (s1[i] != '\0')
+	size = (sizeof(ptr) / sizeof(int));
+	str = ft_strnew(1);
+	str[0] = '\0';
+	while (i < (int)size + 2 && ptr[i])
 	{
-		dst[i] = s1[i];
+		buf = str;
+		str = ft_strjoin(str, (char*)ft_unichar(ptr[i]));
+		ft_strdel(&buf);
 		i++;
 	}
-	dst[i] = '\0';
-	return (dst);
-}
-
-char	*ft_wchar_tdup(wchar_t *s1)
-{
-	char	*dst;
-	int		i;
-
-	i = 0;
-	dst = (char*)malloc(sizeof(char) * (ft_strlen((char*)s1) + 1));
-	if (dst == NULL)
-		return (dst);
-	while (s1[i] != '\0')
-	{
-		dst[i] = s1[i];
-		i++;
-	}
-	dst[i] = '\0';
-	return (dst);
+	return (str);
 }
