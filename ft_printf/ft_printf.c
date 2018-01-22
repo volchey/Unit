@@ -12,21 +12,79 @@
 
 #include "libft.h"
 
-void		get_str(const char *s, char **str, va_list ap)
+int			set_width(const char *s, t_format *format)
 {
 	int		i;
+	char	*sub;
 
+	i = 0;
+	while (ft_isdigit(s[i]))
+		i++;
+	sub = ft_strsub(s, 0, i);
+	format->width = ft_atoi(sub);
+	ft_strdel(&sub);
+	return (i);
+}
+
+int			set_precision(const char *s, t_format *format)
+{
+	int		i;
+	char	*sub;
+
+	i = 0;
+	s++;
+	while (ft_isdigit(s[i]))
+		i++;
+	sub = ft_strsub(s, 0, i);
+	format->precision = ft_atoi(sub);
+	ft_strdel(&sub);
+	return (i);
+}
+
+void		set_stuct(const char **s, t_format *format)
+{
+	int			i;
+
+	i = 0;
+	if (ft_isdigit(**s))
+	{
+		*s += set_width(*s, format);
+		set_stuct(s, format);
+	}
+	else if (**s == '#' || **s == '-' || **s == '+' || **s == ' ' || **s == '0')
+	{
+		format->flag = **s;
+		*s += 1;
+		set_stuct(s, format);
+	}
+	else if (**s == '.')
+	{
+		*s += set_precision(*s, format);
+		set_stuct(s, format);
+	}
+	else 
+		format->variable = (char*)*s;
+}
+
+void			get_str(const char *s, char **str, va_list ap)
+{
+	int			i;
+	t_format	*format;
+
+	format = malloc(sizeof(t_format));
 	i = 0;
 	while (*s)
 	{
 		if(*s == '%')
 		{
-//			set_stuct(s);
-			s += set_arg(s, str, ap);
+			s++;
+			clear_struct(format);
+			set_stuct(&s, format);
+			s += set_arg(str, ap, format);
 		}
-        if (*s)
+        if (*s && *s != '%')
     		ft_chrjoin(str, *s);
-		if (*s)
+		if (*s && *s != '%')
 			s++;
 	}
 }

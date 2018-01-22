@@ -33,11 +33,12 @@ typedef	struct		s_format
 	char 			*variable;
 }					t_format;
 
+char				*ft_lltoa(long long n);
+void				clear_struct(t_format *format);
 char				*ft_unistr(int *ptr);
 unsigned char		*ft_unichar(unsigned int value);
 int 				ft_power(int value, int power);
 char				*ft_binary(int value);
-char				*ft_wchar_tdup(wchar_t *s1);
 char				*ft_get_address(long int n);
 char				*ft_oct_itoa(int n);
 char				*ft_unitoa(unsigned int n);
@@ -48,7 +49,7 @@ void 				ft_chrjoin(char **str, char c);
 void				get_flag(char *s);
 void				get_width(char *sint);
 void				get_precision(char *s);
-int					set_arg(const char *s, char **str, va_list ap);
+int					set_arg(char **str, va_list ap, t_format *format);
 void				set_integer(char **str, int nb, int *i);
 int					ft_printf(const char *restrict format, ...);
 void				*ft_memset(void *b, int c, size_t len);
