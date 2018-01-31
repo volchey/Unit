@@ -12,16 +12,23 @@
 
 #include "libft.h"
 
-void 		ft_chrjoin(char **str, char c)
+void 		ft_chrjoin(t_list **str, char c)
 {
-	int 	size;
 	char	*buf;
+	t_list	*new;
 
-	size = ft_strlen(*str);
-	buf = (char*)malloc(sizeof(char) * (size + 1));
-	buf = ft_strcpy(buf, *str);
-	buf[size] = c;
-	buf[size + 1] = '\0';
-	ft_strdel(str);
-	*str = buf;
+    if (str && c)
+    {
+		if ((*str)->content_size == BUFF_SIZE)
+		{
+			new = ft_lstnew("", BUFF_SIZE);
+			new->content_size = 0;
+			(*str)->next = new;
+			*str = (*str)->next;
+			(*str)->content_size = 0;
+		}
+		buf = (char*)(*str)->content;
+		buf[(*str)->content_size] = c;
+		(*str)->content_size += 1;
+    }
 }

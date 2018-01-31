@@ -12,10 +12,10 @@
 
 #include "libft.h"
 
-int			set_width(const char *s, t_format *format)
+int				set_width(const char *s, t_format *format)
 {
-	int		i;
-	char	*sub;
+	int			i;
+	char		*sub;
 
 	i = 0;
 	while (ft_isdigit(s[i]))
@@ -26,10 +26,10 @@ int			set_width(const char *s, t_format *format)
 	return (i);
 }
 
-int			set_precision(const char *s, t_format *format)
+int				set_precision(const char *s, t_format *format)
 {
-	int		i;
-	char	*sub;
+	int			i;
+	char		*sub;
 
 	i = 0;
 	s++;
@@ -41,67 +41,74 @@ int			set_precision(const char *s, t_format *format)
 	return (i);
 }
 
-void		set_stuct(const char **s, t_format *format)
+void			set_struct(const char **s, t_format *format)
 {
-	int			i;
-
-	i = 0;
 	if (ft_isdigit(**s))
 	{
 		*s += set_width(*s, format);
-		set_stuct(s, format);
+		set_struct(s, format);
 	}
 	else if (**s == '#' || **s == '-' || **s == '+' || **s == ' ' || **s == '0')
 	{
 		format->flag = **s;
 		*s += 1;
-		set_stuct(s, format);
+		set_struct(s, format);
 	}
 	else if (**s == '.')
 	{
 		*s += set_precision(*s, format);
-		set_stuct(s, format);
+		set_struct(s, format);
 	}
-	else 
+	else
 		format->variable = (char*)*s;
 }
 
-void			get_str(const char *s, char **str, va_list ap)
+void			get_str(const char *s, t_list **str, va_list ap)
 {
-	int			i;
 	t_format	*format;
 
 	format = malloc(sizeof(t_format));
-	i = 0;
 	while (*s)
 	{
-		if(*s == '%')
+		if (*s == '%')
 		{
 			s++;
 			clear_struct(format);
-			set_stuct(&s, format);
+			set_struct(&s, format);
 			s += set_arg(str, ap, format);
 		}
-        if (*s && *s != '%')
-    		ft_chrjoin(str, *s);
+		if (str && *s && (*s != '%'))
+			ft_chrjoin(str, *s);
 		if (*s && *s != '%')
 			s++;
 	}
 }
 
-int		ft_printf(const char *restrict format, ...)
+int				ft_printf(const char *restrict format, ...)
 {
-	va_list ap;
-	char	*str;
-	int		size;
+	va_list		ap;
+	t_list		*str;
+	t_list		*head;
+	int			i;
+	int 		size;
 
-	str = ft_strnew(0);
-    *str = '\0';
+	size = 0;
+	str = ft_lstnew("", BUFF_SIZE);
+	str->content_size = 0;
+	head = str;
 	va_start(ap, format);
 	get_str(format, &str, ap);
 	va_end(ap);
-	ft_putstr(str);
-	size = ft_strlen(str);
-    ft_strdel(&str);
+	while (head)
+	{
+		i = 0;
+		while ((int)head->content_size > i)
+		{
+			write(1, &(head->content[i]), 1);
+			i++;
+		}
+		size += i;
+		head = head->next;
+	}
 	return (size);
 }

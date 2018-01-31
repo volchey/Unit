@@ -46,12 +46,16 @@ unsigned char	*ft_unichar(unsigned int value)
 {
 	int				size;
 	unsigned char	*octet;
-	char			*bin;
+	unsigned int	i;
 
-	bin = ft_binary(value);
-	size = ft_strlen(bin);
+	size = 0;
+	i = value;
+	while (i > 0)
+	{
+		i /= 2;
+		size++;
+	}
 	octet = (unsigned char*)malloc(sizeof(char) * (size + 1));
-	ft_strdel(&bin);
 	if (size < 8)
 		octet[0] = value;
 	else if (size < 12)

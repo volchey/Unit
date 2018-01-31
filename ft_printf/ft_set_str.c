@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_set_str.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vchechai <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,38 +12,14 @@
 
 #include "libft.h"
 
-char	*ft_strdup(const char *s1)
+void	ft_set_str(const char *s1, t_list **str)
 {
-	char	*dst;
-	int		i;
+	int	i;
 
 	i = 0;
-	dst = (char*)malloc(sizeof(char) * (ft_strlen(s1) + 1));
-	if (dst == NULL)
-		return (dst);
-	while (s1[i] != '\0')
+	while (s1[i])
 	{
-		dst[i] = s1[i];
+		ft_chrjoin(str, s1[i]);
 		i++;
 	}
-	dst[i] = '\0';
-	return (dst);
-}
-
-char	*ft_wchar_tdup(wchar_t *s1)
-{
-	char	*dst;
-	int		i;
-
-	i = 0;
-	dst = (char*)malloc(sizeof(char) * (ft_strlen((char*)s1) + 1));
-	if (dst == NULL)
-		return (dst);
-	while (s1[i] != '\0')
-	{
-		dst[i] = s1[i];
-		i++;
-	}
-	dst[i] = '\0';
-	return (dst);
 }

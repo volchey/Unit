@@ -1,26 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   set_integer.c                                      :+:      :+:    :+:   */
+/*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vchechai <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/01/12 16:14:44 by vchechai          #+#    #+#             */
-/*   Updated: 2018/01/12 16:21:01 by vchechai         ###   ########.fr       */
+/*   Created: 2017/11/06 15:17:32 by vchechai          #+#    #+#             */
+/*   Updated: 2017/11/06 15:17:51 by vchechai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	set_integer(char **str, int nb, int *i)
+int	ft_isascii(int c)
 {
-	char	*num;
-	char	*buf;
-
-	num = ft_itoa(nb);
-	buf = *str;
-	*str = ft_strjoin(buf, num);
-	ft_strdel(&buf);
-	ft_strdel(&num);
-	*i += 2;
+	return (c >= 0 && c <= 127) ? 1 : 0;
 }

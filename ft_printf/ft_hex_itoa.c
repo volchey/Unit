@@ -12,48 +12,48 @@
 
 #include "libft.h"
 
-static char	*ft_to_str(long int bn, int len)
+static char	*ft_to_str(unsigned long int n, int len)
 {
 	char		*arr;
-	int			ram;
+	long		ram;
 
 	arr = ft_strnew(len + 1);
 	if (arr == NULL)
 		return (arr);
+    if (n == 0)
+        arr[0] = '0';
 	arr[len--] = '\0';
-	while (bn > 0)
+	while (len > 0)
 	{
-		ram = bn % 16;
+		ram = n % 16;
 		if (ram < 10)
 			arr[len] = ram + '0';
 		else
 			arr[len] = ram + 87;
-		bn /= 16;
+		n /= 16;
 		len--;
 	}	
 	return (arr);
 }
 
-char		*ft_hex_itoa(long int n)
+char		*ft_hex_itoa(unsigned long int n)
 {
-	long int	bn;
 	long int	i;
 	int			len;
 
-	bn = n;
 	i = 1;
 	len = 0;
-	if (bn < 0)
-		bn *= -1;
-	while (bn / i > 0)
+    if (n == 0)
+        len++;
+	while (n / i > 0)
 	{
 		i *= 16;
 		len++;
 	}
-	return (ft_to_str(bn, len));
+	return (ft_to_str(n, len));
 }
 
-static char	*ft_to_uppstr(long int bn, int len)
+static char	*ft_to_uppstr(unsigned long int n, int len)
 {
 	char		*arr;
 	int			ram;
@@ -61,35 +61,35 @@ static char	*ft_to_uppstr(long int bn, int len)
 	arr = ft_strnew(len + 1);
 	if (arr == NULL)
 		return (arr);
+    if (n == 0)
+        arr[0] = '0';
 	arr[len--] = '\0';
-	while (bn > 0)
+	while (n > 0)
 	{
-		ram = bn % 16;
+		ram = n % 16;
 		if (ram < 10)
 			arr[len] = ram + '0';
 		else
 			arr[len] = ram + 55;
-		bn /= 16;
+		n /= 16;
 		len--;
 	}	
 	return (arr);
 }
 
-char		*ft_upphex_itoa(long int n)
+char		*ft_upphex_itoa(unsigned long int n)
 {
-	long int	bn;
 	long int	i;
 	int			len;
 
-	bn = n;
 	i = 1;
 	len = 0;
-	if (bn < 0)
-		bn *= -1;
-	while (bn / i > 0)
+    if (n == 0)
+        len++;
+	while (n / i > 0)
 	{
 		i *= 16;
 		len++;
 	}
-	return (ft_to_uppstr(bn, len));
+	return (ft_to_uppstr(n, len));
 }

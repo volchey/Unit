@@ -17,13 +17,14 @@
 int main()
 {
 	char	*str;
-	int		x[4] = {945, 256, 23, 0};
+//	int		x[4] = {945, 256, 23, 0};
 
 	setlocale(LC_ALL, "");
 	str = ft_strnew(2);
 	str[0] = 'H';
-//	ft_putchar(x);
-//	printf("printf: %x %cs %C %p\n", -1742, 'i', x[0], str);
-	ft_printf("ft_printf: %x %d %cs %C %lld\n", -1742, 0, 'i', x[0], 3214721364712673467);
-//	system("leaks a.out");
+//    ft_putstr(ft_itoa(0));
+//    ft_putchar('\n');
+	ft_printf("ft_printf:  %x %o %u %d %s\n", 42, -123, -123, -123, "-123");
+	printf("ft_printf:  %x %o %u %d %s\n", 42, -123, -123, -123, "-123");
+	//	system("leaks a.out");
 }
