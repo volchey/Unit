@@ -1,25 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_unistr.c                                        :+:      :+:    :+:   */
+/*   ft_strncpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vchechai <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/01/20 13:21:27 by vchechai          #+#    #+#             */
-/*   Updated: 2018/01/20 13:47:48 by vchechai         ###   ########.fr       */
+/*   Created: 2017/11/06 12:45:37 by vchechai          #+#    #+#             */
+/*   Updated: 2017/11/06 12:45:57 by vchechai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void		ft_unistr(int *ptr, t_list **str)
+char	*ft_strncpy(char *dst, const char *src, size_t len)
 {
-	int		i;
+	size_t i;
 
 	i = 0;
-	while (ptr[i])
+	while (i < len)
 	{
-		ft_unichr(ptr[i], str);
+		if (src[i] && i < ft_strlen(src))
+			dst[i] = src[i];
+		else
+			dst[i] = '\0';
 		i++;
 	}
+	return (dst);
 }

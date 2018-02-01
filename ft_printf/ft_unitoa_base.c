@@ -12,13 +12,11 @@
 
 #include "libft.h"
 
-static void	ft_base_str(unsigned int nb, int base, long len,
+static void	ft_base_str(unsigned long long nb, int base, unsigned long long len,
 									t_list **str)
 {
-	char	chr[16] = "0123456789abcdef";
+	char	chr[17] = "0123456789abcdef";
 
-	if (nb == 0)
-		ft_chrjoin(str, '0');
 	while (len > 0)
 	{
 		ft_chrjoin(str, chr[nb / len]);
@@ -27,12 +25,12 @@ static void	ft_base_str(unsigned int nb, int base, long len,
 	}
 }
 
-void		ft_unitoa_base(unsigned int nb, int base, t_list **str)
+void		ft_unitoa_base(unsigned long long nb, int base, t_list **str)
 {
-	long	len;
+	unsigned long long	len;
 
 	len = 1;
-	while (nb / len > (base - 1))
+	while (nb / len > (unsigned  long long)(base - 1))
 		len *= base;
 	ft_base_str(nb, base, len, str);
 }

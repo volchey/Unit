@@ -12,40 +12,39 @@
 
 #include "libft.h"
 
-static void	set_2_bytes(unsigned int value, unsigned char **octet)
+static void			set_2_bytes(unsigned int value, t_list **str)
 {
 	unsigned int	mask1;
 
 	mask1 = 49280;
-	(*octet)[0] = (((value >> 6) << 27) >> 27) | (mask1 >> 8);
-	(*octet)[1] = ((value << 26) >> 26) | ((mask1 << 24) >> 24);	
+	ft_chrjoin(str, (((value >> 6) << 27) >> 27) | (mask1 >> 8));
+	ft_chrjoin(str, ((value << 26) >> 26) | ((mask1 << 24) >> 24));
 }
 
-static void set_3_bytes(unsigned int value, unsigned char **octet)
+static void			set_3_bytes(unsigned int value, t_list **str)
 {
 	unsigned int	mask2;
 
 	mask2 = 14712960;
-	(*octet)[0] = (((value >> 12) << 28) >> 28) | (mask2 >> 16);
-	(*octet)[1] = (((value >> 6) << 26) >> 26) | ((mask2 << 16) >> 24);
-	(*octet)[2] = ((value << 26) >> 26) | ((mask2 << 24) >> 24);
+	ft_chrjoin(str, (((value >> 12) << 28) >> 28) | (mask2 >> 16));
+	ft_chrjoin(str, (((value >> 6) << 26) >> 26) | ((mask2 << 16) >> 24));
+	ft_chrjoin(str, ((value << 26) >> 26) | ((mask2 << 24) >> 24));
 }
 
-static void set_4_bytes(unsigned int value, unsigned char **octet)
+static void			set_4_bytes(unsigned int value, t_list **str)
 {
 	unsigned int	mask3;
 
 	mask3 = 4034953344;
-	(*octet)[0] = (((value >> 18) << 29) >> 29) | (mask3 >> 24);
-	(*octet)[1] = ((value >> 12) << 26) >> 26 | ((mask3 << 8) >> 24);
-	(*octet)[2] = ((value >> 6) << 26) >> 26 | ((mask3 << 16) >> 24);
-	(*octet)[3] = ((value << 26) >> 26) | ((mask3 << 24) >> 24);
+	ft_chrjoin(str, (((value >> 18) << 29) >> 29) | (mask3 >> 24));
+	ft_chrjoin(str, (((value >> 12) << 26) >> 26 | ((mask3 << 8) >> 24)));
+	ft_chrjoin(str, ((value >> 6) << 26) >> 26 | ((mask3 << 16) >> 24));
+	ft_chrjoin(str, ((value << 26) >> 26) | ((mask3 << 24) >> 24));
 }
 
-unsigned char	*ft_unichar(unsigned int value)
+void				ft_unichr(unsigned int value, t_list **str)
 {
 	int				size;
-	unsigned char	*octet;
 	unsigned int	i;
 
 	size = 0;
@@ -55,15 +54,12 @@ unsigned char	*ft_unichar(unsigned int value)
 		i /= 2;
 		size++;
 	}
-	octet = (unsigned char*)malloc(sizeof(char) * (size + 1));
 	if (size < 8)
-		octet[0] = value;
+		ft_chrjoin(str,value);
 	else if (size < 12)
-		set_2_bytes(value, &octet);
+		set_2_bytes(value, str);
 	else if (size < 17)
-		set_3_bytes(value, &octet);
+		set_3_bytes(value, str);
 	else
-		set_4_bytes(value, &octet);
-	octet[size] = '\0';
-	return (octet);
+		set_4_bytes(value, str);
 }

@@ -73,15 +73,19 @@ void			get_str(const char *s, t_list **str, va_list ap)
 		if (*s == '%')
 		{
 			s++;
-			clear_struct(format);
-			set_struct(&s, format);
-			s += set_arg(str, ap, format);
+			if (*s)
+			{
+				clear_struct(format);
+				set_struct(&s, format);
+				s += set_arg(str, ap, format);
+			}
 		}
 		if (str && *s && (*s != '%'))
 			ft_chrjoin(str, *s);
 		if (*s && *s != '%')
 			s++;
 	}
+	free(format);
 }
 
 int				ft_printf(const char *restrict format, ...)
@@ -89,26 +93,14 @@ int				ft_printf(const char *restrict format, ...)
 	va_list		ap;
 	t_list		*str;
 	t_list		*head;
-	int			i;
 	int 		size;
 
-	size = 0;
 	str = ft_lstnew("", BUFF_SIZE);
 	str->content_size = 0;
 	head = str;
 	va_start(ap, format);
 	get_str(format, &str, ap);
 	va_end(ap);
-	while (head)
-	{
-		i = 0;
-		while ((int)head->content_size > i)
-		{
-			write(1, &(head->content[i]), 1);
-			i++;
-		}
-		size += i;
-		head = head->next;
-	}
+	size = ft_put_del_lst(&head);
 	return (size);
 }
