@@ -12,25 +12,87 @@
 
 #include "libft.h"
 
-static void	ft_base_str(unsigned long long nb, int base, unsigned long long len,
-									t_list **str)
+static int	num_size(unsigned long long n, int base, t_format *format)
 {
-	char	chr[17] = "0123456789abcdef";
+	int					len;
 
-	while (len > 0)
+	len = 0;
+	if (n == 0 && format->precision != -1)
+		len++;
+	while (n > 0)
 	{
-		ft_chrjoin(str, chr[nb / len]);
-		nb %= len;
-		len /= base;
+		n /= base;
+		len++;
+	}
+	return (len);
+}
+
+static void	ft_to_str(unsigned long long n, int base, t_format *format,
+						 t_list **str)
+{
+	char				buf[17] = "0123456789abcdef";
+	int					len;
+	unsigned long long	i;
+
+	len = num_size(n, base, format);
+	i = ft_power(base, len - 1);
+	if (format->plus && !format->precision)
+		len++;
+	if (format->hesh && n != 0)
+	{
+		ft_chrjoin(str, '0');
+		ft_chrjoin(str, 'x');
+	}
+	while ((format->zero && len < format->width && !format->precision
+			&& !format->minus) || len < format->precision)
+	{
+		ft_chrjoin(str, '0');
+		len++;
+	}
+	while (i > 0)
+	{
+		ft_chrjoin(str, buf[n / i]);
+		n %= i;
+		i /= base;
 	}
 }
 
-void		ft_unitoa_base(unsigned long long nb, int base, t_list **str)
+static void	ft_pre_str(unsigned long long n, int base, t_format *format,
+						  t_list **str)
 {
-	unsigned long long	len;
-
-	len = 1;
-	while (nb / len > (unsigned  long long)(base - 1))
-		len *= base;
-	ft_base_str(nb, base, len, str);
+	if (format->plus)
+		ft_chrjoin(str, '+');
+	if (format->space && !format->plus && !format->minus)
+		ft_chrjoin(str, ' ');
+	if (!(format->precision == -1 && n == 0))
+		ft_to_str(n, base, format, str);
 }
+
+void		ft_unitoa_base(unsigned long long n, int base,
+						   t_list **str, t_format *format)
+{
+	long long	len;
+
+	len = num_size(n, base, format);
+	if (format->precision > len)
+		len = format->precision;
+	if (format->plus || (format->space && !format->plus && !format->minus))
+		len++;
+	if (format->width)
+	{
+		if (format->zero && !format->precision && !format->minus)
+			len = format->width;
+		if (format->minus)
+			ft_pre_str(n, base, format, str);
+		while (len < format->width)
+		{
+			ft_chrjoin(str, ' ');
+			len++;
+		}
+		if (!format->minus)
+			ft_pre_str(n, base, format, str);
+	}
+	else
+		ft_pre_str(n, base, format, str);
+}
+

@@ -14,18 +14,18 @@
 
 void		get_arg(va_list ap, t_list **str, char c, t_format *format)
 {
-	if (c == 'd' || c == 'i' || c == 'D')
+	if (c == 'd' || c == 'i')
 		ft_itoa(va_arg(ap, int), str, format);
-    else if (c == 'o' || c == 'O')
-        ft_unitoa_base(va_arg(ap, unsigned int), 8, str);
-    else if (c == 'u' || c == 'U')
-        ft_unitoa_base(va_arg(ap, unsigned int), 10 , str);
+    else if (c == 'o')
+        ft_unitoa_base(va_arg(ap, unsigned int), 8, str, format);
+    else if (c == 'u')
+        ft_unitoa_base(va_arg(ap, unsigned int), 10 , str, format);
     else if (c == 'x')
-        ft_unitoa_base(va_arg(ap, unsigned int), 16, str);
+        ft_unitoa_base(va_arg(ap, unsigned int), 16, str, format);
 	else if (c == 's')
-		ft_set_str(va_arg(ap, char*), str);
+		ft_set_str(va_arg(ap, char*), str, format);
 	else if (c == 'c')
-		ft_chrjoin(str, (char)va_arg(ap, int));
+		ft_set_chr((char)va_arg(ap, int), str, format);
 	else if (c == 'p')
 		ft_get_address(va_arg(ap, unsigned long), str);
 	else if (c == 'X')
@@ -33,9 +33,11 @@ void		get_arg(va_list ap, t_list **str, char c, t_format *format)
 	else if (c == 'C')
 		ft_unichr(va_arg(ap, unsigned int), str);
 	else if (c == 'S')
-		ft_unistr(va_arg(ap, int*), str);
+		ft_unistr((int*)va_arg(ap, unsigned int*), str, format);
 	else if (c == '%')
-		ft_chrjoin(str, '%');
+		ft_set_chr('%', str, format);
+	else
+		ft_chrjoin(str, c);
 }
 
 void	clear_struct(t_format *format)
@@ -53,18 +55,12 @@ void	clear_struct(t_format *format)
 int		ft_put_del_lst(t_list **head)
 {
 	int size;
-	int i;
 
 	size = 0;
 	while (*head)
 	{
-		i = 0;
-		while ((int)(*head)->content_size > i)
-		{
-			write(1, &((*head)->content[i]), 1);
-			i++;
-		}
-		size += i;
+		write(1, (*head)->content, (*head)->content_size);
+		size += (*head)->content_size;
 		free((*head)->content);
 		free(*head);
 		(*head) = (*head)->next;
@@ -79,7 +75,13 @@ int			set_arg(t_list **str, va_list ap, t_format *format)
 
 	c = *(format->variable);
     length = 1;
-	if (c == 'l' || c == 'h' || c == 'j' || c == 'z')
+	if (c == 'D')
+		ft_itoa(va_arg(ap, long), str, format);
+	else if (c == 'O')
+		ft_unitoa_base(va_arg(ap, unsigned long), 8, str, format);
+	else if (c == 'U')
+		ft_unitoa_base(va_arg(ap, unsigned long), 10, str, format);
+	else if (c == 'l' || c == 'h' || c == 'j' || c == 'z')
 		get_farg(ap, format, str, &length);
 	else
     	get_arg(ap, str, c, format);

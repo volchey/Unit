@@ -33,6 +33,11 @@ int				set_precision(const char *s, t_format *format)
 
 	i = 0;
 	s++;
+	if (!ft_isdigit(s[i]) || s[i] == '0')
+	{
+		format->precision = -1;
+		return (0);
+	}
 	while (ft_isdigit(s[i]))
 		i++;
 	sub = ft_strsub(s, 0, i);

@@ -13,7 +13,7 @@
 #ifndef LIBFT_H
 # define LIBFT_H
 
-#define BUFF_SIZE 5
+#define BUFF_SIZE 30
 
 # include <stdarg.h>
 # include <string.h>
@@ -39,16 +39,18 @@ typedef	struct		s_format
 	const char		*variable;
 }					t_format;
 
+void 				ft_set_chr(char c, t_list **str, t_format *format);
 int					ft_put_del_lst(t_list **head);
 void				ft_unitoa_uppbase(unsigned long long nb, int base, t_list **str);
-void				ft_set_str(const char *s1, t_list **str);
-void				ft_unitoa_base(unsigned long long nb, int base, t_list **str);
+void				ft_set_str(char *s1, t_list **str, t_format *format);
+void				ft_unitoa_base(unsigned long long nb, int base,
+								   t_list **str, t_format *format);
 void				get_farg(va_list ap, t_format *format, t_list **str, int *length);
 char                *ft_itoa_base(int nb, int base);
 void				clear_struct(t_format *format);
-void				ft_unistr(int *ptr, t_list **str);
+void				ft_unistr(int *ptr, t_list **str, t_format *format);
 void				ft_unichr(unsigned int value, t_list **str);
-long long			ft_power(long long value, int power);
+unsigned long long	ft_power(long long value, int power);
 char				*ft_binary(int value);
 void				ft_get_address(unsigned long n, t_list **str);
 char        		*ft_oct_unlltoa(unsigned long long n);

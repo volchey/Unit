@@ -39,10 +39,10 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /Applications/CLion.app/Contents/bin/cmake/bin/cmake
+CMAKE_COMMAND = /Volumes/CLion/CLion.app/Contents/bin/cmake/bin/cmake
 
 # The command to remove a file.
-RM = /Applications/CLion.app/Contents/bin/cmake/bin/cmake -E remove -f
+RM = /Volumes/CLion/CLion.app/Contents/bin/cmake/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -59,7 +59,7 @@ CMAKE_BINARY_DIR = /Users/vchechai/work/ft_printf/cmake-build-debug
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/Applications/CLion.app/Contents/bin/cmake/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/Volumes/CLion/CLion.app/Contents/bin/cmake/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -70,7 +70,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/Applications/CLion.app/Contents/bin/cmake/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	/Volumes/CLion/CLion.app/Contents/bin/cmake/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -474,6 +474,60 @@ ft_putstr.c.s:
 	$(MAKE) -f CMakeFiles/ft_printf.dir/build.make CMakeFiles/ft_printf.dir/ft_putstr.c.s
 .PHONY : ft_putstr.c.s
 
+ft_set_chr.o: ft_set_chr.c.o
+
+.PHONY : ft_set_chr.o
+
+# target to build an object file
+ft_set_chr.c.o:
+	$(MAKE) -f CMakeFiles/ft_printf.dir/build.make CMakeFiles/ft_printf.dir/ft_set_chr.c.o
+.PHONY : ft_set_chr.c.o
+
+ft_set_chr.i: ft_set_chr.c.i
+
+.PHONY : ft_set_chr.i
+
+# target to preprocess a source file
+ft_set_chr.c.i:
+	$(MAKE) -f CMakeFiles/ft_printf.dir/build.make CMakeFiles/ft_printf.dir/ft_set_chr.c.i
+.PHONY : ft_set_chr.c.i
+
+ft_set_chr.s: ft_set_chr.c.s
+
+.PHONY : ft_set_chr.s
+
+# target to generate assembly for a file
+ft_set_chr.c.s:
+	$(MAKE) -f CMakeFiles/ft_printf.dir/build.make CMakeFiles/ft_printf.dir/ft_set_chr.c.s
+.PHONY : ft_set_chr.c.s
+
+ft_set_str.o: ft_set_str.c.o
+
+.PHONY : ft_set_str.o
+
+# target to build an object file
+ft_set_str.c.o:
+	$(MAKE) -f CMakeFiles/ft_printf.dir/build.make CMakeFiles/ft_printf.dir/ft_set_str.c.o
+.PHONY : ft_set_str.c.o
+
+ft_set_str.i: ft_set_str.c.i
+
+.PHONY : ft_set_str.i
+
+# target to preprocess a source file
+ft_set_str.c.i:
+	$(MAKE) -f CMakeFiles/ft_printf.dir/build.make CMakeFiles/ft_printf.dir/ft_set_str.c.i
+.PHONY : ft_set_str.c.i
+
+ft_set_str.s: ft_set_str.c.s
+
+.PHONY : ft_set_str.s
+
+# target to generate assembly for a file
+ft_set_str.c.s:
+	$(MAKE) -f CMakeFiles/ft_printf.dir/build.make CMakeFiles/ft_printf.dir/ft_set_str.c.s
+.PHONY : ft_set_str.c.s
+
 ft_strcpy.o: ft_strcpy.c.o
 
 .PHONY : ft_strcpy.o
@@ -873,6 +927,12 @@ help:
 	@echo "... ft_putstr.o"
 	@echo "... ft_putstr.i"
 	@echo "... ft_putstr.s"
+	@echo "... ft_set_chr.o"
+	@echo "... ft_set_chr.i"
+	@echo "... ft_set_chr.s"
+	@echo "... ft_set_str.o"
+	@echo "... ft_set_str.i"
+	@echo "... ft_set_str.s"
 	@echo "... ft_strcpy.o"
 	@echo "... ft_strcpy.i"
 	@echo "... ft_strcpy.s"

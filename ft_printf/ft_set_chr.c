@@ -1,34 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_chrjoin.c                                       :+:      :+:    :+:   */
+/*   ft_set_chr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vchechai <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/01/15 16:36:32 by vchechai          #+#    #+#             */
-/*   Updated: 2018/01/15 16:37:03 by vchechai         ###   ########.fr       */
+/*   Created: 2018/02/05 18:29:12 by vchechai          #+#    #+#             */
+/*   Updated: 2018/02/05 18:29:14 by vchechai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void 		ft_chrjoin(t_list **str, char c)
+void	ft_set_chr(char c, t_list **str, t_format *f)
 {
-	char	*buf;
-	t_list	*new;
+	int		len;
 
-    if (str)
-    {
-		if ((*str)->content_size == BUFF_SIZE)
+	len = 1;
+	if(f->width > len)
+	{
+		if(f->minus)
+			ft_chrjoin(str, c);
+		while(len < f->width)
 		{
-			new = ft_lstnew("", BUFF_SIZE);
-			new->content_size = 0;
-			(*str)->next = new;
-			*str = (*str)->next;
-			(*str)->content_size = 0;
+			ft_chrjoin(str, ' ');
+			len++;
 		}
-		buf = (char*)(*str)->content;
-		buf[(*str)->content_size] = c;
-		(*str)->content_size += 1;
-    }
+		if(!f->minus)
+			ft_chrjoin(str, c);
+	} else
+		ft_chrjoin(str, c);
 }

@@ -25,6 +25,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/ft_printf.dir/main.c.o"
   "CMakeFiles/ft_printf.dir/set_arg.c.o"
   "CMakeFiles/ft_printf.dir/get_farg.c.o"
+  "CMakeFiles/ft_printf.dir/ft_set_str.c.o"
+  "CMakeFiles/ft_printf.dir/ft_set_chr.c.o"
   "ft_printf.pdb"
   "ft_printf"
 )

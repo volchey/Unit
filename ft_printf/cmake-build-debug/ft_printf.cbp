@@ -127,6 +127,12 @@
 		<Unit filename="/Users/vchechai/work/ft_printf/ft_putstr.c">
 			<Option target="ft_printf"/>
 		</Unit>
+		<Unit filename="/Users/vchechai/work/ft_printf/ft_set_chr.c">
+			<Option target="ft_printf"/>
+		</Unit>
+		<Unit filename="/Users/vchechai/work/ft_printf/ft_set_str.c">
+			<Option target="ft_printf"/>
+		</Unit>
 		<Unit filename="/Users/vchechai/work/ft_printf/ft_strcpy.c">
 			<Option target="ft_printf"/>
 		</Unit>

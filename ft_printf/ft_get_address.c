@@ -29,8 +29,6 @@ void		ft_get_address(unsigned long nb, t_list **str)
 	long	len;
 
 	len = 1;
-	if (nb == 0)
-		nb = 4294967296;
 	ft_chrjoin(str, '0');
 	ft_chrjoin(str, 'x');
 	while (nb / len > 15)

@@ -34,10 +34,10 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /Applications/CLion.app/Contents/bin/cmake/bin/cmake
+CMAKE_COMMAND = /Volumes/CLion/CLion.app/Contents/bin/cmake/bin/cmake
 
 # The command to remove a file.
-RM = /Applications/CLion.app/Contents/bin/cmake/bin/cmake -E remove -f
+RM = /Volumes/CLion/CLion.app/Contents/bin/cmake/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -681,6 +681,54 @@ CMakeFiles/ft_printf.dir/get_farg.c.o.provides: CMakeFiles/ft_printf.dir/get_far
 CMakeFiles/ft_printf.dir/get_farg.c.o.provides.build: CMakeFiles/ft_printf.dir/get_farg.c.o
 
 
+CMakeFiles/ft_printf.dir/ft_set_str.c.o: CMakeFiles/ft_printf.dir/flags.make
+CMakeFiles/ft_printf.dir/ft_set_str.c.o: ../ft_set_str.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/ft_printf/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building C object CMakeFiles/ft_printf.dir/ft_set_str.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ft_printf.dir/ft_set_str.c.o   -c /Users/vchechai/work/ft_printf/ft_set_str.c
+
+CMakeFiles/ft_printf.dir/ft_set_str.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ft_printf.dir/ft_set_str.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/vchechai/work/ft_printf/ft_set_str.c > CMakeFiles/ft_printf.dir/ft_set_str.c.i
+
+CMakeFiles/ft_printf.dir/ft_set_str.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ft_printf.dir/ft_set_str.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/vchechai/work/ft_printf/ft_set_str.c -o CMakeFiles/ft_printf.dir/ft_set_str.c.s
+
+CMakeFiles/ft_printf.dir/ft_set_str.c.o.requires:
+
+.PHONY : CMakeFiles/ft_printf.dir/ft_set_str.c.o.requires
+
+CMakeFiles/ft_printf.dir/ft_set_str.c.o.provides: CMakeFiles/ft_printf.dir/ft_set_str.c.o.requires
+	$(MAKE) -f CMakeFiles/ft_printf.dir/build.make CMakeFiles/ft_printf.dir/ft_set_str.c.o.provides.build
+.PHONY : CMakeFiles/ft_printf.dir/ft_set_str.c.o.provides
+
+CMakeFiles/ft_printf.dir/ft_set_str.c.o.provides.build: CMakeFiles/ft_printf.dir/ft_set_str.c.o
+
+
+CMakeFiles/ft_printf.dir/ft_set_chr.c.o: CMakeFiles/ft_printf.dir/flags.make
+CMakeFiles/ft_printf.dir/ft_set_chr.c.o: ../ft_set_chr.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/ft_printf/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building C object CMakeFiles/ft_printf.dir/ft_set_chr.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ft_printf.dir/ft_set_chr.c.o   -c /Users/vchechai/work/ft_printf/ft_set_chr.c
+
+CMakeFiles/ft_printf.dir/ft_set_chr.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ft_printf.dir/ft_set_chr.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/vchechai/work/ft_printf/ft_set_chr.c > CMakeFiles/ft_printf.dir/ft_set_chr.c.i
+
+CMakeFiles/ft_printf.dir/ft_set_chr.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ft_printf.dir/ft_set_chr.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/vchechai/work/ft_printf/ft_set_chr.c -o CMakeFiles/ft_printf.dir/ft_set_chr.c.s
+
+CMakeFiles/ft_printf.dir/ft_set_chr.c.o.requires:
+
+.PHONY : CMakeFiles/ft_printf.dir/ft_set_chr.c.o.requires
+
+CMakeFiles/ft_printf.dir/ft_set_chr.c.o.provides: CMakeFiles/ft_printf.dir/ft_set_chr.c.o.requires
+	$(MAKE) -f CMakeFiles/ft_printf.dir/build.make CMakeFiles/ft_printf.dir/ft_set_chr.c.o.provides.build
+.PHONY : CMakeFiles/ft_printf.dir/ft_set_chr.c.o.provides
+
+CMakeFiles/ft_printf.dir/ft_set_chr.c.o.provides.build: CMakeFiles/ft_printf.dir/ft_set_chr.c.o
+
+
 # Object files for target ft_printf
 ft_printf_OBJECTS = \
 "CMakeFiles/ft_printf.dir/ft_atoi.c.o" \
@@ -708,7 +756,9 @@ ft_printf_OBJECTS = \
 "CMakeFiles/ft_printf.dir/ft_unitoa_uppbase.c.o" \
 "CMakeFiles/ft_printf.dir/main.c.o" \
 "CMakeFiles/ft_printf.dir/set_arg.c.o" \
-"CMakeFiles/ft_printf.dir/get_farg.c.o"
+"CMakeFiles/ft_printf.dir/get_farg.c.o" \
+"CMakeFiles/ft_printf.dir/ft_set_str.c.o" \
+"CMakeFiles/ft_printf.dir/ft_set_chr.c.o"
 
 # External object files for target ft_printf
 ft_printf_EXTERNAL_OBJECTS =
@@ -739,9 +789,11 @@ ft_printf: CMakeFiles/ft_printf.dir/ft_unitoa_uppbase.c.o
 ft_printf: CMakeFiles/ft_printf.dir/main.c.o
 ft_printf: CMakeFiles/ft_printf.dir/set_arg.c.o
 ft_printf: CMakeFiles/ft_printf.dir/get_farg.c.o
+ft_printf: CMakeFiles/ft_printf.dir/ft_set_str.c.o
+ft_printf: CMakeFiles/ft_printf.dir/ft_set_chr.c.o
 ft_printf: CMakeFiles/ft_printf.dir/build.make
 ft_printf: CMakeFiles/ft_printf.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/vchechai/work/ft_printf/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Linking C executable ft_printf"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/vchechai/work/ft_printf/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Linking C executable ft_printf"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/ft_printf.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -775,6 +827,8 @@ CMakeFiles/ft_printf.dir/requires: CMakeFiles/ft_printf.dir/ft_unitoa_uppbase.c.
 CMakeFiles/ft_printf.dir/requires: CMakeFiles/ft_printf.dir/main.c.o.requires
 CMakeFiles/ft_printf.dir/requires: CMakeFiles/ft_printf.dir/set_arg.c.o.requires
 CMakeFiles/ft_printf.dir/requires: CMakeFiles/ft_printf.dir/get_farg.c.o.requires
+CMakeFiles/ft_printf.dir/requires: CMakeFiles/ft_printf.dir/ft_set_str.c.o.requires
+CMakeFiles/ft_printf.dir/requires: CMakeFiles/ft_printf.dir/ft_set_chr.c.o.requires
 
 .PHONY : CMakeFiles/ft_printf.dir/requires
 

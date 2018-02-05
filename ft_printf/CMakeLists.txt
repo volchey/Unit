@@ -32,4 +32,6 @@ add_executable(ft_printf
         main.c
         Makefile
         set_arg.c
-        get_farg.c)
+        get_farg.c
+        ft_set_str.c
+        ft_set_chr.c)

@@ -17,6 +17,8 @@ set(CMAKE_DEPENDS_CHECK_C
   "/Users/vchechai/work/ft_printf/ft_putchar.c" "/Users/vchechai/work/ft_printf/cmake-build-debug/CMakeFiles/ft_printf.dir/ft_putchar.c.o"
   "/Users/vchechai/work/ft_printf/ft_putnbr.c" "/Users/vchechai/work/ft_printf/cmake-build-debug/CMakeFiles/ft_printf.dir/ft_putnbr.c.o"
   "/Users/vchechai/work/ft_printf/ft_putstr.c" "/Users/vchechai/work/ft_printf/cmake-build-debug/CMakeFiles/ft_printf.dir/ft_putstr.c.o"
+  "/Users/vchechai/work/ft_printf/ft_set_chr.c" "/Users/vchechai/work/ft_printf/cmake-build-debug/CMakeFiles/ft_printf.dir/ft_set_chr.c.o"
+  "/Users/vchechai/work/ft_printf/ft_set_str.c" "/Users/vchechai/work/ft_printf/cmake-build-debug/CMakeFiles/ft_printf.dir/ft_set_str.c.o"
   "/Users/vchechai/work/ft_printf/ft_strcpy.c" "/Users/vchechai/work/ft_printf/cmake-build-debug/CMakeFiles/ft_printf.dir/ft_strcpy.c.o"
   "/Users/vchechai/work/ft_printf/ft_strdel.c" "/Users/vchechai/work/ft_printf/cmake-build-debug/CMakeFiles/ft_printf.dir/ft_strdel.c.o"
   "/Users/vchechai/work/ft_printf/ft_strjoin.c" "/Users/vchechai/work/ft_printf/cmake-build-debug/CMakeFiles/ft_printf.dir/ft_strjoin.c.o"
