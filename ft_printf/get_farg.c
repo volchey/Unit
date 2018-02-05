@@ -97,11 +97,9 @@ void		get_farg(va_list ap, t_format *format, t_list **str, int *len)
 {
 	char	c1;
 	char 	c2;
-	char	c3;
 
 	c1 = (format->variable)[0];
 	c2 = (format->variable)[1];
-	c3 = (format->variable)[2];
 	if ((c2 == 'l' || c2 == 'h') && (c1 == c2))
 	{
 		*len += 2;

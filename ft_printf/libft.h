@@ -29,10 +29,14 @@ typedef struct		s_list
 
 typedef	struct		s_format
 {
-	char 			flag;
+	int				minus;
+	int 			plus;
+	int 			space;
+	int 			hesh;
+	int 			zero;
 	int 			width;
 	int 			precision;
-	char 			*variable;
+	const char		*variable;
 }					t_format;
 
 int					ft_put_del_lst(t_list **head);
@@ -44,7 +48,7 @@ char                *ft_itoa_base(int nb, int base);
 void				clear_struct(t_format *format);
 void				ft_unistr(int *ptr, t_list **str);
 void				ft_unichr(unsigned int value, t_list **str);
-int 				ft_power(int value, int power);
+long long			ft_power(long long value, int power);
 char				*ft_binary(int value);
 void				ft_get_address(unsigned long n, t_list **str);
 char        		*ft_oct_unlltoa(unsigned long long n);

@@ -12,15 +12,15 @@
 
 #include "libft.h"
 
-int		num_size(long long n, t_format *format)
+int			num_size(long long n)
 {
-	int len;
+	int		len;
 
 	len = 0;
-	if (format->flag == '+' || format->flag == ' ')
+	if (n == 0)
 		len++;
 	if (n < 0)
-		len++;
+		n *= -1;
 	while (n > 0)
 	{
 		n /= 10;
@@ -29,10 +29,26 @@ int		num_size(long long n, t_format *format)
 	return (len);
 }
 
-static void		ft_to_str(long long n, long long i, int f, t_list **str)
+static void		ft_to_str(long long n, long long i, t_format *format,
+							 t_list **str)
 {
-	if (f)
-		ft_chrjoin(str, '-');
+	int 		len;
+
+	len = num_size(n);
+	if (format->plus && n >= 0 && !format->precision)
+		len++;
+	if (n < 0)
+	{
+		n *= -1;
+		if (format->zero && !format->precision)
+		len++;
+	}
+	while ((format->zero && len < format->width && !format->precision
+		   && !format->minus) || len < format->precision)
+	{
+		ft_chrjoin(str, '0');
+		len++;
+	}
 	while (i > 0)
 	{
 		ft_chrjoin(str, (n / i + '0'));
@@ -41,45 +57,49 @@ static void		ft_to_str(long long n, long long i, int f, t_list **str)
 	}
 }
 
-void		set_width(long long n, t_format *format, int f, t_list **str)
+static void		ft_pre_str(long long n, t_format *format, t_list **str)
 {
-	int 	len;
-	char 	c;
+	int 		len;
+	long long	i;
 
-	c = ' ';
-	len = num_size(n, format);
-	if (format->width)
-	{
-		if (format->flag == '0')
-			c = '0';
-		if (format->flag == '-')
-			ft_to_str(n, ft_power(len, 10), f, str);
-		while (len < format->width)
-		{
-			ft_chrjoin(str, c);
-			len++;
-		}
-		if (format->flag != '0')
-			ft_to_str(n, ft_power(len, 10), f, str);
-	}
-	else
-		ft_to_str(n, ft_power(len, 10), f, str);
+	len = num_size(n);
+	i = ft_power(10, len -1);
+	if (format->plus && n >= 0)
+		ft_chrjoin(str, '+');
+	if (format->space && !format->plus && !format->minus && n >= 0)
+		ft_chrjoin(str, ' ');
+	if (n < 0)
+		ft_chrjoin(str, '-');
+	ft_to_str(n, i, format, str);
 }
 
 void			ft_itoa(long long n, t_list **str, t_format *format)
 {
-	long long	i;
-	int			f;
+	long long	len;
 
-	i = 1;
-	f = 0;
+	len = num_size(n);
+	if (format->precision > len)
+		len = format->precision;
 	if (n < 0)
+		len++;
+	if ((format->plus && n >= 0) || (format->space && !format->plus
+									 && !format->minus && n >= 0))
+		len++;
+	if (format->width)
 	{
-		f = 1;
-		n *= -1;
+		if (format->zero && !format->precision && !format->minus)
+			len = format->width;
+		if (format->minus)
+			ft_pre_str(n, format, str);
+		while (len < format->width)
+		{
+			ft_chrjoin(str, ' ');
+			len++;
+		}
+		if (!format->minus)
+			ft_pre_str(n, format, str);
 	}
-	while (n / i > 9)
-		i *= 10;
-	set_width(n, format, f, str);
+	else
+		ft_pre_str(n, format, str);
 }
 

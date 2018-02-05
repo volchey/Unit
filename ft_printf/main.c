@@ -24,8 +24,8 @@ int main()
 	str[0] = 'H';
 //    ft_putstr(ft_itoa(0));
 //    ft_putchar('\n');
-	ft_printf("ft_printf:  %X %o %u %10d %s %p %C\n", 42, -123, -123, -123, "-123", str, 345768);
-	printf("ft_printf:  %X %o %u %d %s %p %C\n", 42, -123, -123, -123, "-123", str, 345768);
+	ft_printf("ft_printf: @moulitest: %.d %.0d\n", 5, 1);
+	printf("   printf: @moulitest: %.d %.0d\n", 5, 1);
 	free(str);
 //	system("leaks a.out");
 }

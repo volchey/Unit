@@ -41,7 +41,11 @@ void		get_arg(va_list ap, t_list **str, char c, t_format *format)
 void	clear_struct(t_format *format)
 {
 	format->width = 0;
-	format->flag = 'o';
+	format->minus = 0;
+	format->plus = 0;
+	format->space = 0;
+	format->hesh = 0;
+	format->zero = 0;
 	format->precision = 0;
 	format->variable = NULL;
 }
