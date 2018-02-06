@@ -31,24 +31,25 @@ static int	num_size(long long n, t_format *format)
 	return (len);
 }
 
-static void	ft_to_str(long long n, long long i, t_format *format,
+static void	ft_to_str(long long n, long long i, t_format *f,
 							 t_list **str)
 {
 	int					len;
 	unsigned long long	un;
 
-	len = num_size(n, format);
-	if (format->plus && n >= 0 && !format->precision)
+	len = num_size(n, f);
+	if (f->plus && n >= 0 && !f->precision)
 		len++;
+	len += f->space && !f->plus && !f->minus && n == 0 ? 1 : 0;
 	if (n < 0)
 	{
 		n *= -1;
-		if (format->zero && !format->precision)
+		if (f->zero && !f->precision)
 		len++;
 	}
 	un = n;
-	while ((format->zero && len < format->width && !format->precision
-		   && !format->minus) || len < format->precision)
+	while ((f->zero && len < f->width && !f->precision
+		   && !f->minus) || len < f->precision)
 	{
 		ft_chrjoin(str, '0');
 		len++;

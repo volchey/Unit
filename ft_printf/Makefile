@@ -17,8 +17,9 @@ SRC		=	ft_putchar.c ft_putstr.c ft_putnbr.c ft_printf.c ft_strjoin.c \
             ft_bzero.c set_chr.c set_arg.c ft_chrjoin.c ft_chr_to_str.c \
             ft_set_str.c ft_get_address.c ft_memcpy.c ft_unichar.c ft_power.c \
             ft_unistr.c ft_isdigit.c ft_atoi.c ft_strsub.c ft_isalpha.c \
-            ft_isascii.c ft_itoa_base.c get_farg.c ft_set_chr.c \
-            ft_lstnew.c ft_lstadd.c ft_unitoa_base.c ft_unitoa_uppbase.c
+            ft_isascii.c ft_itoa_base.c get_farg.c ft_set_chr.c ft_isupper.c \
+            ft_lstnew.c ft_lstadd.c ft_unitoa_base.c ft_unitoa_uppbase.c \
+            ft_strcmp.c ft_memset.c
 
 OSRC	=	$(SRC:.c=.o)
 

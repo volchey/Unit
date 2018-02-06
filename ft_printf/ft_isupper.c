@@ -1,31 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_isupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vchechai <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/01/11 15:37:36 by vchechai          #+#    #+#             */
-/*   Updated: 2018/01/11 17:50:47 by vchechai         ###   ########.fr       */
+/*   Created: 2017/11/09 10:54:05 by vchechai          #+#    #+#             */
+/*   Updated: 2017/11/09 15:42:32 by vchechai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include "libft.h"
-#include <locale.h>
-
-int main()
+int	ft_isupper(int c)
 {
-//	char	*str;
-//	int		x[4] = {945, 256, 23, 0};
-
-	setlocale(LC_ALL, "");
-//	str = ft_strnew(2);
-//	str[0] = 'H';
-//    ft_putstr(ft_itoa(0));
-//    ft_putchar('\n');
-	ft_printf("ft_printf: % p|%+p", 42, 42);
-	printf("   printf: % p|%+p", 42, 42);
-//	free(str);
-//	system("leaks a.out");
+	if (c > 64 && c < 91)
+		return (1);
+	return (0);
 }

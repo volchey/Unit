@@ -15,40 +15,50 @@
 static void	put_str(char *s1, t_list **str, t_format *f)
 {
 	int	i;
+	int len;
 
 	i = 0;
-	if (f->space && !f->minus)
-		ft_chrjoin(str, ' ');
-	while (s1[i])
+	len = ft_strlen(s1);
+	if (!s1)
+		s1 = "(null)";
+	while (f->precision == -1 && f->zero && len < f->width)
+		ft_chrjoin(str, '0');
+	if (f->precision != -1)
 	{
-		ft_chrjoin(str, s1[i]);
-		i++;
-		if (f->precision && i == f->precision)
-			break ;
+		while(s1[i])
+		{
+			ft_chrjoin(str, s1[i]);
+			i++;
+			if(f->precision && i == f->precision)
+				break;
+		}
 	}
 }
 
 void	ft_set_str(char *s1, t_list **str, t_format *f)
 {
 	int		len;
-	char 	ptr[67] = "(null)";
+	char 	c;
 
-	if (!s1)
-		s1 = ptr;
+	c = ' ';
 	len = ft_strlen(s1);
-	if(f->precision && f->precision != -1 && len > f->precision)
+	if (f->precision && f->precision != -1 && len > f->precision)
 		len = f->precision;
-	if(f->width > len)
+	len = (f->precision == -1) ? 0 : len;
+	if (f->width > len && s1)
 	{
-		if(f->minus)
+		if (f->zero)
+			c = '0';
+		if (f->minus)
 			put_str(s1, str, f);
-		while(len < f->width)
+		while (len < f->width)
 		{
-			ft_chrjoin(str, ' ');
+			ft_chrjoin(str, c);
 			len++;
 		}
-		if(!f->minus)
+		if (!f->minus)
 			put_str(s1, str, f);
-	} else
+	}
+	else
 		put_str(s1, str, f);
 }

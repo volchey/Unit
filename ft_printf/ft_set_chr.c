@@ -15,15 +15,19 @@
 void	ft_set_chr(char c, t_list **str, t_format *f)
 {
 	int		len;
+	char 	chr;
 
 	len = 1;
-	if(f->width > len)
+	chr = ' ';
+	if (f->width > len)
 	{
-		if(f->minus)
+		if (f->minus)
 			ft_chrjoin(str, c);
+		if (f->zero)
+			chr = '0';
 		while(len < f->width)
 		{
-			ft_chrjoin(str, ' ');
+			ft_chrjoin(str, chr);
 			len++;
 		}
 		if(!f->minus)

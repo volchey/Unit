@@ -36,13 +36,10 @@ static void	ft_to_str(unsigned long long n, int base, t_format *format,
 
 	len = num_size(n, base, format);
 	i = ft_power(base, len - 1);
-	if (format->plus && !format->precision)
+	if (format->plus && !format->precision && base == 16)
 		len++;
 	if (format->hesh && n != 0)
-	{
-		ft_chrjoin(str, '0');
-		ft_chrjoin(str, 'x');
-	}
+		len += (base == 16) ? 2 : 0;
 	while ((format->zero && len < format->width && !format->precision
 			&& !format->minus) || len < format->precision)
 	{
@@ -60,11 +57,19 @@ static void	ft_to_str(unsigned long long n, int base, t_format *format,
 static void	ft_pre_str(unsigned long long n, int base, t_format *format,
 						  t_list **str)
 {
-	if (format->plus)
+	if (format->plus && base == 16)
 		ft_chrjoin(str, '+');
-	if (format->space && !format->plus && !format->minus)
+	if (format->space && !format->plus && !format->minus && base != 10)
 		ft_chrjoin(str, ' ');
+	if (format->hesh && n != 0)
+	{
+		ft_chrjoin(str, '0');
+		if (base == 16)
+			ft_chrjoin(str, 'x');
+	}
 	if (!(format->precision == -1 && n == 0))
+		ft_to_str(n, base, format, str);
+	if (format->precision == -1 && n == 0 && base == 8 && format->hesh)
 		ft_to_str(n, base, format, str);
 }
 
@@ -76,7 +81,10 @@ void		ft_unitoa_base(unsigned long long n, int base,
 	len = num_size(n, base, format);
 	if (format->precision > len)
 		len = format->precision;
-	if (format->plus || (format->space && !format->plus && !format->minus))
+	if (format->hesh && n != 0)
+		len += (base == 16) ? 2 : 1;
+	if ((format->plus && base == 16) || (format->space && !format->plus
+										 && !format->minus && base != 10))
 		len++;
 	if (format->width)
 	{

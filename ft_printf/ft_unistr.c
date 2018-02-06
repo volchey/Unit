@@ -31,6 +31,8 @@ int 	ft_arrlen(int *ptr)
 	int size;
 	int len;
 
+	if (!ptr)
+		return (0);
 	i = -1;
 	len = 0;
 	while (ptr[++i])
@@ -56,47 +58,50 @@ static void	put_str(int *s1, t_list **str, t_format *f)
 
 	i = 0;
 	len = 0;
-	if (f->space && !f->minus)
-		ft_chrjoin(str, ' ');
-	while (s1[i])
+	if (f->precision != -1)
 	{
-		size = ft_num_size(s1[i]);
-		if (size < 8)
-			len += 1;
-		else if (size < 12)
-			len += 2;
-		else if (size < 17)
-			len += 3;
-		else
-			len += 4;
-		ft_unichr(s1[i], str);
-		i++;
-		if (len == f->precision)
-			break ;
+		while(s1 && s1[i])
+		{
+			size = ft_num_size(s1[i]);
+			if(size < 8)
+				len += 1;
+			else if(size < 12)
+				len += 2;
+			else if(size < 17)
+				len += 3;
+			else
+				len += 4;
+			ft_unichr(s1[i], str);
+			i++;
+			if(len == f->precision)
+				break;
+		}
 	}
 }
 
 void	ft_unistr(int *s1, t_list **str, t_format *f)
 {
 	int		len;
-	int 	arr[7] = {'(', 'n', 'u', 'l', 'l', ')'};
+	char 	c;
 
-	if (!s1)
-		s1 = arr;
 	len = ft_arrlen(s1);
-	if(f->precision && f->precision != -1 && len > f->precision)
+	if (!s1)
+		ft_set_str(0, str, f);
+	if (f->precision && f->precision != -1 && len > f->precision)
 		len = f->precision;
-	if(f->width > len)
+	len = (f->precision == -1) ? 0 : len;
+	if (f->width > len && s1)
 	{
-		if(f->minus)
+		c = f->zero ? '0' : ' ';
+		if (f->minus)
 			put_str(s1, str, f);
-		while(len < f->width)
+		while (len < f->width)
 		{
-			ft_chrjoin(str, ' ');
+			ft_chrjoin(str, c);
 			len++;
 		}
-		if(!f->minus)
+		if (!f->minus)
 			put_str(s1, str, f);
-	} else
+	} else if (s1)
 		put_str(s1, str, f);
 }

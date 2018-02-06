@@ -27,9 +27,9 @@ void		get_arg(va_list ap, t_list **str, char c, t_format *format)
 	else if (c == 'c')
 		ft_set_chr((char)va_arg(ap, int), str, format);
 	else if (c == 'p')
-		ft_get_address(va_arg(ap, unsigned long), str);
+		ft_get_address(va_arg(ap, unsigned long), str, format);
 	else if (c == 'X')
-		ft_unitoa_uppbase(va_arg(ap, unsigned int), 16, str);
+		ft_unitoa_uppbase(va_arg(ap, unsigned int), 16, str, format);
 	else if (c == 'C')
 		ft_unichr(va_arg(ap, unsigned int), str);
 	else if (c == 'S')
@@ -37,7 +37,7 @@ void		get_arg(va_list ap, t_list **str, char c, t_format *format)
 	else if (c == '%')
 		ft_set_chr('%', str, format);
 	else
-		ft_chrjoin(str, c);
+		ft_set_chr(c, str, format);
 }
 
 void	clear_struct(t_format *format)

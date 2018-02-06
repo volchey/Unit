@@ -1,31 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vchechai <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/01/11 15:37:36 by vchechai          #+#    #+#             */
-/*   Updated: 2018/01/11 17:50:47 by vchechai         ###   ########.fr       */
+/*   Created: 2017/11/06 15:09:30 by vchechai          #+#    #+#             */
+/*   Updated: 2017/11/06 15:11:39 by vchechai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include "libft.h"
-#include <locale.h>
 
-int main()
+int	ft_strcmp(const char *s1, const char *s2)
 {
-//	char	*str;
-//	int		x[4] = {945, 256, 23, 0};
+	unsigned char	b1;
+	unsigned char	b2;
+	int				i;
 
-	setlocale(LC_ALL, "");
-//	str = ft_strnew(2);
-//	str[0] = 'H';
-//    ft_putstr(ft_itoa(0));
-//    ft_putchar('\n');
-	ft_printf("ft_printf: % p|%+p", 42, 42);
-	printf("   printf: % p|%+p", 42, 42);
-//	free(str);
-//	system("leaks a.out");
+	i = 0;
+	while (s1[i] == s2[i] && s1[i] && s2[i])
+		i++;
+	b1 = s1[i];
+	b2 = s2[i];
+	return (b1 - b2);
 }
