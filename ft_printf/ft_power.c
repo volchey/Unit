@@ -10,8 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
 unsigned long long	ft_power(long long num, int power)
 {
 	unsigned long long	res;

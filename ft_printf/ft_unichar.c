@@ -55,7 +55,7 @@ void				ft_unichr(unsigned int value, t_list **str)
 		size++;
 	}
 	if (size < 8)
-		ft_chrjoin(str,value);
+		ft_chrjoin(str, value);
 	else if (size < 12)
 		set_2_bytes(value, str);
 	else if (size < 17)

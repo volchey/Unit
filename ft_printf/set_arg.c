@@ -12,16 +12,16 @@
 
 #include "libft.h"
 
-void		get_arg(va_list ap, t_list **str, char c, t_format *format)
+void	get_arg(va_list ap, t_list **str, char c, t_format *format)
 {
 	if (c == 'd' || c == 'i')
 		ft_itoa(va_arg(ap, int), str, format);
-    else if (c == 'o')
-        ft_unitoa_base(va_arg(ap, unsigned int), 8, str, format);
-    else if (c == 'u')
-        ft_unitoa_base(va_arg(ap, unsigned int), 10 , str, format);
-    else if (c == 'x')
-        ft_unitoa_base(va_arg(ap, unsigned int), 16, str, format);
+	else if (c == 'o')
+		ft_unitoa_base(va_arg(ap, unsigned int), 8, str, format);
+	else if (c == 'u')
+		ft_unitoa_base(va_arg(ap, unsigned int), 10, str, format);
+	else if (c == 'x')
+		ft_unitoa_base(va_arg(ap, unsigned int), 16, str, format);
 	else if (c == 's')
 		ft_set_str(va_arg(ap, char*), str, format);
 	else if (c == 'c')
@@ -68,13 +68,13 @@ int		ft_put_del_lst(t_list **head)
 	return (size);
 }
 
-int			set_arg(t_list **str, va_list ap, t_format *format)
+int		set_arg(t_list **str, va_list ap, t_format *format)
 {
-    int		length;
+	int		length;
 	char	c;
 
 	c = *(format->variable);
-    length = 1;
+	length = 1;
 	if (c == 'D')
 		ft_itoa(va_arg(ap, long), str, format);
 	else if (c == 'O')
@@ -84,6 +84,6 @@ int			set_arg(t_list **str, va_list ap, t_format *format)
 	else if (c == 'l' || c == 'h' || c == 'j' || c == 'z')
 		get_farg(ap, format, str, &length);
 	else
-    	get_arg(ap, str, c, format);
-    return (length);
+		get_arg(ap, str, c, format);
+	return (length);
 }

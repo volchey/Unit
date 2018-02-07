@@ -12,13 +12,13 @@
 
 #include "libft.h"
 
-void 		ft_chrjoin(t_list **str, char c)
+void	ft_chrjoin(t_list **str, char c)
 {
 	char	*buf;
 	t_list	*new;
 
-    if (str)
-    {
+	if (str)
+	{
 		if ((*str)->content_size == BUFF_SIZE)
 		{
 			new = ft_lstnew("", BUFF_SIZE);
@@ -30,5 +30,5 @@ void 		ft_chrjoin(t_list **str, char c)
 		buf = (char*)(*str)->content;
 		buf[(*str)->content_size] = c;
 		(*str)->content_size += 1;
-    }
+	}
 }

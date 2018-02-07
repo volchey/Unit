@@ -32,24 +32,23 @@ static int	num_size(long long n, t_format *format)
 }
 
 static void	ft_to_str(long long n, long long i, t_format *f,
-							 t_list **str)
+						t_list **str)
 {
 	int					len;
 	unsigned long long	un;
 
 	len = num_size(n, f);
-	if (f->plus && n >= 0 && !f->precision)
-		len++;
+	len += (f->plus && n >= 0 && !f->precision) ? 1 : 0;
 	len += f->space && !f->plus && !f->minus && n == 0 ? 1 : 0;
 	if (n < 0)
 	{
 		n *= -1;
 		if (f->zero && !f->precision)
-		len++;
+			len++;
 	}
 	un = n;
 	while ((f->zero && len < f->width && !f->precision
-		   && !f->minus) || len < f->precision)
+			&& !f->minus) || len < f->precision)
 	{
 		ft_chrjoin(str, '0');
 		len++;
@@ -64,18 +63,18 @@ static void	ft_to_str(long long n, long long i, t_format *f,
 
 static void	ft_pre_str(long long n, t_format *format, t_list **str)
 {
-	int 		len;
+	int			len;
 	long long	i;
 
 	len = num_size(n, format);
-	i = ft_power(10, len -1);
+	i = ft_power(10, len - 1);
 	if (format->plus && n >= 0)
 		ft_chrjoin(str, '+');
 	if (format->space && !format->plus && !format->minus && n >= 0)
 		ft_chrjoin(str, ' ');
 	if (n < 0)
 		ft_chrjoin(str, '-');
-	if (!(format->precision == -1  && n == 0))
+	if (!(format->precision == -1 && n == 0))
 		ft_to_str(n, i, format, str);
 }
 
@@ -86,10 +85,9 @@ void		ft_itoa(long long n, t_list **str, t_format *format)
 	len = num_size(n, format);
 	if (format->precision > len)
 		len = format->precision;
-	if (n < 0)
-		len++;
+	len += (n < 0) ? 1 : 0;
 	if ((format->plus && n >= 0) || (format->space && !format->plus
-									 && !format->minus && n >= 0))
+			&& !format->minus && n >= 0))
 		len++;
 	if (format->width)
 	{

@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-int 	ft_num_size(int num)
+int			ft_num_size(int num)
 {
 	int i;
 
@@ -25,7 +25,7 @@ int 	ft_num_size(int num)
 	return (i);
 }
 
-int 	ft_arrlen(int *ptr)
+int			ft_arrlen(int *ptr)
 {
 	int i;
 	int size;
@@ -60,29 +60,29 @@ static void	put_str(int *s1, t_list **str, t_format *f)
 	len = 0;
 	if (f->precision != -1)
 	{
-		while(s1 && s1[i])
+		while (s1 && s1[i])
 		{
 			size = ft_num_size(s1[i]);
-			if(size < 8)
+			if (size < 8)
 				len += 1;
-			else if(size < 12)
+			else if (size < 12)
 				len += 2;
-			else if(size < 17)
+			else if (size < 17)
 				len += 3;
 			else
 				len += 4;
 			ft_unichr(s1[i], str);
 			i++;
-			if(len == f->precision)
-				break;
+			if (len == f->precision)
+				break ;
 		}
 	}
 }
 
-void	ft_unistr(int *s1, t_list **str, t_format *f)
+void		ft_unistr(int *s1, t_list **str, t_format *f)
 {
 	int		len;
-	char 	c;
+	char	c;
 
 	len = ft_arrlen(s1);
 	if (!s1)
@@ -102,6 +102,7 @@ void	ft_unistr(int *s1, t_list **str, t_format *f)
 		}
 		if (!f->minus)
 			put_str(s1, str, f);
-	} else if (s1)
+	}
+	else if (s1)
 		put_str(s1, str, f);
 }

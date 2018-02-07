@@ -19,26 +19,29 @@ static void	put_str(char *s1, t_list **str, t_format *f)
 
 	i = 0;
 	len = ft_strlen(s1);
+	while (f->precision == -1 && f->zero && len < f->width && !s1)
+	{
+		len++;
+		ft_chrjoin(str, '0');
+	}
 	if (!s1)
 		s1 = "(null)";
-	while (f->precision == -1 && f->zero && len < f->width)
-		ft_chrjoin(str, '0');
 	if (f->precision != -1)
 	{
-		while(s1[i])
+		while (s1[i])
 		{
 			ft_chrjoin(str, s1[i]);
 			i++;
-			if(f->precision && i == f->precision)
-				break;
+			if (f->precision && i == f->precision)
+				break ;
 		}
 	}
 }
 
-void	ft_set_str(char *s1, t_list **str, t_format *f)
+void		ft_set_str(char *s1, t_list **str, t_format *f)
 {
 	int		len;
-	char 	c;
+	char	c;
 
 	c = ' ';
 	len = ft_strlen(s1);

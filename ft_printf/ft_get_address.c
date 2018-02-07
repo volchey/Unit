@@ -28,12 +28,13 @@ static int	num_size(unsigned long long n, t_format *format)
 }
 
 static void	ft_to_str(unsigned long long n, t_format *format,
-						 t_list **str)
+						t_list **str)
 {
-	char				buf[17] = "0123456789abcdef";
+	char				buf[17];
 	int					len;
 	unsigned long long	i;
 
+	ft_strcpy(buf, "0123456789abcdef");
 	len = num_size(n, format);
 	i = ft_power(16, len - 1);
 	len += !format->precision ? 2 : 0;
@@ -54,12 +55,8 @@ static void	ft_to_str(unsigned long long n, t_format *format,
 }
 
 static void	ft_pre_str(unsigned long long n, t_format *format,
-						  t_list **str)
+						t_list **str)
 {
-	if (format->plus)
-		ft_chrjoin(str, '+');
-	if (format->space && !format->plus && !format->minus)
-		ft_chrjoin(str, ' ');
 	ft_chrjoin(str, '0');
 	ft_chrjoin(str, 'x');
 	if (!(format->precision == -1 && n == 0))

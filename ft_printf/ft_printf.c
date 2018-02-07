@@ -106,7 +106,7 @@ int				ft_printf(const char *restrict format, ...)
 	va_list		ap;
 	t_list		*str;
 	t_list		*head;
-	int 		size;
+	int			size;
 
 	str = ft_lstnew("", BUFF_SIZE);
 	str->content_size = 0;

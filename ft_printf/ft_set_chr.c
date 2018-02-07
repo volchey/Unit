@@ -15,7 +15,7 @@
 void	ft_set_chr(char c, t_list **str, t_format *f)
 {
 	int		len;
-	char 	chr;
+	char	chr;
 
 	len = 1;
 	chr = ' ';
@@ -25,13 +25,14 @@ void	ft_set_chr(char c, t_list **str, t_format *f)
 			ft_chrjoin(str, c);
 		if (f->zero)
 			chr = '0';
-		while(len < f->width)
+		while (len < f->width)
 		{
 			ft_chrjoin(str, chr);
 			len++;
 		}
-		if(!f->minus)
+		if (!f->minus)
 			ft_chrjoin(str, c);
-	} else
+	}
+	else
 		ft_chrjoin(str, c);
 }
