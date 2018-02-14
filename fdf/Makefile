@@ -23,15 +23,17 @@ all: $(NAME)
 
 $(NAME):
 		@make re -C libft
-		@gcc -I /usr/locale/include main.c $(SRC) -L /usr/local/lib/ -lmlx \
+		@gcc $(FLAGS) -I /usr/locale/include main.c $(SRC) -L /usr/local/lib/ -lmlx \
 		-framework OpenGL -framework AppKit -L libft -lft -o $(NAME)
 
 clean:
+	$(MAKE) clean -C libft
 	@rm -f *.o
 
 fclean: clean
+	$(MAKE) fclean -C libft
 	@rm -f $(NAME)
 
-re: 
-	$(MAKE) fclean 
+re:
+	$(MAKE) fclean
 	$(MAKE) all

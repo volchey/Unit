@@ -46,7 +46,7 @@ void	change_param(int key, t_mlx *mlx)
 	}
 	if (key == 78)
 	{
-		if (mlx->area.vy - 15 > 0)
+		if (mlx->area.vy - 10 > 0)
 			mlx->area.vy -= 10;
 		if (mlx->area.vx - 10 > 0)
 			mlx->area.vx -= 10;
@@ -64,7 +64,7 @@ void	change_param(int key, t_mlx *mlx)
 int		key_press(int key, t_mlx *mlx_var)
 {
 	if (key == 53)
-		exit(0);
+		exit(1);
 	else
 	{
 		if (key == 123)
@@ -78,11 +78,11 @@ int		key_press(int key, t_mlx *mlx_var)
 		if (key == 69 || key == 78 || key == 115 || key == 119)
 			change_param(key, mlx_var);
 		if (key == 8)
-			mlx_var->color += 0x00ba0;
+			mlx_var->color += 0x30b0a0;
 	}
 	mlx_clear_window(mlx_var->mlx_ptr, mlx_var->win_ptr);
 	mlx_string_put(mlx_var->mlx_ptr, mlx_var->win_ptr, 100, 50, 0xffaaff,
-					"use arrows to move and change altitude");
+					"use arrows to move and to change altitude");
 	mlx_string_put(mlx_var->mlx_ptr, mlx_var->win_ptr, 100, 70, 0xffaaff,
 					"use +- to scale");
 	draw_map(parse_map(mlx_var->name, mlx_var->st_xy, mlx_var->area), *mlx_var);
@@ -108,10 +108,10 @@ int		main(int ac, char **av)
 	mlx_var.area.h = 1;
 	mlx_var.color = 0x22f222;
 	mlx_string_put(mlx_var.mlx_ptr, mlx_var.win_ptr, 100, 50, 0xffaaff,
-					"use arrows to move and change altitude");
+					"use arrows to move and to change altitude");
 	mlx_string_put(mlx_var.mlx_ptr, mlx_var.win_ptr, 100, 70, 0xffaaff,
 					"use +- to scale");
-	mlx_key_hook(mlx_var.win_ptr, key_press, &mlx_var);
+	mlx_hook(mlx_var.win_ptr, 2, 5, key_press, &mlx_var);
 	map = parse_map(av[1], mlx_var.st_xy, mlx_var.area);
 	draw_map(map, mlx_var);
 	mlx_loop(mlx_var.mlx_ptr);

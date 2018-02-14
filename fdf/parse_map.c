@@ -27,7 +27,7 @@ t_row	set_row(char *line, int size, t_coord st_xy, t_area area)
 	while (line[++j])
 	{
 		i = j;
-		while (ft_isalnum(line[i]))
+		while (ft_isalnum(line[i]) || ft_isalpha(line[i]) || line[i] == ',')
 			i++;
 		if (i > j)
 		{
@@ -42,7 +42,7 @@ t_row	set_row(char *line, int size, t_coord st_xy, t_area area)
 	return (row);
 }
 
-t_row	parse_row(char *line, t_coord st_xy, t_area area)
+t_row	parse_row(char *line, t_coord st_xy, t_area area, int *len)
 {
 	int		i;
 	int		size;
@@ -51,12 +51,22 @@ t_row	parse_row(char *line, t_coord st_xy, t_area area)
 	size = 0;
 	while (line[i])
 	{
-		if (ft_isalnum(line[i]))
+		if (line[i] >= '0' && line[i] <= '9')
+		{
 			size++;
-		while (ft_isalnum(line[i]))
+			while (ft_isalnum(line[i]) || ft_isalpha(line[i]) || line[i] == ',')
+				i++;
+		}
+		else
 			i++;
-		i++;
 	}
+	if (*len != 0 && *len != size)
+	{
+		write(1, "Found wrong line length. Exiting.", 33);
+		exit(-1);
+	}
+	else
+		*len = size;
 	return (set_row(line, size, st_xy, area));
 }
 
@@ -84,14 +94,16 @@ t_row	*parse_map(char *file, t_coord st_xy, t_area area)
 	char	*line;
 	int		size;
 	int		fd;
+	int		len;
 
+	len = 0;
 	size = file_size(file);
 	map = (t_row*)malloc(sizeof(t_row) * (size + 1));
 	fd = open(file, O_RDONLY);
 	size = 0;
 	while (get_next_line(fd, &line))
 	{
-		map[size] = parse_row(line, st_xy, area);
+		map[size] = parse_row(line, st_xy, area, &len);
 		st_xy.x -= area.vx;
 		st_xy.y += area.vy;
 		size++;
