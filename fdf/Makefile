@@ -22,8 +22,9 @@ FLAGS	=	-Wall -Wextra -Werror
 all: $(NAME)
 
 $(NAME):
-		gcc -I /usr/locale/include main.c $(SRC) -L /usr/local/lib/ -lmlx \
-		-framework OpenGL -framework AppKit -L. -lft -o $(NAME)
+		@make re -C libft
+		@gcc -I /usr/locale/include main.c $(SRC) -L /usr/local/lib/ -lmlx \
+		-framework OpenGL -framework AppKit -L libft -lft -o $(NAME)
 
 clean:
 	@rm -f *.o

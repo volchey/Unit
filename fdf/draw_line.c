@@ -12,8 +12,7 @@
 
 #include "fdf.h"
 
-void	draw_line_left(t_coord st_xy, t_coord end_xy, void *mlx_ptr,
-						void *win_ptr)
+void	draw_line_left(t_coord st_xy, t_coord end_xy, t_mlx c)
 {
 	int dx;
 	int dy;
@@ -31,7 +30,7 @@ void	draw_line_left(t_coord st_xy, t_coord end_xy, void *mlx_ptr,
 	d = 2 * dy - dx;
 	while (st_xy.x < end_xy.x)
 	{
-		mlx_pixel_put(mlx_ptr, win_ptr, st_xy.x, st_xy.y, 0xFFFFFF);
+		mlx_pixel_put(c.mlx_ptr, c.win_ptr, st_xy.x, st_xy.y, c.color);
 		if (d > 0)
 		{
 			st_xy.y += f;
@@ -42,8 +41,7 @@ void	draw_line_left(t_coord st_xy, t_coord end_xy, void *mlx_ptr,
 	}
 }
 
-void	draw_line_right(t_coord st_xy, t_coord end_xy, void *mlx_ptr,
-						void *win_ptr)
+void	draw_line_right(t_coord st_xy, t_coord end_xy, t_mlx c)
 {
 	int dx;
 	int dy;
@@ -61,7 +59,7 @@ void	draw_line_right(t_coord st_xy, t_coord end_xy, void *mlx_ptr,
 	d = 2 * dx - dy;
 	while (st_xy.y < end_xy.y)
 	{
-		mlx_pixel_put(mlx_ptr, win_ptr, st_xy.x, st_xy.y, 0xFFFFFF);
+		mlx_pixel_put(c.mlx_ptr, c.win_ptr, st_xy.x, st_xy.y, c.color);
 		if (d > 0)
 		{
 			st_xy.x += f;
@@ -72,7 +70,7 @@ void	draw_line_right(t_coord st_xy, t_coord end_xy, void *mlx_ptr,
 	}
 }
 
-void	draw_line(t_coord st_xy, t_coord end_xy, void *mlx_ptr, void *win_ptr)
+void	draw_line(t_coord st_xy, t_coord end_xy, t_mlx c)
 {
 	int	dx;
 	int	dy;
@@ -84,15 +82,15 @@ void	draw_line(t_coord st_xy, t_coord end_xy, void *mlx_ptr, void *win_ptr)
 	if (dy < dx)
 	{
 		if (st_xy.x > end_xy.x)
-			draw_line_left(end_xy, st_xy, mlx_ptr, win_ptr);
+			draw_line_left(end_xy, st_xy, c);
 		else
-			draw_line_left(st_xy, end_xy, mlx_ptr, win_ptr);
+			draw_line_left(st_xy, end_xy, c);
 	}
 	else
 	{
 		if (st_xy.y > end_xy.y)
-			draw_line_right(end_xy, st_xy, mlx_ptr, win_ptr);
+			draw_line_right(end_xy, st_xy, c);
 		else
-			draw_line_right(st_xy, end_xy, mlx_ptr, win_ptr);
+			draw_line_right(st_xy, end_xy, c);
 	}
 }

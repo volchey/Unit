@@ -15,11 +15,11 @@
 
 t_row	set_row(char *line, int size, t_coord st_xy, t_area area)
 {
-	int 	i;
-	int 	j;
-	int 	val;
+	int		i;
+	int		j;
+	int		val;
 	t_row	row;
-	int 	k;
+	int		k;
 
 	j = -1;
 	k = 0;
@@ -33,7 +33,7 @@ t_row	set_row(char *line, int size, t_coord st_xy, t_area area)
 		{
 			val = ft_atoi(line + j);
 			(row.coord)[k].x = st_xy.x + k * area.gx + val * area.h;
-			(row.coord)[k].y = st_xy.y + k * area.gy - val * area.h * 10;
+			(row.coord)[k].y = st_xy.y + k * area.gy - val * area.h * 5;
 			k++;
 			j = i - 1;
 		}
@@ -45,7 +45,7 @@ t_row	set_row(char *line, int size, t_coord st_xy, t_area area)
 t_row	parse_row(char *line, t_coord st_xy, t_area area)
 {
 	int		i;
-	int 	size;
+	int		size;
 
 	i = 0;
 	size = 0;
@@ -60,11 +60,11 @@ t_row	parse_row(char *line, t_coord st_xy, t_area area)
 	return (set_row(line, size, st_xy, area));
 }
 
-int 	file_size(char *name)
+int		file_size(char *name)
 {
-	char *line;
-	int fd;
-	int size;
+	char	*line;
+	int		fd;
+	int		size;
 
 	size = 0;
 	fd = open(name, O_RDONLY);
@@ -82,8 +82,8 @@ t_row	*parse_map(char *file, t_coord st_xy, t_area area)
 {
 	t_row	*map;
 	char	*line;
-	int 	size;
-	int 	fd;
+	int		size;
+	int		fd;
 
 	size = file_size(file);
 	map = (t_row*)malloc(sizeof(t_row) * (size + 1));
