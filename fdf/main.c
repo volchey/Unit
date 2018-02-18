@@ -67,13 +67,13 @@ int		key_press(int key, t_mlx *mlx_var)
 		exit(1);
 	else
 	{
-		if (key == 123)
-			mlx_var->st_xy.x += 20;
 		if (key == 124)
+			mlx_var->st_xy.x += 20;
+		if (key == 123)
 			mlx_var->st_xy.x -= 20;
-		if (key == 126)
-			mlx_var->st_xy.y += 20;
 		if (key == 125)
+			mlx_var->st_xy.y += 20;
+		if (key == 126)
 			mlx_var->st_xy.y -= 20;
 		if (key == 69 || key == 78 || key == 115 || key == 119)
 			change_param(key, mlx_var);

@@ -75,13 +75,24 @@ int		file_size(char *name)
 	char	*line;
 	int		fd;
 	int		size;
+	int 	gnl;
 
 	size = 0;
 	fd = open(name, O_RDONLY);
-	while (get_next_line(fd, &line))
+	if (fd == -1 || fd == 0)
+	{
+		ft_putstr("wrong file");
+		exit(-1);
+	}
+	while ((gnl = get_next_line(fd, &line)) && gnl != -1)
 	{
 		size++;
 		free(line);
+	}
+	if (gnl == -1)
+	{
+		ft_putstr("wrong file");
+		exit(-1);
 	}
 	free(line);
 	close(fd);
@@ -100,6 +111,8 @@ t_row	*parse_map(char *file, t_coord st_xy, t_area area)
 	size = file_size(file);
 	map = (t_row*)malloc(sizeof(t_row) * (size + 1));
 	fd = open(file, O_RDONLY);
+	if (fd == -1 || fd == 0)
+		exit(-1);
 	size = 0;
 	while (get_next_line(fd, &line))
 	{
@@ -111,5 +124,6 @@ t_row	*parse_map(char *file, t_coord st_xy, t_area area)
 	}
 	free(line);
 	(map[size]).size = 0;
+	close(fd);
 	return (map);
 }
