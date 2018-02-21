@@ -1,0 +1,40 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/vchechai/work/filler/filler.h
+libft/libft.h
+/Users/vchechai/work/filler/libft/libft.h
+
+/Users/vchechai/work/filler/ft_get_coord.c
+filler.h
+/Users/vchechai/work/filler/filler.h
+
+/Users/vchechai/work/filler/ft_getplayer.c
+filler.h
+/Users/vchechai/work/filler/filler.h
+
+/Users/vchechai/work/filler/ft_parse_map.c
+filler.h
+/Users/vchechai/work/filler/filler.h
+
+/Users/vchechai/work/filler/libft/libft.h
+fcntl.h
+-
+stdarg.h
+-
+string.h
+-
+stdlib.h
+-
+unistd.h
+-
+
+/Users/vchechai/work/filler/main.c
+filler.h
+/Users/vchechai/work/filler/filler.h
+
