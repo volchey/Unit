@@ -13,7 +13,7 @@
 #ifndef FILLER_H
 # define FILLER_H
 
-#include "libft/libft.h"
+#include "libft.h"
 
 typedef struct		s_xy
 {
@@ -34,10 +34,10 @@ typedef struct 		s_map
 	t_row			*map;
 }					t_map;
 
-t_map				ft_parse_map(int fd);
-t_xy				ft_get_coord(t_map map, t_map piece);
-int			 		ft_getplayer(int fd);
-t_map				ft_parse_piece(int fd, int p);
-
+t_map				ft_parse_map(char *buf);
+t_xy				ft_get_coord(t_map map, t_map piece, int p);
+int			 		ft_getplayer(char *line);
+t_xy				ft_parse_piece(t_map map, int p, char *buf);
+int					ft_set_position(t_map map, t_xy *psbl_xy, int p);
 
 #endif

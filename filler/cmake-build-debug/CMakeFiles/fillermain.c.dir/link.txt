@@ -1,1 +1,0 @@
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc -g -Wl,-search_paths_first -Wl,-headerpad_max_install_names  CMakeFiles/fillermain.c.dir/ft_parse_map.c.o CMakeFiles/fillermain.c.dir/main.c.o CMakeFiles/fillermain.c.dir/ft_getplayer.c.o CMakeFiles/fillermain.c.dir/ft_get_coord.c.o  -o fillermain.c 

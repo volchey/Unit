@@ -26,10 +26,12 @@ set(SUB_SOURCE libft/ libft/ft_memset.c libft/ft_bzero.c libft/ft_memcpy.c libft
 		libft/ft_printf/ft_unitoa_base.c libft/ft_printf/ft_power.c
 		libft/ft_printf/ft_unitoa_uppbase.c)
 
+include_directories(libft .)
+
 add_executable(filler
 		filler.h
 		ft_parse_map.c
 		main.c
 		ft_getplayer.c
 		ft_get_coord.c
-		 ${SUB_SOURCE})
+		ft_set_position.c)

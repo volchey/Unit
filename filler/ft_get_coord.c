@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "filler.h"
+#include <stdio.h>
 
 int		ft_check_position(t_map map, t_map piece, int row, int i)
 {
@@ -90,17 +91,15 @@ t_xy	*ft_posible_position(t_map map, t_map piece)
 	return (psbl_xy);
 }
 
-t_xy	ft_get_coord(t_map map, t_map piece)
+t_xy	ft_get_coord(t_map map, t_map piece, int p)
 {
 	t_xy	*psbl_xy;
 	int		i;
 
 	i = 0;
 	psbl_xy = ft_posible_position(map, piece);
-//	while (i < psbl_xy->player)
-//	{
-//		ft_printf("x: %d y: %d\n", psbl_xy[i].x, psbl_xy[i].y);
-//		i++;
-//	}
-	return (*psbl_xy);
+	if (psbl_xy->player == -1)
+		return (*psbl_xy);
+//	dprintf(2, "%d\n", ft_sqrt(16));
+	return (psbl_xy[ft_set_position(map, psbl_xy, p)]);
 }

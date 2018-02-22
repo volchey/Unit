@@ -12,28 +12,27 @@
 
 #include "filler.h"
 
-int	main(void)
+int	main(int argc, char **argv)
 {
-	t_map	map;
-	t_map	piece;
 	t_xy	coord;
-	int 	fd;
 	int 	p;
+	char	*line;
+	t_map	map;
 
-	fd = 0;//open("test.filler", O_RDONLY);
-	p = ft_getplayer(fd);
-	while (1)
+	get_next_line(0, &line);
+	p = ft_getplayer(line);
+	while (get_next_line(0, &line) > 0)
 	{
-		map = ft_parse_map(fd);
-		piece = ft_parse_piece(fd, p);
-		coord = ft_get_coord(map, piece);
+		map = ft_parse_map(line);
+		get_next_line(0, &line);
+		coord = ft_parse_piece(map, p, line);
 		if (coord.player == -1)
+		{
+			ft_printf("%d %d\n", 0, 0);
 			return (0);
-		ft_putnbr_fd(coord.y, 1);
-		ft_putchar_fd(' ', 1);
-		ft_putnbr_fd(coord.x, 1);
-		ft_putchar_fd('\n', 1);
+		}
+		ft_printf("%d %d\n", coord.y, coord.x);
+		ft_strdel(&line);
 	}
-	close(fd);
 	return (0);
 }

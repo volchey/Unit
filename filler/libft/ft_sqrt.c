@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_getplayer.c                                     :+:      :+:    :+:   */
+/*   ft_sqrt.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vchechai <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/02/15 19:43:13 by vchechai          #+#    #+#             */
-/*   Updated: 2018/02/15 19:43:15 by vchechai         ###   ########.fr       */
+/*   Created: 2018/02/22 17:05:04 by vchechai          #+#    #+#             */
+/*   Updated: 2018/02/22 17:05:06 by vchechai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "filler.h"
-
-int	ft_getplayer(char *line)
+int	ft_sqrt(int num)
 {
-	int 	p;
+	int res;
 
-	p = 0;
-	if (ft_strstr(line, "$$$ exec p") && ft_strstr(line, "vchechai.filler"))
-		p = line[10] - '0';
-	return (p);
+	res = 1;
+	if (num <= 0)
+		return (0);
+	while (res * res <= num - 1)
+		res++;
+	return (res);
 }

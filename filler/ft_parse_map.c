@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "filler.h"
+#include <stdio.h>
 
 static t_row	ft_get_row(int y, int width, char *line)
 {
@@ -35,33 +36,6 @@ static t_row	ft_get_row(int y, int width, char *line)
 	return (row);
 }
 
-t_map			ft_parse_map(int fd)
-{
-	char	*line;
-	t_map	map;
-	int 	i;
-	int 	width;
-
-	while (get_next_line(fd, &line) > 0 && !ft_strstr(line, "Plateau"))
-		ft_strdel(&line);
-	map.height = ft_atoi(line + 8);
-	width = ft_atoi(line + 10);
-	ft_strdel(&line);
-	get_next_line(fd, &line);
-	ft_strdel(&line);
-	i = 0;
-	map.map = (t_row*)malloc(sizeof(t_row) * (map.height));
-	while (i < (map.height))
-	{
-		get_next_line(fd, &line);
-		(map.map)[i] = ft_get_row(i, width, line);
-		ft_strdel(&line);
-		i++;
-	}
-	ft_strdel(&line);
-	return (map);
-}
-
 static t_row	ft_get_prow(int y, int width, char *line, int p)
 {
 	int		i;
@@ -82,29 +56,46 @@ static t_row	ft_get_prow(int y, int width, char *line, int p)
 	return (row);
 }
 
-t_map			ft_parse_piece(int fd, int p)
+t_xy			ft_parse_piece(t_map map, int p, char *buf)
 {
 	char	*line;
 	t_map	piece;
 	int 	i;
 	int 	width;
 
-	i = 6;
-	get_next_line(fd, &line);
-	piece.height = ft_atoi(line + i);
-	while (ft_isalnum(line[i]))
-		i++;
-	width = ft_atoi(line + i);
-	ft_strdel(&line);
+	piece.height = ft_atoi(buf + 6);
+	width = ft_atoi(buf + 8);
 	i = 0;
 	piece.map = (t_row*)malloc(sizeof(t_row) * (piece.height));
 	while (i < (piece.height))
 	{
-		get_next_line(fd, &line);
+		get_next_line(0, &line);
 		(piece.map)[i] = ft_get_prow(i, width, line, p);
 		ft_strdel(&line);
 		i++;
 	}
+	return (ft_get_coord(map, piece, p));
+}
+
+t_map			ft_parse_map(char *buf)
+{
+	char	*line;
+	t_map	map;
+	int 	i;
+	int 	width;
+
+	map.height = ft_atoi(buf + 8);
+	width = ft_atoi(buf + 10);
+	get_next_line(0, &line);
 	ft_strdel(&line);
-	return (piece);
+	i = 0;
+	map.map = (t_row*)malloc(sizeof(t_row) * (map.height));
+	while (i < (map.height))
+	{
+		get_next_line(0, &line);
+		(map.map)[i] = ft_get_row(i, width, line);
+		ft_strdel(&line);
+		i++;
+	}
+	return (map);
 }

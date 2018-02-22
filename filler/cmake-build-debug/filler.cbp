@@ -44,13 +44,14 @@
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/Users/vchechai/work/filler/libft"/>
+					<Add directory="/Users/vchechai/work/filler/."/>
 					<Add directory="/usr/local/include"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/8.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.0.0/include"/>
 					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
-					<Add directory="/usr/include"/>
-					<Add directory="/System/Library/Frameworks"/>
-					<Add directory="/Library/Frameworks"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/usr/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/System/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
 					<Build command="/usr/bin/make -j4 -f &quot;/Users/vchechai/work/filler/cmake-build-debug/Makefile&quot;  VERBOSE=1 filler"/>
@@ -66,13 +67,14 @@
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/Users/vchechai/work/filler/libft"/>
+					<Add directory="/Users/vchechai/work/filler/."/>
 					<Add directory="/usr/local/include"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/8.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.0.0/include"/>
 					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
-					<Add directory="/usr/include"/>
-					<Add directory="/System/Library/Frameworks"/>
-					<Add directory="/Library/Frameworks"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/usr/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/System/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
 					<Build command="/usr/bin/make -j4 -f &quot;/Users/vchechai/work/filler/cmake-build-debug/Makefile&quot;  VERBOSE=1 filler/fast"/>
@@ -82,9 +84,6 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/vchechai/work/filler">
-			<Option target="filler"/>
-		</Unit>
 		<Unit filename="/Users/vchechai/work/filler/filler.h">
 			<Option target="filler"/>
 		</Unit>
@@ -97,238 +96,7 @@
 		<Unit filename="/Users/vchechai/work/filler/ft_parse_map.c">
 			<Option target="filler"/>
 		</Unit>
-		<Unit filename="/Users/vchechai/work/filler/libft/ft_atoi.c">
-			<Option target="filler"/>
-		</Unit>
-		<Unit filename="/Users/vchechai/work/filler/libft/ft_bzero.c">
-			<Option target="filler"/>
-		</Unit>
-		<Unit filename="/Users/vchechai/work/filler/libft/ft_count_word.c">
-			<Option target="filler"/>
-		</Unit>
-		<Unit filename="/Users/vchechai/work/filler/libft/ft_isalnum.c">
-			<Option target="filler"/>
-		</Unit>
-		<Unit filename="/Users/vchechai/work/filler/libft/ft_isalpha.c">
-			<Option target="filler"/>
-		</Unit>
-		<Unit filename="/Users/vchechai/work/filler/libft/ft_isascii.c">
-			<Option target="filler"/>
-		</Unit>
-		<Unit filename="/Users/vchechai/work/filler/libft/ft_isdigit.c">
-			<Option target="filler"/>
-		</Unit>
-		<Unit filename="/Users/vchechai/work/filler/libft/ft_islower.c">
-			<Option target="filler"/>
-		</Unit>
-		<Unit filename="/Users/vchechai/work/filler/libft/ft_isprint.c">
-			<Option target="filler"/>
-		</Unit>
-		<Unit filename="/Users/vchechai/work/filler/libft/ft_isupper.c">
-			<Option target="filler"/>
-		</Unit>
-		<Unit filename="/Users/vchechai/work/filler/libft/ft_itoa.c">
-			<Option target="filler"/>
-		</Unit>
-		<Unit filename="/Users/vchechai/work/filler/libft/ft_lstadd.c">
-			<Option target="filler"/>
-		</Unit>
-		<Unit filename="/Users/vchechai/work/filler/libft/ft_lstdel.c">
-			<Option target="filler"/>
-		</Unit>
-		<Unit filename="/Users/vchechai/work/filler/libft/ft_lstdelone.c">
-			<Option target="filler"/>
-		</Unit>
-		<Unit filename="/Users/vchechai/work/filler/libft/ft_lstiter.c">
-			<Option target="filler"/>
-		</Unit>
-		<Unit filename="/Users/vchechai/work/filler/libft/ft_lstmap.c">
-			<Option target="filler"/>
-		</Unit>
-		<Unit filename="/Users/vchechai/work/filler/libft/ft_lstnew.c">
-			<Option target="filler"/>
-		</Unit>
-		<Unit filename="/Users/vchechai/work/filler/libft/ft_memalloc.c">
-			<Option target="filler"/>
-		</Unit>
-		<Unit filename="/Users/vchechai/work/filler/libft/ft_memccpy.c">
-			<Option target="filler"/>
-		</Unit>
-		<Unit filename="/Users/vchechai/work/filler/libft/ft_memchr.c">
-			<Option target="filler"/>
-		</Unit>
-		<Unit filename="/Users/vchechai/work/filler/libft/ft_memcmp.c">
-			<Option target="filler"/>
-		</Unit>
-		<Unit filename="/Users/vchechai/work/filler/libft/ft_memcpy.c">
-			<Option target="filler"/>
-		</Unit>
-		<Unit filename="/Users/vchechai/work/filler/libft/ft_memdel.c">
-			<Option target="filler"/>
-		</Unit>
-		<Unit filename="/Users/vchechai/work/filler/libft/ft_memmove.c">
-			<Option target="filler"/>
-		</Unit>
-		<Unit filename="/Users/vchechai/work/filler/libft/ft_memset.c">
-			<Option target="filler"/>
-		</Unit>
-		<Unit filename="/Users/vchechai/work/filler/libft/ft_printf/ft_chrjoin.c">
-			<Option target="filler"/>
-		</Unit>
-		<Unit filename="/Users/vchechai/work/filler/libft/ft_printf/ft_get_address.c">
-			<Option target="filler"/>
-		</Unit>
-		<Unit filename="/Users/vchechai/work/filler/libft/ft_printf/ft_itoa.c">
-			<Option target="filler"/>
-		</Unit>
-		<Unit filename="/Users/vchechai/work/filler/libft/ft_printf/ft_power.c">
-			<Option target="filler"/>
-		</Unit>
-		<Unit filename="/Users/vchechai/work/filler/libft/ft_printf/ft_printf.c">
-			<Option target="filler"/>
-		</Unit>
-		<Unit filename="/Users/vchechai/work/filler/libft/ft_printf/ft_set_chr.c">
-			<Option target="filler"/>
-		</Unit>
-		<Unit filename="/Users/vchechai/work/filler/libft/ft_printf/ft_set_str.c">
-			<Option target="filler"/>
-		</Unit>
-		<Unit filename="/Users/vchechai/work/filler/libft/ft_printf/ft_unichar.c">
-			<Option target="filler"/>
-		</Unit>
-		<Unit filename="/Users/vchechai/work/filler/libft/ft_printf/ft_unistr.c">
-			<Option target="filler"/>
-		</Unit>
-		<Unit filename="/Users/vchechai/work/filler/libft/ft_printf/ft_unitoa_base.c">
-			<Option target="filler"/>
-		</Unit>
-		<Unit filename="/Users/vchechai/work/filler/libft/ft_printf/ft_unitoa_uppbase.c">
-			<Option target="filler"/>
-		</Unit>
-		<Unit filename="/Users/vchechai/work/filler/libft/ft_printf/get_farg.c">
-			<Option target="filler"/>
-		</Unit>
-		<Unit filename="/Users/vchechai/work/filler/libft/ft_printf/set_arg.c">
-			<Option target="filler"/>
-		</Unit>
-		<Unit filename="/Users/vchechai/work/filler/libft/ft_putchar.c">
-			<Option target="filler"/>
-		</Unit>
-		<Unit filename="/Users/vchechai/work/filler/libft/ft_putchar_fd.c">
-			<Option target="filler"/>
-		</Unit>
-		<Unit filename="/Users/vchechai/work/filler/libft/ft_putendl.c">
-			<Option target="filler"/>
-		</Unit>
-		<Unit filename="/Users/vchechai/work/filler/libft/ft_putendl_fd.c">
-			<Option target="filler"/>
-		</Unit>
-		<Unit filename="/Users/vchechai/work/filler/libft/ft_putnbr.c">
-			<Option target="filler"/>
-		</Unit>
-		<Unit filename="/Users/vchechai/work/filler/libft/ft_putnbr_fd.c">
-			<Option target="filler"/>
-		</Unit>
-		<Unit filename="/Users/vchechai/work/filler/libft/ft_putstr.c">
-			<Option target="filler"/>
-		</Unit>
-		<Unit filename="/Users/vchechai/work/filler/libft/ft_putstr_fd.c">
-			<Option target="filler"/>
-		</Unit>
-		<Unit filename="/Users/vchechai/work/filler/libft/ft_strcat.c">
-			<Option target="filler"/>
-		</Unit>
-		<Unit filename="/Users/vchechai/work/filler/libft/ft_strchr.c">
-			<Option target="filler"/>
-		</Unit>
-		<Unit filename="/Users/vchechai/work/filler/libft/ft_strclr.c">
-			<Option target="filler"/>
-		</Unit>
-		<Unit filename="/Users/vchechai/work/filler/libft/ft_strcmp.c">
-			<Option target="filler"/>
-		</Unit>
-		<Unit filename="/Users/vchechai/work/filler/libft/ft_strcpy.c">
-			<Option target="filler"/>
-		</Unit>
-		<Unit filename="/Users/vchechai/work/filler/libft/ft_strdel.c">
-			<Option target="filler"/>
-		</Unit>
-		<Unit filename="/Users/vchechai/work/filler/libft/ft_strdup.c">
-			<Option target="filler"/>
-		</Unit>
-		<Unit filename="/Users/vchechai/work/filler/libft/ft_strequ.c">
-			<Option target="filler"/>
-		</Unit>
-		<Unit filename="/Users/vchechai/work/filler/libft/ft_striter.c">
-			<Option target="filler"/>
-		</Unit>
-		<Unit filename="/Users/vchechai/work/filler/libft/ft_striteri.c">
-			<Option target="filler"/>
-		</Unit>
-		<Unit filename="/Users/vchechai/work/filler/libft/ft_strjoin.c">
-			<Option target="filler"/>
-		</Unit>
-		<Unit filename="/Users/vchechai/work/filler/libft/ft_strlcat.c">
-			<Option target="filler"/>
-		</Unit>
-		<Unit filename="/Users/vchechai/work/filler/libft/ft_strlen.c">
-			<Option target="filler"/>
-		</Unit>
-		<Unit filename="/Users/vchechai/work/filler/libft/ft_strlwr.c">
-			<Option target="filler"/>
-		</Unit>
-		<Unit filename="/Users/vchechai/work/filler/libft/ft_strmap.c">
-			<Option target="filler"/>
-		</Unit>
-		<Unit filename="/Users/vchechai/work/filler/libft/ft_strmapi.c">
-			<Option target="filler"/>
-		</Unit>
-		<Unit filename="/Users/vchechai/work/filler/libft/ft_strncat.c">
-			<Option target="filler"/>
-		</Unit>
-		<Unit filename="/Users/vchechai/work/filler/libft/ft_strncmp.c">
-			<Option target="filler"/>
-		</Unit>
-		<Unit filename="/Users/vchechai/work/filler/libft/ft_strncpy.c">
-			<Option target="filler"/>
-		</Unit>
-		<Unit filename="/Users/vchechai/work/filler/libft/ft_strnequ.c">
-			<Option target="filler"/>
-		</Unit>
-		<Unit filename="/Users/vchechai/work/filler/libft/ft_strnew.c">
-			<Option target="filler"/>
-		</Unit>
-		<Unit filename="/Users/vchechai/work/filler/libft/ft_strnstr.c">
-			<Option target="filler"/>
-		</Unit>
-		<Unit filename="/Users/vchechai/work/filler/libft/ft_strrchr.c">
-			<Option target="filler"/>
-		</Unit>
-		<Unit filename="/Users/vchechai/work/filler/libft/ft_strsplit.c">
-			<Option target="filler"/>
-		</Unit>
-		<Unit filename="/Users/vchechai/work/filler/libft/ft_strstr.c">
-			<Option target="filler"/>
-		</Unit>
-		<Unit filename="/Users/vchechai/work/filler/libft/ft_strsub.c">
-			<Option target="filler"/>
-		</Unit>
-		<Unit filename="/Users/vchechai/work/filler/libft/ft_strtrim.c">
-			<Option target="filler"/>
-		</Unit>
-		<Unit filename="/Users/vchechai/work/filler/libft/ft_strupr.c">
-			<Option target="filler"/>
-		</Unit>
-		<Unit filename="/Users/vchechai/work/filler/libft/ft_tolower.c">
-			<Option target="filler"/>
-		</Unit>
-		<Unit filename="/Users/vchechai/work/filler/libft/ft_toupper.c">
-			<Option target="filler"/>
-		</Unit>
-		<Unit filename="/Users/vchechai/work/filler/libft/get_next_line.c">
-			<Option target="filler"/>
-		</Unit>
-		<Unit filename="/Users/vchechai/work/filler/libft/get_next_line.h">
+		<Unit filename="/Users/vchechai/work/filler/ft_set_position.c">
 			<Option target="filler"/>
 		</Unit>
 		<Unit filename="/Users/vchechai/work/filler/main.c">

@@ -14,20 +14,22 @@ NAME	=	vchechai.filler
 
 MAKE	=	@make
 
-SRC     =   ft_parse_map.c ft_getplayer.c ft_get_coord.c
+SRC     =   ft_parse_map.c ft_getplayer.c ft_get_coord.c ft_set_position.c
+
+OBJECTS =   $(patsubst %.c,%.o, ${SRC})
 
 FLAGS	=	-Wall -Wextra -Werror
 
 .PHONY: all clean fclean re
 
 %.o: %.c
-	gcc $(FLAGS) -c $<
+	gcc $(FLAGS) -c $< -Ilibft
 
 all: $(NAME)
 
-$(NAME):
-		make re -C libft
-		gcc main.c $(SRC) -L libft -lft -o $(NAME)
+$(NAME): $(OBJECTS) main.c
+		make -C libft
+		gcc main.c $(SRC) -L libft -I libft -lft -o $(NAME)
 
 clean:
 	$(MAKE) clean -C libft

@@ -14,7 +14,7 @@
 # define LIBFT_H
 
 # define BUFF_SIZE_PF 30
-# define BUFF_SIZE 40
+# define BUFF_SIZE 1
 
 # include <fcntl.h>
 # include <stdarg.h>
@@ -41,6 +41,7 @@ typedef	struct		s_format
 	const char		*variable;
 }					t_format;
 
+int 				ft_sqrt(int	num);
 int					ft_numlen(int n);
 void				ft_set_chr(char c, t_list **str, t_format *format);
 int					ft_put_del_lst(t_list **head);
