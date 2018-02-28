@@ -41,7 +41,7 @@ typedef	struct		s_format
 	const char		*variable;
 }					t_format;
 
-int 				ft_sqrt(int	num);
+int					ft_sqrt(int	num);
 int					ft_numlen(int n);
 void				ft_set_chr(char c, t_list **str, t_format *format);
 int					ft_put_del_lst(t_list **head);

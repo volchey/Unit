@@ -34,4 +34,6 @@ add_executable(filler
 		main.c
 		ft_getplayer.c
 		ft_get_coord.c
-		ft_set_position.c)
+		ft_set_position.c
+		ft_draw_map.c
+		${SUB_SOURCE})

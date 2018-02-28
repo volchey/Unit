@@ -11,28 +11,39 @@
 /* ************************************************************************** */
 
 #include "filler.h"
+#include <mlx.h>
+#include <locale.h>
 
-int	main(int argc, char **argv)
+int	ft_getplayer(char *line)
 {
-	t_xy	coord;
-	int 	p;
-	char	*line;
-	t_map	map;
+	int		p;
 
-	get_next_line(0, &line);
-	p = ft_getplayer(line);
-	while (get_next_line(0, &line) > 0)
+	setlocale(LC_ALL, "");
+	p = 0;
+	if (ft_strstr(line, "$$$ exec p") && ft_strstr(line, "vchechai.filler"))
+		p = line[10] - '0';
+	else
 	{
-		map = ft_parse_map(line);
-		get_next_line(0, &line);
-		coord = ft_parse_piece(map, p, line);
-		if (coord.player == -1)
-		{
-			ft_printf("%d %d\n", 0, 0);
-			return (0);
-		}
-		ft_printf("%d %d\n", coord.y, coord.x);
-		ft_strdel(&line);
+		ft_printf("invalid input %S\n", L"😛");
+		exit(-1);
 	}
-	return (0);
+	return (p);
+}
+
+int	main(void)
+{
+	int		p;
+	char	*line;
+	void	*mlx_ptr;
+	void	*win_ptr;
+
+	mlx_ptr = mlx_init();
+	win_ptr = mlx_new_window(mlx_ptr, 800, 900, "filler in da house");
+	if (get_next_line(0, &line) <= 0)
+	{
+		ft_printf("invalid input %S\n", L"😛");
+		exit(-1);
+	}
+	p = ft_getplayer(line);
+	ft_start_mlx(mlx_ptr, win_ptr, p);
 }

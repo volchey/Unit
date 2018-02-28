@@ -1,4 +1,15 @@
-/private/var/folders/zz/zyxvpxvq6csfxvn_n0000mlh00054w/T/AppTranslocation/B28DB310-E0F8-4572-AEAD-835D7BD149A4/d/CLion.app/Contents/bin/cmake/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_C_COMPILER=/usr/bin/gcc -DCMAKE_CXX_COMPILER=/usr/bin/c++ -G "CodeBlocks - Unix Makefiles" /Users/vchechai/work/filler
+/Volumes/CLion/CLion.app/Contents/bin/cmake/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_C_COMPILER=/usr/bin/gcc -DCMAKE_CXX_COMPILER=/usr/bin/c++ -G "CodeBlocks - Unix Makefiles" /Users/vchechai/work/filler
+CMake Warning at /Volumes/CLion/CLion.app/Contents/bin/cmake/share/cmake-3.9/Modules/Platform/Darwin-Initialize.cmake:121 (message):
+  Ignoring CMAKE_OSX_SYSROOT value:
+
+   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk
+
+  because the directory does not exist.
+Call Stack (most recent call first):
+  /Volumes/CLion/CLion.app/Contents/bin/cmake/share/cmake-3.9/Modules/CMakeSystemSpecificInitialize.cmake:8 (include)
+  CMakeLists.txt:2 (project)
+
+
 -- Configuring done
 -- Generating done
 -- Build files have been written to: /Users/vchechai/work/filler/cmake-build-debug

@@ -12,12 +12,4 @@
 
 #include "filler.h"
 
-int	ft_getplayer(char *line)
-{
-	int 	p;
 
-	p = 0;
-	if (ft_strstr(line, "$$$ exec p") && ft_strstr(line, "vchechai.filler"))
-		p = line[10] - '0';
-	return (p);
-}
