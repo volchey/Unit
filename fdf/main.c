@@ -114,6 +114,7 @@ int		main(int ac, char **av)
 	mlx_hook(mlx_var.win_ptr, 2, 5, key_press, &mlx_var);
 	map = parse_map(av[1], mlx_var.st_xy, mlx_var.area);
 	draw_map(map, mlx_var);
+	system("leaks fdf");
 	mlx_loop(mlx_var.mlx_ptr);
 	return (0);
 }
