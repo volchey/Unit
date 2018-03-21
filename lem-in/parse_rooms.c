@@ -12,16 +12,17 @@
 
 #include "lem-in.h"
 
-static t_room	set_room(char *str, int status)
+static t_room	set_room(char *str, char status)
 {
 	t_room	room;
 	char	**arr;
 
 	room.status = status;
 	arr = ft_strsplit(str, ' ');
-	room.name = arr[0];
+	room.name = ft_strdup(arr[0]);
 	room.x = ft_atoi(arr[1]);
 	room.y = ft_atoi(arr[2]);
+	arr_del(arr);
 	return (room);
 }
 
@@ -31,11 +32,15 @@ static int		validate(char *str)
 	char 	*buf;
 	char	**arr;
 
-	i = 0;
 	buf = ft_strtrim(str);
 	arr = ft_strsplit(buf, ' ');
+	ft_strdel(&buf);
 	if (ft_arrlen(arr) != 3)
+	{
+		arr_del(arr);
 		return (0);
+	}
+	i = 0;
 	while (arr[1][i])
 		if (!ft_isalnum(arr[1][i++]))
 			ft_exit();
@@ -43,6 +48,7 @@ static int		validate(char *str)
 	while (arr[2][i])
 		if (!ft_isalnum(arr[2][i++]))
 			ft_exit();
+	arr_del(arr);
 	return (1);
 }
 
@@ -74,19 +80,19 @@ static void		check_command(char *str, t_list **list, t_room **rooms, int *i)
 	if ((ft_strcmp(str, "##start\n")) == 0)
 	{
 		if (validate(buf))
-			(*rooms)[(*i)++] = set_room(buf, 1);
+			(*rooms)[(*i)++] = set_room(buf, 's');
 		else
 			ft_exit();
 	}
 	else if ((ft_strcmp(str, "##end\n")) == 0)
 	{
 		if (validate(buf))
-			(*rooms)[(*i)++] = set_room(buf, 2);
+			(*rooms)[(*i)++] = set_room(buf, 'e');
 		else
 			ft_exit();
 	}
 	else if (validate(buf))
-		(*rooms)[(*i)++] = set_room(buf, 0);
+		(*rooms)[(*i)++] = set_room(buf, 'd');
 }
 
 t_room			*parse_rooms(t_list *list)
@@ -99,19 +105,19 @@ t_room			*parse_rooms(t_list *list)
 	list = list->next;
 	i = 0;
 	size = count_rooms(list);
-	rooms = (t_room*)malloc(sizeof(t_room) * size + 1);
+	rooms = (t_room*)malloc(sizeof(t_room) * (size + 1));
 	while (list)
 	{
 		str = (char*)list->content;
 		if (str[0] != '#')
 		{
 			if (validate(str))
-				rooms[i++] = set_room(str, 0);
+				rooms[i++] = set_room(str, 'd');
 		}
 		else
 			check_command(str, &list, &rooms, &i);
 		list = list->next;
 	}
-	rooms[i] = set_room("-1 -1 -1", -1);
+	rooms[i] = set_room("-1 -1 -1", '0');
 	return (rooms);
 }

@@ -39,10 +39,10 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /Applications/CLion.app/Contents/bin/cmake/bin/cmake
+CMAKE_COMMAND = /private/var/folders/zz/zyxvpxvq6csfxvn_n0000mlh00054w/T/AppTranslocation/EAA69A96-D792-466B-8DF0-D4A88C54173B/d/CLion.app/Contents/bin/cmake/bin/cmake
 
 # The command to remove a file.
-RM = /Applications/CLion.app/Contents/bin/cmake/bin/cmake -E remove -f
+RM = /private/var/folders/zz/zyxvpxvq6csfxvn_n0000mlh00054w/T/AppTranslocation/EAA69A96-D792-466B-8DF0-D4A88C54173B/d/CLion.app/Contents/bin/cmake/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -59,7 +59,7 @@ CMAKE_BINARY_DIR = /Users/vchechai/work/lem-in/cmake-build-debug
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/Applications/CLion.app/Contents/bin/cmake/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/private/var/folders/zz/zyxvpxvq6csfxvn_n0000mlh00054w/T/AppTranslocation/EAA69A96-D792-466B-8DF0-D4A88C54173B/d/CLion.app/Contents/bin/cmake/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -70,7 +70,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/Applications/CLion.app/Contents/bin/cmake/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	/private/var/folders/zz/zyxvpxvq6csfxvn_n0000mlh00054w/T/AppTranslocation/EAA69A96-D792-466B-8DF0-D4A88C54173B/d/CLion.app/Contents/bin/cmake/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -122,6 +122,33 @@ lem-in: cmake_check_build_system
 lem-in/fast:
 	$(MAKE) -f CMakeFiles/lem-in.dir/build.make CMakeFiles/lem-in.dir/build
 .PHONY : lem-in/fast
+
+arr_del.o: arr_del.c.o
+
+.PHONY : arr_del.o
+
+# target to build an object file
+arr_del.c.o:
+	$(MAKE) -f CMakeFiles/lem-in.dir/build.make CMakeFiles/lem-in.dir/arr_del.c.o
+.PHONY : arr_del.c.o
+
+arr_del.i: arr_del.c.i
+
+.PHONY : arr_del.i
+
+# target to preprocess a source file
+arr_del.c.i:
+	$(MAKE) -f CMakeFiles/lem-in.dir/build.make CMakeFiles/lem-in.dir/arr_del.c.i
+.PHONY : arr_del.c.i
+
+arr_del.s: arr_del.c.s
+
+.PHONY : arr_del.s
+
+# target to generate assembly for a file
+arr_del.c.s:
+	$(MAKE) -f CMakeFiles/lem-in.dir/build.make CMakeFiles/lem-in.dir/arr_del.c.s
+.PHONY : arr_del.c.s
 
 ft_exit.o: ft_exit.c.o
 
@@ -2310,6 +2337,33 @@ main.c.s:
 	$(MAKE) -f CMakeFiles/lem-in.dir/build.make CMakeFiles/lem-in.dir/main.c.s
 .PHONY : main.c.s
 
+new_node.o: new_node.c.o
+
+.PHONY : new_node.o
+
+# target to build an object file
+new_node.c.o:
+	$(MAKE) -f CMakeFiles/lem-in.dir/build.make CMakeFiles/lem-in.dir/new_node.c.o
+.PHONY : new_node.c.o
+
+new_node.i: new_node.c.i
+
+.PHONY : new_node.i
+
+# target to preprocess a source file
+new_node.c.i:
+	$(MAKE) -f CMakeFiles/lem-in.dir/build.make CMakeFiles/lem-in.dir/new_node.c.i
+.PHONY : new_node.c.i
+
+new_node.s: new_node.c.s
+
+.PHONY : new_node.s
+
+# target to generate assembly for a file
+new_node.c.s:
+	$(MAKE) -f CMakeFiles/lem-in.dir/build.make CMakeFiles/lem-in.dir/new_node.c.s
+.PHONY : new_node.c.s
+
 parse_links.o: parse_links.c.o
 
 .PHONY : parse_links.o
@@ -2400,6 +2454,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... lem-in"
+	@echo "... arr_del.o"
+	@echo "... arr_del.i"
+	@echo "... arr_del.s"
 	@echo "... ft_exit.o"
 	@echo "... ft_exit.i"
 	@echo "... ft_exit.s"
@@ -2643,6 +2700,9 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... new_node.o"
+	@echo "... new_node.i"
+	@echo "... new_node.s"
 	@echo "... parse_links.o"
 	@echo "... parse_links.i"
 	@echo "... parse_links.s"

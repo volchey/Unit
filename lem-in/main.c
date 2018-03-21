@@ -18,6 +18,7 @@ int	main(void)
 	t_room	*rooms;
 	t_link	*links;
 	t_list	*list;
+	t_list	*buf;
 	t_ways	*ways;
 	int 	i;
 
@@ -25,8 +26,8 @@ int	main(void)
 	setlocale(LC_ALL, "");
 	list = read_file();
 	rooms = parse_rooms(list);
-	links = parse_links(list, rooms);
-	ways = get_ways(links, rooms);
+//	links = parse_links(list, rooms);
+//	ways = get_ways(links, rooms);
 //	while (ways)
 //	{
 //		ft_printf("\nway = ");
@@ -39,9 +40,15 @@ int	main(void)
 //	}
 //	while (list)
 //	{
+//		buf = list->next;
+//		free(list->content);
+//		free(list);
 //		ft_printf("%s", list->content);
-//		list = list->next;
+//		list = buf;
 //	}
+//	free(list);
+	system("leaks lem-in");
+
 //	while (rooms[i].status != -1)
 //		ft_printf("name: %s, status: %d, x: %d, y: %d\n", rooms[i].name, rooms[i].status, rooms[i].x, rooms[i++].y);
 //	i = 0;

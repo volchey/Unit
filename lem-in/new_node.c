@@ -1,36 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   read_file.c                                        :+:      :+:    :+:   */
+/*   new_node.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vchechai <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/03/10 19:45:36 by vchechai          #+#    #+#             */
-/*   Updated: 2018/03/10 19:45:37 by vchechai         ###   ########.fr       */
+/*   Created: 2018/03/21 11:41:15 by vchechai          #+#    #+#             */
+/*   Updated: 2018/03/21 11:41:18 by vchechai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lem-in.h"
 
-t_list	*read_file()
+t_way	*new_node(int room)
 {
-	t_list	*ptr;
-	t_list	*head;
-	char	*line;
+	t_way	*new;
 
-	line = 0;
-	if (get_next_line(0, &line) > 0)
-		ptr = ft_lstnew(line, ft_strlen(line));
-	else
-		ft_exit();
-	head = ptr;
-	ft_strdel(&line);
-	while (get_next_line(0, &line) > 0)
-	{
-		ptr->next = ft_lstnew(line, ft_strlen(line));
-		ptr = ptr->next;
-		ft_strdel(&line);
-	}
-	ft_strdel(&line);
-	return (head);
+	new = (t_way*)malloc(sizeof(t_way));
+	new->room = room;
+	new->next = NULL;
+	return (new);
+}
+
+t_way	*last_node(t_way *way)
+{
+	t_way	*buf;
+
+	buf = way;
+	while (buf->next)
+		buf = buf->next;
+	return (buf);
 }

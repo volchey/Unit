@@ -34,19 +34,20 @@ t_link		set_link(char *str, t_room *rooms)
 	i = 0;
 	buf = ft_strtrim(str);
 	arr = ft_strsplit(buf, '-');
-	while (rooms[i].status != -1 && ft_strcmp(rooms[i].name, arr[0]))
+	while (rooms[i].status != '0' && ft_strcmp(rooms[i].name, arr[0]))
 		i++;
-	if (rooms[i].status == -1)
+	if (rooms[i].status == '0')
 		ft_exit();
 	else
 		link.room1 = i;
 	i = 0;
-	while (rooms[i].status != -1 && ft_strcmp(rooms[i].name, arr[1]))
+	while (rooms[i].status != '0' && ft_strcmp(rooms[i].name, arr[1]))
 		i++;
-	if (rooms[i].status == -1)
+	if (rooms[i].status == '0')
 		ft_exit();
 	else
 		link.room2 = i;
+	arr_del(arr);
 	return (link);
 }
 
@@ -59,17 +60,22 @@ static int 	validate(char *str, t_room *rooms)
 	i = 0;
 	buf = ft_strtrim(str);
 	arr = ft_strsplit(buf, '-');
+	free(buf);
 	if (ft_arrlen(arr) != 2)
+	{
+		arr_del(arr);
 		return (0);
-	while (rooms[i].status != -1 && !ft_strcmp(arr[0], rooms[i].name))
+	}
+	while (rooms[i].status != '0' && !ft_strcmp(arr[0], rooms[i].name))
 		i++;
-	if (rooms[i].status == -1)
+	if (rooms[i].status == '0')
 		ft_exit();
 	i = 0;
-	while (rooms[i].status != -1 && !ft_strcmp(arr[1], rooms[i].name))
+	while (rooms[i].status != '0' && !ft_strcmp(arr[1], rooms[i].name))
 		i++;
-	if (rooms[i].status == -1)
+	if (rooms[i].status == '0')
 		ft_exit();
+	arr_del(arr);
 	return (1);
 }
 
@@ -102,7 +108,7 @@ t_link	*parse_links(t_list *list, t_room *rooms)
 	i = 0;
 	list = list->next;
 	size = count_links(list, rooms);
-	links = (t_link*)malloc(sizeof(t_link) * size + 1);
+	links = (t_link*)malloc(sizeof(t_link) * (size + 1));
 	while (list)
 	{
 		str = (char*)list->content;
