@@ -4,6 +4,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/lem-in.dir/ft_exit.c.o"
   "CMakeFiles/lem-in.dir/parse_links.c.o"
   "CMakeFiles/lem-in.dir/get_ways.c.o"
+  "CMakeFiles/lem-in.dir/check_ways.c.o"
   "CMakeFiles/lem-in.dir/new_node.c.o"
   "CMakeFiles/lem-in.dir/arr_del.c.o"
   "CMakeFiles/lem-in.dir/parse_rooms.c.o"

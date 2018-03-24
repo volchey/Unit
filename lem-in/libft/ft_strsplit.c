@@ -23,19 +23,16 @@ char		**ft_strsplit(char const *s, char c)
 		return (0);
 	i = 0;
 	w = 0;
-	if (!(str = (char**)malloc(sizeof(char*) * ft_count_word(s, c) + 1)))
+	if (!(str = (char**)malloc(sizeof(char*) * (ft_count_word(s, c) + 1))))
 		return (0);
-	while (s[i] != '\0')
+	while (s[i])
 	{
 		while (s[i] == c)
 			i++;
 		start = i;
-		while (s[i] != c && s[i])
+		while (s[i] && s[i] != c)
 			i++;
-		str[w] = ft_strsub(s, start, (i - start));
-		if (w < ft_count_word(s, c))
-			w++;
-		i++;
+		str[w++] = ft_strsub(s, start, (i - start));
 	}
 	str[w] = 0;
 	return (str);

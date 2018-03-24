@@ -22,7 +22,6 @@ char	*ft_strtrim(char const *s)
 	res = NULL;
 	i = 0;
 	j = 0;
-	n = 0;
 	if (s)
 	{
 		n = ft_strlen(s);

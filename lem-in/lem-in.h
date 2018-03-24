@@ -49,5 +49,7 @@ void				ft_exit();
 t_way				*new_node(int room);
 t_way				*last_node(t_way *way);
 void				arr_del(char **arr);
+t_ways				*check_ways(t_ways *list, t_room *rooms);
+t_ways				*del_way(t_ways *way, t_ways *list, t_ways **head);
 
 #endif

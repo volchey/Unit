@@ -15,15 +15,15 @@ int			ft_count_word(char const *s, char c)
 	int		word;
 	int		i;
 
-	i = 1;
+	i = 0;
 	word = 0;
 	while (s[i])
 	{
-		if (i == 1 && s[0] != c)
-			word++;
-		if (s[i] != c && s[i - 1] == c && s[i])
-			word++;
-		i++;
+		while (s[i] && s[i] == c)
+			i++;
+		while (s[i] && s[i] != c)
+			i++;
+		word++;
 	}
 	return (word);
 }

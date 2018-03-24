@@ -35,6 +35,7 @@ add_executable(lem-in
 		ft_exit.c
 		parse_links.c
 		get_ways.c
+		check_ways.c
 		new_node.c
 		arr_del.c
 		parse_rooms.c

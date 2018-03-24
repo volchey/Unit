@@ -34,10 +34,10 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /private/var/folders/zz/zyxvpxvq6csfxvn_n0000mlh00054w/T/AppTranslocation/EAA69A96-D792-466B-8DF0-D4A88C54173B/d/CLion.app/Contents/bin/cmake/bin/cmake
+CMAKE_COMMAND = /private/var/folders/zz/zyxvpxvq6csfxvn_n0000mlh00054w/T/AppTranslocation/F190345D-9026-44D6-96A9-06828FCD8E52/d/CLion.app/Contents/bin/cmake/bin/cmake
 
 # The command to remove a file.
-RM = /private/var/folders/zz/zyxvpxvq6csfxvn_n0000mlh00054w/T/AppTranslocation/EAA69A96-D792-466B-8DF0-D4A88C54173B/d/CLion.app/Contents/bin/cmake/bin/cmake -E remove -f
+RM = /private/var/folders/zz/zyxvpxvq6csfxvn_n0000mlh00054w/T/AppTranslocation/F190345D-9026-44D6-96A9-06828FCD8E52/d/CLion.app/Contents/bin/cmake/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -177,9 +177,33 @@ CMakeFiles/lem-in.dir/get_ways.c.o.provides: CMakeFiles/lem-in.dir/get_ways.c.o.
 CMakeFiles/lem-in.dir/get_ways.c.o.provides.build: CMakeFiles/lem-in.dir/get_ways.c.o
 
 
+CMakeFiles/lem-in.dir/check_ways.c.o: CMakeFiles/lem-in.dir/flags.make
+CMakeFiles/lem-in.dir/check_ways.c.o: ../check_ways.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/lem-in.dir/check_ways.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem-in.dir/check_ways.c.o   -c /Users/vchechai/work/lem-in/check_ways.c
+
+CMakeFiles/lem-in.dir/check_ways.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/lem-in.dir/check_ways.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/vchechai/work/lem-in/check_ways.c > CMakeFiles/lem-in.dir/check_ways.c.i
+
+CMakeFiles/lem-in.dir/check_ways.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/lem-in.dir/check_ways.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/vchechai/work/lem-in/check_ways.c -o CMakeFiles/lem-in.dir/check_ways.c.s
+
+CMakeFiles/lem-in.dir/check_ways.c.o.requires:
+
+.PHONY : CMakeFiles/lem-in.dir/check_ways.c.o.requires
+
+CMakeFiles/lem-in.dir/check_ways.c.o.provides: CMakeFiles/lem-in.dir/check_ways.c.o.requires
+	$(MAKE) -f CMakeFiles/lem-in.dir/build.make CMakeFiles/lem-in.dir/check_ways.c.o.provides.build
+.PHONY : CMakeFiles/lem-in.dir/check_ways.c.o.provides
+
+CMakeFiles/lem-in.dir/check_ways.c.o.provides.build: CMakeFiles/lem-in.dir/check_ways.c.o
+
+
 CMakeFiles/lem-in.dir/new_node.c.o: CMakeFiles/lem-in.dir/flags.make
 CMakeFiles/lem-in.dir/new_node.c.o: ../new_node.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/lem-in.dir/new_node.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/lem-in.dir/new_node.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem-in.dir/new_node.c.o   -c /Users/vchechai/work/lem-in/new_node.c
 
 CMakeFiles/lem-in.dir/new_node.c.i: cmake_force
@@ -203,7 +227,7 @@ CMakeFiles/lem-in.dir/new_node.c.o.provides.build: CMakeFiles/lem-in.dir/new_nod
 
 CMakeFiles/lem-in.dir/arr_del.c.o: CMakeFiles/lem-in.dir/flags.make
 CMakeFiles/lem-in.dir/arr_del.c.o: ../arr_del.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/lem-in.dir/arr_del.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/lem-in.dir/arr_del.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem-in.dir/arr_del.c.o   -c /Users/vchechai/work/lem-in/arr_del.c
 
 CMakeFiles/lem-in.dir/arr_del.c.i: cmake_force
@@ -227,7 +251,7 @@ CMakeFiles/lem-in.dir/arr_del.c.o.provides.build: CMakeFiles/lem-in.dir/arr_del.
 
 CMakeFiles/lem-in.dir/parse_rooms.c.o: CMakeFiles/lem-in.dir/flags.make
 CMakeFiles/lem-in.dir/parse_rooms.c.o: ../parse_rooms.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/lem-in.dir/parse_rooms.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object CMakeFiles/lem-in.dir/parse_rooms.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem-in.dir/parse_rooms.c.o   -c /Users/vchechai/work/lem-in/parse_rooms.c
 
 CMakeFiles/lem-in.dir/parse_rooms.c.i: cmake_force
@@ -251,7 +275,7 @@ CMakeFiles/lem-in.dir/parse_rooms.c.o.provides.build: CMakeFiles/lem-in.dir/pars
 
 CMakeFiles/lem-in.dir/libft/ft_memset.c.o: CMakeFiles/lem-in.dir/flags.make
 CMakeFiles/lem-in.dir/libft/ft_memset.c.o: ../libft/ft_memset.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object CMakeFiles/lem-in.dir/libft/ft_memset.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object CMakeFiles/lem-in.dir/libft/ft_memset.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem-in.dir/libft/ft_memset.c.o   -c /Users/vchechai/work/lem-in/libft/ft_memset.c
 
 CMakeFiles/lem-in.dir/libft/ft_memset.c.i: cmake_force
@@ -275,7 +299,7 @@ CMakeFiles/lem-in.dir/libft/ft_memset.c.o.provides.build: CMakeFiles/lem-in.dir/
 
 CMakeFiles/lem-in.dir/libft/ft_bzero.c.o: CMakeFiles/lem-in.dir/flags.make
 CMakeFiles/lem-in.dir/libft/ft_bzero.c.o: ../libft/ft_bzero.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object CMakeFiles/lem-in.dir/libft/ft_bzero.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object CMakeFiles/lem-in.dir/libft/ft_bzero.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem-in.dir/libft/ft_bzero.c.o   -c /Users/vchechai/work/lem-in/libft/ft_bzero.c
 
 CMakeFiles/lem-in.dir/libft/ft_bzero.c.i: cmake_force
@@ -299,7 +323,7 @@ CMakeFiles/lem-in.dir/libft/ft_bzero.c.o.provides.build: CMakeFiles/lem-in.dir/l
 
 CMakeFiles/lem-in.dir/libft/ft_memcpy.c.o: CMakeFiles/lem-in.dir/flags.make
 CMakeFiles/lem-in.dir/libft/ft_memcpy.c.o: ../libft/ft_memcpy.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object CMakeFiles/lem-in.dir/libft/ft_memcpy.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object CMakeFiles/lem-in.dir/libft/ft_memcpy.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem-in.dir/libft/ft_memcpy.c.o   -c /Users/vchechai/work/lem-in/libft/ft_memcpy.c
 
 CMakeFiles/lem-in.dir/libft/ft_memcpy.c.i: cmake_force
@@ -323,7 +347,7 @@ CMakeFiles/lem-in.dir/libft/ft_memcpy.c.o.provides.build: CMakeFiles/lem-in.dir/
 
 CMakeFiles/lem-in.dir/libft/ft_memccpy.c.o: CMakeFiles/lem-in.dir/flags.make
 CMakeFiles/lem-in.dir/libft/ft_memccpy.c.o: ../libft/ft_memccpy.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object CMakeFiles/lem-in.dir/libft/ft_memccpy.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building C object CMakeFiles/lem-in.dir/libft/ft_memccpy.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem-in.dir/libft/ft_memccpy.c.o   -c /Users/vchechai/work/lem-in/libft/ft_memccpy.c
 
 CMakeFiles/lem-in.dir/libft/ft_memccpy.c.i: cmake_force
@@ -347,7 +371,7 @@ CMakeFiles/lem-in.dir/libft/ft_memccpy.c.o.provides.build: CMakeFiles/lem-in.dir
 
 CMakeFiles/lem-in.dir/libft/ft_memmove.c.o: CMakeFiles/lem-in.dir/flags.make
 CMakeFiles/lem-in.dir/libft/ft_memmove.c.o: ../libft/ft_memmove.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building C object CMakeFiles/lem-in.dir/libft/ft_memmove.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building C object CMakeFiles/lem-in.dir/libft/ft_memmove.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem-in.dir/libft/ft_memmove.c.o   -c /Users/vchechai/work/lem-in/libft/ft_memmove.c
 
 CMakeFiles/lem-in.dir/libft/ft_memmove.c.i: cmake_force
@@ -371,7 +395,7 @@ CMakeFiles/lem-in.dir/libft/ft_memmove.c.o.provides.build: CMakeFiles/lem-in.dir
 
 CMakeFiles/lem-in.dir/libft/ft_memchr.c.o: CMakeFiles/lem-in.dir/flags.make
 CMakeFiles/lem-in.dir/libft/ft_memchr.c.o: ../libft/ft_memchr.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building C object CMakeFiles/lem-in.dir/libft/ft_memchr.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building C object CMakeFiles/lem-in.dir/libft/ft_memchr.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem-in.dir/libft/ft_memchr.c.o   -c /Users/vchechai/work/lem-in/libft/ft_memchr.c
 
 CMakeFiles/lem-in.dir/libft/ft_memchr.c.i: cmake_force
@@ -395,7 +419,7 @@ CMakeFiles/lem-in.dir/libft/ft_memchr.c.o.provides.build: CMakeFiles/lem-in.dir/
 
 CMakeFiles/lem-in.dir/libft/ft_memcmp.c.o: CMakeFiles/lem-in.dir/flags.make
 CMakeFiles/lem-in.dir/libft/ft_memcmp.c.o: ../libft/ft_memcmp.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building C object CMakeFiles/lem-in.dir/libft/ft_memcmp.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building C object CMakeFiles/lem-in.dir/libft/ft_memcmp.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem-in.dir/libft/ft_memcmp.c.o   -c /Users/vchechai/work/lem-in/libft/ft_memcmp.c
 
 CMakeFiles/lem-in.dir/libft/ft_memcmp.c.i: cmake_force
@@ -419,7 +443,7 @@ CMakeFiles/lem-in.dir/libft/ft_memcmp.c.o.provides.build: CMakeFiles/lem-in.dir/
 
 CMakeFiles/lem-in.dir/libft/ft_arrlen.c.o: CMakeFiles/lem-in.dir/flags.make
 CMakeFiles/lem-in.dir/libft/ft_arrlen.c.o: ../libft/ft_arrlen.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building C object CMakeFiles/lem-in.dir/libft/ft_arrlen.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building C object CMakeFiles/lem-in.dir/libft/ft_arrlen.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem-in.dir/libft/ft_arrlen.c.o   -c /Users/vchechai/work/lem-in/libft/ft_arrlen.c
 
 CMakeFiles/lem-in.dir/libft/ft_arrlen.c.i: cmake_force
@@ -443,7 +467,7 @@ CMakeFiles/lem-in.dir/libft/ft_arrlen.c.o.provides.build: CMakeFiles/lem-in.dir/
 
 CMakeFiles/lem-in.dir/libft/ft_strlen.c.o: CMakeFiles/lem-in.dir/flags.make
 CMakeFiles/lem-in.dir/libft/ft_strlen.c.o: ../libft/ft_strlen.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building C object CMakeFiles/lem-in.dir/libft/ft_strlen.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building C object CMakeFiles/lem-in.dir/libft/ft_strlen.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem-in.dir/libft/ft_strlen.c.o   -c /Users/vchechai/work/lem-in/libft/ft_strlen.c
 
 CMakeFiles/lem-in.dir/libft/ft_strlen.c.i: cmake_force
@@ -467,7 +491,7 @@ CMakeFiles/lem-in.dir/libft/ft_strlen.c.o.provides.build: CMakeFiles/lem-in.dir/
 
 CMakeFiles/lem-in.dir/libft/ft_strdup.c.o: CMakeFiles/lem-in.dir/flags.make
 CMakeFiles/lem-in.dir/libft/ft_strdup.c.o: ../libft/ft_strdup.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building C object CMakeFiles/lem-in.dir/libft/ft_strdup.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building C object CMakeFiles/lem-in.dir/libft/ft_strdup.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem-in.dir/libft/ft_strdup.c.o   -c /Users/vchechai/work/lem-in/libft/ft_strdup.c
 
 CMakeFiles/lem-in.dir/libft/ft_strdup.c.i: cmake_force
@@ -491,7 +515,7 @@ CMakeFiles/lem-in.dir/libft/ft_strdup.c.o.provides.build: CMakeFiles/lem-in.dir/
 
 CMakeFiles/lem-in.dir/libft/ft_strcpy.c.o: CMakeFiles/lem-in.dir/flags.make
 CMakeFiles/lem-in.dir/libft/ft_strcpy.c.o: ../libft/ft_strcpy.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building C object CMakeFiles/lem-in.dir/libft/ft_strcpy.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building C object CMakeFiles/lem-in.dir/libft/ft_strcpy.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem-in.dir/libft/ft_strcpy.c.o   -c /Users/vchechai/work/lem-in/libft/ft_strcpy.c
 
 CMakeFiles/lem-in.dir/libft/ft_strcpy.c.i: cmake_force
@@ -515,7 +539,7 @@ CMakeFiles/lem-in.dir/libft/ft_strcpy.c.o.provides.build: CMakeFiles/lem-in.dir/
 
 CMakeFiles/lem-in.dir/libft/ft_strncpy.c.o: CMakeFiles/lem-in.dir/flags.make
 CMakeFiles/lem-in.dir/libft/ft_strncpy.c.o: ../libft/ft_strncpy.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building C object CMakeFiles/lem-in.dir/libft/ft_strncpy.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building C object CMakeFiles/lem-in.dir/libft/ft_strncpy.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem-in.dir/libft/ft_strncpy.c.o   -c /Users/vchechai/work/lem-in/libft/ft_strncpy.c
 
 CMakeFiles/lem-in.dir/libft/ft_strncpy.c.i: cmake_force
@@ -539,7 +563,7 @@ CMakeFiles/lem-in.dir/libft/ft_strncpy.c.o.provides.build: CMakeFiles/lem-in.dir
 
 CMakeFiles/lem-in.dir/libft/ft_strcat.c.o: CMakeFiles/lem-in.dir/flags.make
 CMakeFiles/lem-in.dir/libft/ft_strcat.c.o: ../libft/ft_strcat.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building C object CMakeFiles/lem-in.dir/libft/ft_strcat.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building C object CMakeFiles/lem-in.dir/libft/ft_strcat.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem-in.dir/libft/ft_strcat.c.o   -c /Users/vchechai/work/lem-in/libft/ft_strcat.c
 
 CMakeFiles/lem-in.dir/libft/ft_strcat.c.i: cmake_force
@@ -563,7 +587,7 @@ CMakeFiles/lem-in.dir/libft/ft_strcat.c.o.provides.build: CMakeFiles/lem-in.dir/
 
 CMakeFiles/lem-in.dir/libft/get_next_line.c.o: CMakeFiles/lem-in.dir/flags.make
 CMakeFiles/lem-in.dir/libft/get_next_line.c.o: ../libft/get_next_line.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building C object CMakeFiles/lem-in.dir/libft/get_next_line.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building C object CMakeFiles/lem-in.dir/libft/get_next_line.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem-in.dir/libft/get_next_line.c.o   -c /Users/vchechai/work/lem-in/libft/get_next_line.c
 
 CMakeFiles/lem-in.dir/libft/get_next_line.c.i: cmake_force
@@ -587,7 +611,7 @@ CMakeFiles/lem-in.dir/libft/get_next_line.c.o.provides.build: CMakeFiles/lem-in.
 
 CMakeFiles/lem-in.dir/libft/ft_strncat.c.o: CMakeFiles/lem-in.dir/flags.make
 CMakeFiles/lem-in.dir/libft/ft_strncat.c.o: ../libft/ft_strncat.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building C object CMakeFiles/lem-in.dir/libft/ft_strncat.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building C object CMakeFiles/lem-in.dir/libft/ft_strncat.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem-in.dir/libft/ft_strncat.c.o   -c /Users/vchechai/work/lem-in/libft/ft_strncat.c
 
 CMakeFiles/lem-in.dir/libft/ft_strncat.c.i: cmake_force
@@ -611,7 +635,7 @@ CMakeFiles/lem-in.dir/libft/ft_strncat.c.o.provides.build: CMakeFiles/lem-in.dir
 
 CMakeFiles/lem-in.dir/libft/ft_strlcat.c.o: CMakeFiles/lem-in.dir/flags.make
 CMakeFiles/lem-in.dir/libft/ft_strlcat.c.o: ../libft/ft_strlcat.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building C object CMakeFiles/lem-in.dir/libft/ft_strlcat.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building C object CMakeFiles/lem-in.dir/libft/ft_strlcat.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem-in.dir/libft/ft_strlcat.c.o   -c /Users/vchechai/work/lem-in/libft/ft_strlcat.c
 
 CMakeFiles/lem-in.dir/libft/ft_strlcat.c.i: cmake_force
@@ -635,7 +659,7 @@ CMakeFiles/lem-in.dir/libft/ft_strlcat.c.o.provides.build: CMakeFiles/lem-in.dir
 
 CMakeFiles/lem-in.dir/libft/ft_strchr.c.o: CMakeFiles/lem-in.dir/flags.make
 CMakeFiles/lem-in.dir/libft/ft_strchr.c.o: ../libft/ft_strchr.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building C object CMakeFiles/lem-in.dir/libft/ft_strchr.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building C object CMakeFiles/lem-in.dir/libft/ft_strchr.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem-in.dir/libft/ft_strchr.c.o   -c /Users/vchechai/work/lem-in/libft/ft_strchr.c
 
 CMakeFiles/lem-in.dir/libft/ft_strchr.c.i: cmake_force
@@ -659,7 +683,7 @@ CMakeFiles/lem-in.dir/libft/ft_strchr.c.o.provides.build: CMakeFiles/lem-in.dir/
 
 CMakeFiles/lem-in.dir/libft/ft_strrchr.c.o: CMakeFiles/lem-in.dir/flags.make
 CMakeFiles/lem-in.dir/libft/ft_strrchr.c.o: ../libft/ft_strrchr.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building C object CMakeFiles/lem-in.dir/libft/ft_strrchr.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building C object CMakeFiles/lem-in.dir/libft/ft_strrchr.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem-in.dir/libft/ft_strrchr.c.o   -c /Users/vchechai/work/lem-in/libft/ft_strrchr.c
 
 CMakeFiles/lem-in.dir/libft/ft_strrchr.c.i: cmake_force
@@ -683,7 +707,7 @@ CMakeFiles/lem-in.dir/libft/ft_strrchr.c.o.provides.build: CMakeFiles/lem-in.dir
 
 CMakeFiles/lem-in.dir/libft/ft_strstr.c.o: CMakeFiles/lem-in.dir/flags.make
 CMakeFiles/lem-in.dir/libft/ft_strstr.c.o: ../libft/ft_strstr.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building C object CMakeFiles/lem-in.dir/libft/ft_strstr.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building C object CMakeFiles/lem-in.dir/libft/ft_strstr.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem-in.dir/libft/ft_strstr.c.o   -c /Users/vchechai/work/lem-in/libft/ft_strstr.c
 
 CMakeFiles/lem-in.dir/libft/ft_strstr.c.i: cmake_force
@@ -707,7 +731,7 @@ CMakeFiles/lem-in.dir/libft/ft_strstr.c.o.provides.build: CMakeFiles/lem-in.dir/
 
 CMakeFiles/lem-in.dir/libft/ft_strnstr.c.o: CMakeFiles/lem-in.dir/flags.make
 CMakeFiles/lem-in.dir/libft/ft_strnstr.c.o: ../libft/ft_strnstr.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building C object CMakeFiles/lem-in.dir/libft/ft_strnstr.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building C object CMakeFiles/lem-in.dir/libft/ft_strnstr.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem-in.dir/libft/ft_strnstr.c.o   -c /Users/vchechai/work/lem-in/libft/ft_strnstr.c
 
 CMakeFiles/lem-in.dir/libft/ft_strnstr.c.i: cmake_force
@@ -731,7 +755,7 @@ CMakeFiles/lem-in.dir/libft/ft_strnstr.c.o.provides.build: CMakeFiles/lem-in.dir
 
 CMakeFiles/lem-in.dir/libft/ft_strcmp.c.o: CMakeFiles/lem-in.dir/flags.make
 CMakeFiles/lem-in.dir/libft/ft_strcmp.c.o: ../libft/ft_strcmp.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building C object CMakeFiles/lem-in.dir/libft/ft_strcmp.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building C object CMakeFiles/lem-in.dir/libft/ft_strcmp.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem-in.dir/libft/ft_strcmp.c.o   -c /Users/vchechai/work/lem-in/libft/ft_strcmp.c
 
 CMakeFiles/lem-in.dir/libft/ft_strcmp.c.i: cmake_force
@@ -755,7 +779,7 @@ CMakeFiles/lem-in.dir/libft/ft_strcmp.c.o.provides.build: CMakeFiles/lem-in.dir/
 
 CMakeFiles/lem-in.dir/libft/ft_strncmp.c.o: CMakeFiles/lem-in.dir/flags.make
 CMakeFiles/lem-in.dir/libft/ft_strncmp.c.o: ../libft/ft_strncmp.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building C object CMakeFiles/lem-in.dir/libft/ft_strncmp.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building C object CMakeFiles/lem-in.dir/libft/ft_strncmp.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem-in.dir/libft/ft_strncmp.c.o   -c /Users/vchechai/work/lem-in/libft/ft_strncmp.c
 
 CMakeFiles/lem-in.dir/libft/ft_strncmp.c.i: cmake_force
@@ -779,7 +803,7 @@ CMakeFiles/lem-in.dir/libft/ft_strncmp.c.o.provides.build: CMakeFiles/lem-in.dir
 
 CMakeFiles/lem-in.dir/libft/ft_atoi.c.o: CMakeFiles/lem-in.dir/flags.make
 CMakeFiles/lem-in.dir/libft/ft_atoi.c.o: ../libft/ft_atoi.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building C object CMakeFiles/lem-in.dir/libft/ft_atoi.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Building C object CMakeFiles/lem-in.dir/libft/ft_atoi.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem-in.dir/libft/ft_atoi.c.o   -c /Users/vchechai/work/lem-in/libft/ft_atoi.c
 
 CMakeFiles/lem-in.dir/libft/ft_atoi.c.i: cmake_force
@@ -803,7 +827,7 @@ CMakeFiles/lem-in.dir/libft/ft_atoi.c.o.provides.build: CMakeFiles/lem-in.dir/li
 
 CMakeFiles/lem-in.dir/libft/ft_isalpha.c.o: CMakeFiles/lem-in.dir/flags.make
 CMakeFiles/lem-in.dir/libft/ft_isalpha.c.o: ../libft/ft_isalpha.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Building C object CMakeFiles/lem-in.dir/libft/ft_isalpha.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Building C object CMakeFiles/lem-in.dir/libft/ft_isalpha.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem-in.dir/libft/ft_isalpha.c.o   -c /Users/vchechai/work/lem-in/libft/ft_isalpha.c
 
 CMakeFiles/lem-in.dir/libft/ft_isalpha.c.i: cmake_force
@@ -827,7 +851,7 @@ CMakeFiles/lem-in.dir/libft/ft_isalpha.c.o.provides.build: CMakeFiles/lem-in.dir
 
 CMakeFiles/lem-in.dir/libft/ft_isdigit.c.o: CMakeFiles/lem-in.dir/flags.make
 CMakeFiles/lem-in.dir/libft/ft_isdigit.c.o: ../libft/ft_isdigit.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Building C object CMakeFiles/lem-in.dir/libft/ft_isdigit.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Building C object CMakeFiles/lem-in.dir/libft/ft_isdigit.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem-in.dir/libft/ft_isdigit.c.o   -c /Users/vchechai/work/lem-in/libft/ft_isdigit.c
 
 CMakeFiles/lem-in.dir/libft/ft_isdigit.c.i: cmake_force
@@ -851,7 +875,7 @@ CMakeFiles/lem-in.dir/libft/ft_isdigit.c.o.provides.build: CMakeFiles/lem-in.dir
 
 CMakeFiles/lem-in.dir/libft/ft_isalnum.c.o: CMakeFiles/lem-in.dir/flags.make
 CMakeFiles/lem-in.dir/libft/ft_isalnum.c.o: ../libft/ft_isalnum.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Building C object CMakeFiles/lem-in.dir/libft/ft_isalnum.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Building C object CMakeFiles/lem-in.dir/libft/ft_isalnum.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem-in.dir/libft/ft_isalnum.c.o   -c /Users/vchechai/work/lem-in/libft/ft_isalnum.c
 
 CMakeFiles/lem-in.dir/libft/ft_isalnum.c.i: cmake_force
@@ -875,7 +899,7 @@ CMakeFiles/lem-in.dir/libft/ft_isalnum.c.o.provides.build: CMakeFiles/lem-in.dir
 
 CMakeFiles/lem-in.dir/libft/ft_isascii.c.o: CMakeFiles/lem-in.dir/flags.make
 CMakeFiles/lem-in.dir/libft/ft_isascii.c.o: ../libft/ft_isascii.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Building C object CMakeFiles/lem-in.dir/libft/ft_isascii.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Building C object CMakeFiles/lem-in.dir/libft/ft_isascii.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem-in.dir/libft/ft_isascii.c.o   -c /Users/vchechai/work/lem-in/libft/ft_isascii.c
 
 CMakeFiles/lem-in.dir/libft/ft_isascii.c.i: cmake_force
@@ -899,7 +923,7 @@ CMakeFiles/lem-in.dir/libft/ft_isascii.c.o.provides.build: CMakeFiles/lem-in.dir
 
 CMakeFiles/lem-in.dir/libft/ft_isprint.c.o: CMakeFiles/lem-in.dir/flags.make
 CMakeFiles/lem-in.dir/libft/ft_isprint.c.o: ../libft/ft_isprint.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Building C object CMakeFiles/lem-in.dir/libft/ft_isprint.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_37) "Building C object CMakeFiles/lem-in.dir/libft/ft_isprint.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem-in.dir/libft/ft_isprint.c.o   -c /Users/vchechai/work/lem-in/libft/ft_isprint.c
 
 CMakeFiles/lem-in.dir/libft/ft_isprint.c.i: cmake_force
@@ -923,7 +947,7 @@ CMakeFiles/lem-in.dir/libft/ft_isprint.c.o.provides.build: CMakeFiles/lem-in.dir
 
 CMakeFiles/lem-in.dir/libft/ft_toupper.c.o: CMakeFiles/lem-in.dir/flags.make
 CMakeFiles/lem-in.dir/libft/ft_toupper.c.o: ../libft/ft_toupper.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_37) "Building C object CMakeFiles/lem-in.dir/libft/ft_toupper.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_38) "Building C object CMakeFiles/lem-in.dir/libft/ft_toupper.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem-in.dir/libft/ft_toupper.c.o   -c /Users/vchechai/work/lem-in/libft/ft_toupper.c
 
 CMakeFiles/lem-in.dir/libft/ft_toupper.c.i: cmake_force
@@ -947,7 +971,7 @@ CMakeFiles/lem-in.dir/libft/ft_toupper.c.o.provides.build: CMakeFiles/lem-in.dir
 
 CMakeFiles/lem-in.dir/libft/ft_tolower.c.o: CMakeFiles/lem-in.dir/flags.make
 CMakeFiles/lem-in.dir/libft/ft_tolower.c.o: ../libft/ft_tolower.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_38) "Building C object CMakeFiles/lem-in.dir/libft/ft_tolower.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_39) "Building C object CMakeFiles/lem-in.dir/libft/ft_tolower.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem-in.dir/libft/ft_tolower.c.o   -c /Users/vchechai/work/lem-in/libft/ft_tolower.c
 
 CMakeFiles/lem-in.dir/libft/ft_tolower.c.i: cmake_force
@@ -971,7 +995,7 @@ CMakeFiles/lem-in.dir/libft/ft_tolower.c.o.provides.build: CMakeFiles/lem-in.dir
 
 CMakeFiles/lem-in.dir/libft/ft_memalloc.c.o: CMakeFiles/lem-in.dir/flags.make
 CMakeFiles/lem-in.dir/libft/ft_memalloc.c.o: ../libft/ft_memalloc.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_39) "Building C object CMakeFiles/lem-in.dir/libft/ft_memalloc.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_40) "Building C object CMakeFiles/lem-in.dir/libft/ft_memalloc.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem-in.dir/libft/ft_memalloc.c.o   -c /Users/vchechai/work/lem-in/libft/ft_memalloc.c
 
 CMakeFiles/lem-in.dir/libft/ft_memalloc.c.i: cmake_force
@@ -995,7 +1019,7 @@ CMakeFiles/lem-in.dir/libft/ft_memalloc.c.o.provides.build: CMakeFiles/lem-in.di
 
 CMakeFiles/lem-in.dir/libft/ft_memdel.c.o: CMakeFiles/lem-in.dir/flags.make
 CMakeFiles/lem-in.dir/libft/ft_memdel.c.o: ../libft/ft_memdel.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_40) "Building C object CMakeFiles/lem-in.dir/libft/ft_memdel.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_41) "Building C object CMakeFiles/lem-in.dir/libft/ft_memdel.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem-in.dir/libft/ft_memdel.c.o   -c /Users/vchechai/work/lem-in/libft/ft_memdel.c
 
 CMakeFiles/lem-in.dir/libft/ft_memdel.c.i: cmake_force
@@ -1019,7 +1043,7 @@ CMakeFiles/lem-in.dir/libft/ft_memdel.c.o.provides.build: CMakeFiles/lem-in.dir/
 
 CMakeFiles/lem-in.dir/libft/ft_strnew.c.o: CMakeFiles/lem-in.dir/flags.make
 CMakeFiles/lem-in.dir/libft/ft_strnew.c.o: ../libft/ft_strnew.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_41) "Building C object CMakeFiles/lem-in.dir/libft/ft_strnew.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_42) "Building C object CMakeFiles/lem-in.dir/libft/ft_strnew.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem-in.dir/libft/ft_strnew.c.o   -c /Users/vchechai/work/lem-in/libft/ft_strnew.c
 
 CMakeFiles/lem-in.dir/libft/ft_strnew.c.i: cmake_force
@@ -1043,7 +1067,7 @@ CMakeFiles/lem-in.dir/libft/ft_strnew.c.o.provides.build: CMakeFiles/lem-in.dir/
 
 CMakeFiles/lem-in.dir/libft/ft_strdel.c.o: CMakeFiles/lem-in.dir/flags.make
 CMakeFiles/lem-in.dir/libft/ft_strdel.c.o: ../libft/ft_strdel.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_42) "Building C object CMakeFiles/lem-in.dir/libft/ft_strdel.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_43) "Building C object CMakeFiles/lem-in.dir/libft/ft_strdel.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem-in.dir/libft/ft_strdel.c.o   -c /Users/vchechai/work/lem-in/libft/ft_strdel.c
 
 CMakeFiles/lem-in.dir/libft/ft_strdel.c.i: cmake_force
@@ -1067,7 +1091,7 @@ CMakeFiles/lem-in.dir/libft/ft_strdel.c.o.provides.build: CMakeFiles/lem-in.dir/
 
 CMakeFiles/lem-in.dir/libft/ft_strclr.c.o: CMakeFiles/lem-in.dir/flags.make
 CMakeFiles/lem-in.dir/libft/ft_strclr.c.o: ../libft/ft_strclr.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_43) "Building C object CMakeFiles/lem-in.dir/libft/ft_strclr.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_44) "Building C object CMakeFiles/lem-in.dir/libft/ft_strclr.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem-in.dir/libft/ft_strclr.c.o   -c /Users/vchechai/work/lem-in/libft/ft_strclr.c
 
 CMakeFiles/lem-in.dir/libft/ft_strclr.c.i: cmake_force
@@ -1091,7 +1115,7 @@ CMakeFiles/lem-in.dir/libft/ft_strclr.c.o.provides.build: CMakeFiles/lem-in.dir/
 
 CMakeFiles/lem-in.dir/libft/ft_striter.c.o: CMakeFiles/lem-in.dir/flags.make
 CMakeFiles/lem-in.dir/libft/ft_striter.c.o: ../libft/ft_striter.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_44) "Building C object CMakeFiles/lem-in.dir/libft/ft_striter.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_45) "Building C object CMakeFiles/lem-in.dir/libft/ft_striter.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem-in.dir/libft/ft_striter.c.o   -c /Users/vchechai/work/lem-in/libft/ft_striter.c
 
 CMakeFiles/lem-in.dir/libft/ft_striter.c.i: cmake_force
@@ -1115,7 +1139,7 @@ CMakeFiles/lem-in.dir/libft/ft_striter.c.o.provides.build: CMakeFiles/lem-in.dir
 
 CMakeFiles/lem-in.dir/libft/ft_striteri.c.o: CMakeFiles/lem-in.dir/flags.make
 CMakeFiles/lem-in.dir/libft/ft_striteri.c.o: ../libft/ft_striteri.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_45) "Building C object CMakeFiles/lem-in.dir/libft/ft_striteri.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_46) "Building C object CMakeFiles/lem-in.dir/libft/ft_striteri.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem-in.dir/libft/ft_striteri.c.o   -c /Users/vchechai/work/lem-in/libft/ft_striteri.c
 
 CMakeFiles/lem-in.dir/libft/ft_striteri.c.i: cmake_force
@@ -1139,7 +1163,7 @@ CMakeFiles/lem-in.dir/libft/ft_striteri.c.o.provides.build: CMakeFiles/lem-in.di
 
 CMakeFiles/lem-in.dir/libft/ft_strmap.c.o: CMakeFiles/lem-in.dir/flags.make
 CMakeFiles/lem-in.dir/libft/ft_strmap.c.o: ../libft/ft_strmap.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_46) "Building C object CMakeFiles/lem-in.dir/libft/ft_strmap.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_47) "Building C object CMakeFiles/lem-in.dir/libft/ft_strmap.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem-in.dir/libft/ft_strmap.c.o   -c /Users/vchechai/work/lem-in/libft/ft_strmap.c
 
 CMakeFiles/lem-in.dir/libft/ft_strmap.c.i: cmake_force
@@ -1163,7 +1187,7 @@ CMakeFiles/lem-in.dir/libft/ft_strmap.c.o.provides.build: CMakeFiles/lem-in.dir/
 
 CMakeFiles/lem-in.dir/libft/ft_strmapi.c.o: CMakeFiles/lem-in.dir/flags.make
 CMakeFiles/lem-in.dir/libft/ft_strmapi.c.o: ../libft/ft_strmapi.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_47) "Building C object CMakeFiles/lem-in.dir/libft/ft_strmapi.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_48) "Building C object CMakeFiles/lem-in.dir/libft/ft_strmapi.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem-in.dir/libft/ft_strmapi.c.o   -c /Users/vchechai/work/lem-in/libft/ft_strmapi.c
 
 CMakeFiles/lem-in.dir/libft/ft_strmapi.c.i: cmake_force
@@ -1187,7 +1211,7 @@ CMakeFiles/lem-in.dir/libft/ft_strmapi.c.o.provides.build: CMakeFiles/lem-in.dir
 
 CMakeFiles/lem-in.dir/libft/ft_itoa.c.o: CMakeFiles/lem-in.dir/flags.make
 CMakeFiles/lem-in.dir/libft/ft_itoa.c.o: ../libft/ft_itoa.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_48) "Building C object CMakeFiles/lem-in.dir/libft/ft_itoa.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_49) "Building C object CMakeFiles/lem-in.dir/libft/ft_itoa.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem-in.dir/libft/ft_itoa.c.o   -c /Users/vchechai/work/lem-in/libft/ft_itoa.c
 
 CMakeFiles/lem-in.dir/libft/ft_itoa.c.i: cmake_force
@@ -1211,7 +1235,7 @@ CMakeFiles/lem-in.dir/libft/ft_itoa.c.o.provides.build: CMakeFiles/lem-in.dir/li
 
 CMakeFiles/lem-in.dir/libft/ft_putchar.c.o: CMakeFiles/lem-in.dir/flags.make
 CMakeFiles/lem-in.dir/libft/ft_putchar.c.o: ../libft/ft_putchar.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_49) "Building C object CMakeFiles/lem-in.dir/libft/ft_putchar.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_50) "Building C object CMakeFiles/lem-in.dir/libft/ft_putchar.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem-in.dir/libft/ft_putchar.c.o   -c /Users/vchechai/work/lem-in/libft/ft_putchar.c
 
 CMakeFiles/lem-in.dir/libft/ft_putchar.c.i: cmake_force
@@ -1235,7 +1259,7 @@ CMakeFiles/lem-in.dir/libft/ft_putchar.c.o.provides.build: CMakeFiles/lem-in.dir
 
 CMakeFiles/lem-in.dir/libft/ft_putstr.c.o: CMakeFiles/lem-in.dir/flags.make
 CMakeFiles/lem-in.dir/libft/ft_putstr.c.o: ../libft/ft_putstr.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_50) "Building C object CMakeFiles/lem-in.dir/libft/ft_putstr.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_51) "Building C object CMakeFiles/lem-in.dir/libft/ft_putstr.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem-in.dir/libft/ft_putstr.c.o   -c /Users/vchechai/work/lem-in/libft/ft_putstr.c
 
 CMakeFiles/lem-in.dir/libft/ft_putstr.c.i: cmake_force
@@ -1259,7 +1283,7 @@ CMakeFiles/lem-in.dir/libft/ft_putstr.c.o.provides.build: CMakeFiles/lem-in.dir/
 
 CMakeFiles/lem-in.dir/libft/ft_putendl.c.o: CMakeFiles/lem-in.dir/flags.make
 CMakeFiles/lem-in.dir/libft/ft_putendl.c.o: ../libft/ft_putendl.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_51) "Building C object CMakeFiles/lem-in.dir/libft/ft_putendl.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_52) "Building C object CMakeFiles/lem-in.dir/libft/ft_putendl.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem-in.dir/libft/ft_putendl.c.o   -c /Users/vchechai/work/lem-in/libft/ft_putendl.c
 
 CMakeFiles/lem-in.dir/libft/ft_putendl.c.i: cmake_force
@@ -1283,7 +1307,7 @@ CMakeFiles/lem-in.dir/libft/ft_putendl.c.o.provides.build: CMakeFiles/lem-in.dir
 
 CMakeFiles/lem-in.dir/libft/ft_putnbr.c.o: CMakeFiles/lem-in.dir/flags.make
 CMakeFiles/lem-in.dir/libft/ft_putnbr.c.o: ../libft/ft_putnbr.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_52) "Building C object CMakeFiles/lem-in.dir/libft/ft_putnbr.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_53) "Building C object CMakeFiles/lem-in.dir/libft/ft_putnbr.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem-in.dir/libft/ft_putnbr.c.o   -c /Users/vchechai/work/lem-in/libft/ft_putnbr.c
 
 CMakeFiles/lem-in.dir/libft/ft_putnbr.c.i: cmake_force
@@ -1307,7 +1331,7 @@ CMakeFiles/lem-in.dir/libft/ft_putnbr.c.o.provides.build: CMakeFiles/lem-in.dir/
 
 CMakeFiles/lem-in.dir/libft/ft_putchar_fd.c.o: CMakeFiles/lem-in.dir/flags.make
 CMakeFiles/lem-in.dir/libft/ft_putchar_fd.c.o: ../libft/ft_putchar_fd.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_53) "Building C object CMakeFiles/lem-in.dir/libft/ft_putchar_fd.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_54) "Building C object CMakeFiles/lem-in.dir/libft/ft_putchar_fd.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem-in.dir/libft/ft_putchar_fd.c.o   -c /Users/vchechai/work/lem-in/libft/ft_putchar_fd.c
 
 CMakeFiles/lem-in.dir/libft/ft_putchar_fd.c.i: cmake_force
@@ -1331,7 +1355,7 @@ CMakeFiles/lem-in.dir/libft/ft_putchar_fd.c.o.provides.build: CMakeFiles/lem-in.
 
 CMakeFiles/lem-in.dir/libft/ft_putstr_fd.c.o: CMakeFiles/lem-in.dir/flags.make
 CMakeFiles/lem-in.dir/libft/ft_putstr_fd.c.o: ../libft/ft_putstr_fd.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_54) "Building C object CMakeFiles/lem-in.dir/libft/ft_putstr_fd.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_55) "Building C object CMakeFiles/lem-in.dir/libft/ft_putstr_fd.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem-in.dir/libft/ft_putstr_fd.c.o   -c /Users/vchechai/work/lem-in/libft/ft_putstr_fd.c
 
 CMakeFiles/lem-in.dir/libft/ft_putstr_fd.c.i: cmake_force
@@ -1355,7 +1379,7 @@ CMakeFiles/lem-in.dir/libft/ft_putstr_fd.c.o.provides.build: CMakeFiles/lem-in.d
 
 CMakeFiles/lem-in.dir/libft/ft_putendl_fd.c.o: CMakeFiles/lem-in.dir/flags.make
 CMakeFiles/lem-in.dir/libft/ft_putendl_fd.c.o: ../libft/ft_putendl_fd.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_55) "Building C object CMakeFiles/lem-in.dir/libft/ft_putendl_fd.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_56) "Building C object CMakeFiles/lem-in.dir/libft/ft_putendl_fd.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem-in.dir/libft/ft_putendl_fd.c.o   -c /Users/vchechai/work/lem-in/libft/ft_putendl_fd.c
 
 CMakeFiles/lem-in.dir/libft/ft_putendl_fd.c.i: cmake_force
@@ -1379,7 +1403,7 @@ CMakeFiles/lem-in.dir/libft/ft_putendl_fd.c.o.provides.build: CMakeFiles/lem-in.
 
 CMakeFiles/lem-in.dir/libft/ft_strequ.c.o: CMakeFiles/lem-in.dir/flags.make
 CMakeFiles/lem-in.dir/libft/ft_strequ.c.o: ../libft/ft_strequ.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_56) "Building C object CMakeFiles/lem-in.dir/libft/ft_strequ.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_57) "Building C object CMakeFiles/lem-in.dir/libft/ft_strequ.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem-in.dir/libft/ft_strequ.c.o   -c /Users/vchechai/work/lem-in/libft/ft_strequ.c
 
 CMakeFiles/lem-in.dir/libft/ft_strequ.c.i: cmake_force
@@ -1403,7 +1427,7 @@ CMakeFiles/lem-in.dir/libft/ft_strequ.c.o.provides.build: CMakeFiles/lem-in.dir/
 
 CMakeFiles/lem-in.dir/libft/ft_strnequ.c.o: CMakeFiles/lem-in.dir/flags.make
 CMakeFiles/lem-in.dir/libft/ft_strnequ.c.o: ../libft/ft_strnequ.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_57) "Building C object CMakeFiles/lem-in.dir/libft/ft_strnequ.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_58) "Building C object CMakeFiles/lem-in.dir/libft/ft_strnequ.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem-in.dir/libft/ft_strnequ.c.o   -c /Users/vchechai/work/lem-in/libft/ft_strnequ.c
 
 CMakeFiles/lem-in.dir/libft/ft_strnequ.c.i: cmake_force
@@ -1427,7 +1451,7 @@ CMakeFiles/lem-in.dir/libft/ft_strnequ.c.o.provides.build: CMakeFiles/lem-in.dir
 
 CMakeFiles/lem-in.dir/libft/ft_strsub.c.o: CMakeFiles/lem-in.dir/flags.make
 CMakeFiles/lem-in.dir/libft/ft_strsub.c.o: ../libft/ft_strsub.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_58) "Building C object CMakeFiles/lem-in.dir/libft/ft_strsub.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_59) "Building C object CMakeFiles/lem-in.dir/libft/ft_strsub.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem-in.dir/libft/ft_strsub.c.o   -c /Users/vchechai/work/lem-in/libft/ft_strsub.c
 
 CMakeFiles/lem-in.dir/libft/ft_strsub.c.i: cmake_force
@@ -1451,7 +1475,7 @@ CMakeFiles/lem-in.dir/libft/ft_strsub.c.o.provides.build: CMakeFiles/lem-in.dir/
 
 CMakeFiles/lem-in.dir/libft/ft_strjoin.c.o: CMakeFiles/lem-in.dir/flags.make
 CMakeFiles/lem-in.dir/libft/ft_strjoin.c.o: ../libft/ft_strjoin.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_59) "Building C object CMakeFiles/lem-in.dir/libft/ft_strjoin.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_60) "Building C object CMakeFiles/lem-in.dir/libft/ft_strjoin.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem-in.dir/libft/ft_strjoin.c.o   -c /Users/vchechai/work/lem-in/libft/ft_strjoin.c
 
 CMakeFiles/lem-in.dir/libft/ft_strjoin.c.i: cmake_force
@@ -1475,7 +1499,7 @@ CMakeFiles/lem-in.dir/libft/ft_strjoin.c.o.provides.build: CMakeFiles/lem-in.dir
 
 CMakeFiles/lem-in.dir/libft/ft_strtrim.c.o: CMakeFiles/lem-in.dir/flags.make
 CMakeFiles/lem-in.dir/libft/ft_strtrim.c.o: ../libft/ft_strtrim.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_60) "Building C object CMakeFiles/lem-in.dir/libft/ft_strtrim.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_61) "Building C object CMakeFiles/lem-in.dir/libft/ft_strtrim.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem-in.dir/libft/ft_strtrim.c.o   -c /Users/vchechai/work/lem-in/libft/ft_strtrim.c
 
 CMakeFiles/lem-in.dir/libft/ft_strtrim.c.i: cmake_force
@@ -1499,7 +1523,7 @@ CMakeFiles/lem-in.dir/libft/ft_strtrim.c.o.provides.build: CMakeFiles/lem-in.dir
 
 CMakeFiles/lem-in.dir/libft/ft_strsplit.c.o: CMakeFiles/lem-in.dir/flags.make
 CMakeFiles/lem-in.dir/libft/ft_strsplit.c.o: ../libft/ft_strsplit.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_61) "Building C object CMakeFiles/lem-in.dir/libft/ft_strsplit.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_62) "Building C object CMakeFiles/lem-in.dir/libft/ft_strsplit.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem-in.dir/libft/ft_strsplit.c.o   -c /Users/vchechai/work/lem-in/libft/ft_strsplit.c
 
 CMakeFiles/lem-in.dir/libft/ft_strsplit.c.i: cmake_force
@@ -1523,7 +1547,7 @@ CMakeFiles/lem-in.dir/libft/ft_strsplit.c.o.provides.build: CMakeFiles/lem-in.di
 
 CMakeFiles/lem-in.dir/libft/ft_putnbr_fd.c.o: CMakeFiles/lem-in.dir/flags.make
 CMakeFiles/lem-in.dir/libft/ft_putnbr_fd.c.o: ../libft/ft_putnbr_fd.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_62) "Building C object CMakeFiles/lem-in.dir/libft/ft_putnbr_fd.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_63) "Building C object CMakeFiles/lem-in.dir/libft/ft_putnbr_fd.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem-in.dir/libft/ft_putnbr_fd.c.o   -c /Users/vchechai/work/lem-in/libft/ft_putnbr_fd.c
 
 CMakeFiles/lem-in.dir/libft/ft_putnbr_fd.c.i: cmake_force
@@ -1547,7 +1571,7 @@ CMakeFiles/lem-in.dir/libft/ft_putnbr_fd.c.o.provides.build: CMakeFiles/lem-in.d
 
 CMakeFiles/lem-in.dir/libft/ft_lstnew.c.o: CMakeFiles/lem-in.dir/flags.make
 CMakeFiles/lem-in.dir/libft/ft_lstnew.c.o: ../libft/ft_lstnew.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_63) "Building C object CMakeFiles/lem-in.dir/libft/ft_lstnew.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_64) "Building C object CMakeFiles/lem-in.dir/libft/ft_lstnew.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem-in.dir/libft/ft_lstnew.c.o   -c /Users/vchechai/work/lem-in/libft/ft_lstnew.c
 
 CMakeFiles/lem-in.dir/libft/ft_lstnew.c.i: cmake_force
@@ -1571,7 +1595,7 @@ CMakeFiles/lem-in.dir/libft/ft_lstnew.c.o.provides.build: CMakeFiles/lem-in.dir/
 
 CMakeFiles/lem-in.dir/libft/ft_lstdelone.c.o: CMakeFiles/lem-in.dir/flags.make
 CMakeFiles/lem-in.dir/libft/ft_lstdelone.c.o: ../libft/ft_lstdelone.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_64) "Building C object CMakeFiles/lem-in.dir/libft/ft_lstdelone.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_65) "Building C object CMakeFiles/lem-in.dir/libft/ft_lstdelone.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem-in.dir/libft/ft_lstdelone.c.o   -c /Users/vchechai/work/lem-in/libft/ft_lstdelone.c
 
 CMakeFiles/lem-in.dir/libft/ft_lstdelone.c.i: cmake_force
@@ -1595,7 +1619,7 @@ CMakeFiles/lem-in.dir/libft/ft_lstdelone.c.o.provides.build: CMakeFiles/lem-in.d
 
 CMakeFiles/lem-in.dir/libft/ft_lstdel.c.o: CMakeFiles/lem-in.dir/flags.make
 CMakeFiles/lem-in.dir/libft/ft_lstdel.c.o: ../libft/ft_lstdel.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_65) "Building C object CMakeFiles/lem-in.dir/libft/ft_lstdel.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_66) "Building C object CMakeFiles/lem-in.dir/libft/ft_lstdel.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem-in.dir/libft/ft_lstdel.c.o   -c /Users/vchechai/work/lem-in/libft/ft_lstdel.c
 
 CMakeFiles/lem-in.dir/libft/ft_lstdel.c.i: cmake_force
@@ -1619,7 +1643,7 @@ CMakeFiles/lem-in.dir/libft/ft_lstdel.c.o.provides.build: CMakeFiles/lem-in.dir/
 
 CMakeFiles/lem-in.dir/libft/ft_lstadd.c.o: CMakeFiles/lem-in.dir/flags.make
 CMakeFiles/lem-in.dir/libft/ft_lstadd.c.o: ../libft/ft_lstadd.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_66) "Building C object CMakeFiles/lem-in.dir/libft/ft_lstadd.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_67) "Building C object CMakeFiles/lem-in.dir/libft/ft_lstadd.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem-in.dir/libft/ft_lstadd.c.o   -c /Users/vchechai/work/lem-in/libft/ft_lstadd.c
 
 CMakeFiles/lem-in.dir/libft/ft_lstadd.c.i: cmake_force
@@ -1643,7 +1667,7 @@ CMakeFiles/lem-in.dir/libft/ft_lstadd.c.o.provides.build: CMakeFiles/lem-in.dir/
 
 CMakeFiles/lem-in.dir/libft/ft_lstiter.c.o: CMakeFiles/lem-in.dir/flags.make
 CMakeFiles/lem-in.dir/libft/ft_lstiter.c.o: ../libft/ft_lstiter.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_67) "Building C object CMakeFiles/lem-in.dir/libft/ft_lstiter.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_68) "Building C object CMakeFiles/lem-in.dir/libft/ft_lstiter.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem-in.dir/libft/ft_lstiter.c.o   -c /Users/vchechai/work/lem-in/libft/ft_lstiter.c
 
 CMakeFiles/lem-in.dir/libft/ft_lstiter.c.i: cmake_force
@@ -1667,7 +1691,7 @@ CMakeFiles/lem-in.dir/libft/ft_lstiter.c.o.provides.build: CMakeFiles/lem-in.dir
 
 CMakeFiles/lem-in.dir/libft/ft_lstmap.c.o: CMakeFiles/lem-in.dir/flags.make
 CMakeFiles/lem-in.dir/libft/ft_lstmap.c.o: ../libft/ft_lstmap.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_68) "Building C object CMakeFiles/lem-in.dir/libft/ft_lstmap.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_69) "Building C object CMakeFiles/lem-in.dir/libft/ft_lstmap.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem-in.dir/libft/ft_lstmap.c.o   -c /Users/vchechai/work/lem-in/libft/ft_lstmap.c
 
 CMakeFiles/lem-in.dir/libft/ft_lstmap.c.i: cmake_force
@@ -1691,7 +1715,7 @@ CMakeFiles/lem-in.dir/libft/ft_lstmap.c.o.provides.build: CMakeFiles/lem-in.dir/
 
 CMakeFiles/lem-in.dir/libft/ft_count_word.c.o: CMakeFiles/lem-in.dir/flags.make
 CMakeFiles/lem-in.dir/libft/ft_count_word.c.o: ../libft/ft_count_word.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_69) "Building C object CMakeFiles/lem-in.dir/libft/ft_count_word.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_70) "Building C object CMakeFiles/lem-in.dir/libft/ft_count_word.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem-in.dir/libft/ft_count_word.c.o   -c /Users/vchechai/work/lem-in/libft/ft_count_word.c
 
 CMakeFiles/lem-in.dir/libft/ft_count_word.c.i: cmake_force
@@ -1715,7 +1739,7 @@ CMakeFiles/lem-in.dir/libft/ft_count_word.c.o.provides.build: CMakeFiles/lem-in.
 
 CMakeFiles/lem-in.dir/libft/ft_isupper.c.o: CMakeFiles/lem-in.dir/flags.make
 CMakeFiles/lem-in.dir/libft/ft_isupper.c.o: ../libft/ft_isupper.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_70) "Building C object CMakeFiles/lem-in.dir/libft/ft_isupper.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_71) "Building C object CMakeFiles/lem-in.dir/libft/ft_isupper.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem-in.dir/libft/ft_isupper.c.o   -c /Users/vchechai/work/lem-in/libft/ft_isupper.c
 
 CMakeFiles/lem-in.dir/libft/ft_isupper.c.i: cmake_force
@@ -1739,7 +1763,7 @@ CMakeFiles/lem-in.dir/libft/ft_isupper.c.o.provides.build: CMakeFiles/lem-in.dir
 
 CMakeFiles/lem-in.dir/libft/ft_islower.c.o: CMakeFiles/lem-in.dir/flags.make
 CMakeFiles/lem-in.dir/libft/ft_islower.c.o: ../libft/ft_islower.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_71) "Building C object CMakeFiles/lem-in.dir/libft/ft_islower.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_72) "Building C object CMakeFiles/lem-in.dir/libft/ft_islower.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem-in.dir/libft/ft_islower.c.o   -c /Users/vchechai/work/lem-in/libft/ft_islower.c
 
 CMakeFiles/lem-in.dir/libft/ft_islower.c.i: cmake_force
@@ -1763,7 +1787,7 @@ CMakeFiles/lem-in.dir/libft/ft_islower.c.o.provides.build: CMakeFiles/lem-in.dir
 
 CMakeFiles/lem-in.dir/libft/ft_strlwr.c.o: CMakeFiles/lem-in.dir/flags.make
 CMakeFiles/lem-in.dir/libft/ft_strlwr.c.o: ../libft/ft_strlwr.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_72) "Building C object CMakeFiles/lem-in.dir/libft/ft_strlwr.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_73) "Building C object CMakeFiles/lem-in.dir/libft/ft_strlwr.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem-in.dir/libft/ft_strlwr.c.o   -c /Users/vchechai/work/lem-in/libft/ft_strlwr.c
 
 CMakeFiles/lem-in.dir/libft/ft_strlwr.c.i: cmake_force
@@ -1787,7 +1811,7 @@ CMakeFiles/lem-in.dir/libft/ft_strlwr.c.o.provides.build: CMakeFiles/lem-in.dir/
 
 CMakeFiles/lem-in.dir/libft/ft_strupr.c.o: CMakeFiles/lem-in.dir/flags.make
 CMakeFiles/lem-in.dir/libft/ft_strupr.c.o: ../libft/ft_strupr.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_73) "Building C object CMakeFiles/lem-in.dir/libft/ft_strupr.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_74) "Building C object CMakeFiles/lem-in.dir/libft/ft_strupr.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem-in.dir/libft/ft_strupr.c.o   -c /Users/vchechai/work/lem-in/libft/ft_strupr.c
 
 CMakeFiles/lem-in.dir/libft/ft_strupr.c.i: cmake_force
@@ -1811,7 +1835,7 @@ CMakeFiles/lem-in.dir/libft/ft_strupr.c.o.provides.build: CMakeFiles/lem-in.dir/
 
 CMakeFiles/lem-in.dir/libft/ft_printf/ft_printf.c.o: CMakeFiles/lem-in.dir/flags.make
 CMakeFiles/lem-in.dir/libft/ft_printf/ft_printf.c.o: ../libft/ft_printf/ft_printf.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_74) "Building C object CMakeFiles/lem-in.dir/libft/ft_printf/ft_printf.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_75) "Building C object CMakeFiles/lem-in.dir/libft/ft_printf/ft_printf.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem-in.dir/libft/ft_printf/ft_printf.c.o   -c /Users/vchechai/work/lem-in/libft/ft_printf/ft_printf.c
 
 CMakeFiles/lem-in.dir/libft/ft_printf/ft_printf.c.i: cmake_force
@@ -1835,7 +1859,7 @@ CMakeFiles/lem-in.dir/libft/ft_printf/ft_printf.c.o.provides.build: CMakeFiles/l
 
 CMakeFiles/lem-in.dir/libft/ft_printf/get_farg.c.o: CMakeFiles/lem-in.dir/flags.make
 CMakeFiles/lem-in.dir/libft/ft_printf/get_farg.c.o: ../libft/ft_printf/get_farg.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_75) "Building C object CMakeFiles/lem-in.dir/libft/ft_printf/get_farg.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_76) "Building C object CMakeFiles/lem-in.dir/libft/ft_printf/get_farg.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem-in.dir/libft/ft_printf/get_farg.c.o   -c /Users/vchechai/work/lem-in/libft/ft_printf/get_farg.c
 
 CMakeFiles/lem-in.dir/libft/ft_printf/get_farg.c.i: cmake_force
@@ -1859,7 +1883,7 @@ CMakeFiles/lem-in.dir/libft/ft_printf/get_farg.c.o.provides.build: CMakeFiles/le
 
 CMakeFiles/lem-in.dir/libft/ft_printf/set_arg.c.o: CMakeFiles/lem-in.dir/flags.make
 CMakeFiles/lem-in.dir/libft/ft_printf/set_arg.c.o: ../libft/ft_printf/set_arg.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_76) "Building C object CMakeFiles/lem-in.dir/libft/ft_printf/set_arg.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_77) "Building C object CMakeFiles/lem-in.dir/libft/ft_printf/set_arg.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem-in.dir/libft/ft_printf/set_arg.c.o   -c /Users/vchechai/work/lem-in/libft/ft_printf/set_arg.c
 
 CMakeFiles/lem-in.dir/libft/ft_printf/set_arg.c.i: cmake_force
@@ -1883,7 +1907,7 @@ CMakeFiles/lem-in.dir/libft/ft_printf/set_arg.c.o.provides.build: CMakeFiles/lem
 
 CMakeFiles/lem-in.dir/libft/ft_printf/ft_chrjoin.c.o: CMakeFiles/lem-in.dir/flags.make
 CMakeFiles/lem-in.dir/libft/ft_printf/ft_chrjoin.c.o: ../libft/ft_printf/ft_chrjoin.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_77) "Building C object CMakeFiles/lem-in.dir/libft/ft_printf/ft_chrjoin.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_78) "Building C object CMakeFiles/lem-in.dir/libft/ft_printf/ft_chrjoin.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem-in.dir/libft/ft_printf/ft_chrjoin.c.o   -c /Users/vchechai/work/lem-in/libft/ft_printf/ft_chrjoin.c
 
 CMakeFiles/lem-in.dir/libft/ft_printf/ft_chrjoin.c.i: cmake_force
@@ -1907,7 +1931,7 @@ CMakeFiles/lem-in.dir/libft/ft_printf/ft_chrjoin.c.o.provides.build: CMakeFiles/
 
 CMakeFiles/lem-in.dir/libft/ft_printf/ft_get_address.c.o: CMakeFiles/lem-in.dir/flags.make
 CMakeFiles/lem-in.dir/libft/ft_printf/ft_get_address.c.o: ../libft/ft_printf/ft_get_address.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_78) "Building C object CMakeFiles/lem-in.dir/libft/ft_printf/ft_get_address.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_79) "Building C object CMakeFiles/lem-in.dir/libft/ft_printf/ft_get_address.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem-in.dir/libft/ft_printf/ft_get_address.c.o   -c /Users/vchechai/work/lem-in/libft/ft_printf/ft_get_address.c
 
 CMakeFiles/lem-in.dir/libft/ft_printf/ft_get_address.c.i: cmake_force
@@ -1931,7 +1955,7 @@ CMakeFiles/lem-in.dir/libft/ft_printf/ft_get_address.c.o.provides.build: CMakeFi
 
 CMakeFiles/lem-in.dir/libft/ft_printf/ft_itoa.c.o: CMakeFiles/lem-in.dir/flags.make
 CMakeFiles/lem-in.dir/libft/ft_printf/ft_itoa.c.o: ../libft/ft_printf/ft_itoa.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_79) "Building C object CMakeFiles/lem-in.dir/libft/ft_printf/ft_itoa.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_80) "Building C object CMakeFiles/lem-in.dir/libft/ft_printf/ft_itoa.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem-in.dir/libft/ft_printf/ft_itoa.c.o   -c /Users/vchechai/work/lem-in/libft/ft_printf/ft_itoa.c
 
 CMakeFiles/lem-in.dir/libft/ft_printf/ft_itoa.c.i: cmake_force
@@ -1955,7 +1979,7 @@ CMakeFiles/lem-in.dir/libft/ft_printf/ft_itoa.c.o.provides.build: CMakeFiles/lem
 
 CMakeFiles/lem-in.dir/libft/ft_printf/ft_set_chr.c.o: CMakeFiles/lem-in.dir/flags.make
 CMakeFiles/lem-in.dir/libft/ft_printf/ft_set_chr.c.o: ../libft/ft_printf/ft_set_chr.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_80) "Building C object CMakeFiles/lem-in.dir/libft/ft_printf/ft_set_chr.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_81) "Building C object CMakeFiles/lem-in.dir/libft/ft_printf/ft_set_chr.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem-in.dir/libft/ft_printf/ft_set_chr.c.o   -c /Users/vchechai/work/lem-in/libft/ft_printf/ft_set_chr.c
 
 CMakeFiles/lem-in.dir/libft/ft_printf/ft_set_chr.c.i: cmake_force
@@ -1979,7 +2003,7 @@ CMakeFiles/lem-in.dir/libft/ft_printf/ft_set_chr.c.o.provides.build: CMakeFiles/
 
 CMakeFiles/lem-in.dir/libft/ft_printf/ft_set_str.c.o: CMakeFiles/lem-in.dir/flags.make
 CMakeFiles/lem-in.dir/libft/ft_printf/ft_set_str.c.o: ../libft/ft_printf/ft_set_str.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_81) "Building C object CMakeFiles/lem-in.dir/libft/ft_printf/ft_set_str.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_82) "Building C object CMakeFiles/lem-in.dir/libft/ft_printf/ft_set_str.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem-in.dir/libft/ft_printf/ft_set_str.c.o   -c /Users/vchechai/work/lem-in/libft/ft_printf/ft_set_str.c
 
 CMakeFiles/lem-in.dir/libft/ft_printf/ft_set_str.c.i: cmake_force
@@ -2003,7 +2027,7 @@ CMakeFiles/lem-in.dir/libft/ft_printf/ft_set_str.c.o.provides.build: CMakeFiles/
 
 CMakeFiles/lem-in.dir/libft/ft_printf/ft_unichar.c.o: CMakeFiles/lem-in.dir/flags.make
 CMakeFiles/lem-in.dir/libft/ft_printf/ft_unichar.c.o: ../libft/ft_printf/ft_unichar.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_82) "Building C object CMakeFiles/lem-in.dir/libft/ft_printf/ft_unichar.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_83) "Building C object CMakeFiles/lem-in.dir/libft/ft_printf/ft_unichar.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem-in.dir/libft/ft_printf/ft_unichar.c.o   -c /Users/vchechai/work/lem-in/libft/ft_printf/ft_unichar.c
 
 CMakeFiles/lem-in.dir/libft/ft_printf/ft_unichar.c.i: cmake_force
@@ -2027,7 +2051,7 @@ CMakeFiles/lem-in.dir/libft/ft_printf/ft_unichar.c.o.provides.build: CMakeFiles/
 
 CMakeFiles/lem-in.dir/libft/ft_printf/ft_unistr.c.o: CMakeFiles/lem-in.dir/flags.make
 CMakeFiles/lem-in.dir/libft/ft_printf/ft_unistr.c.o: ../libft/ft_printf/ft_unistr.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_83) "Building C object CMakeFiles/lem-in.dir/libft/ft_printf/ft_unistr.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_84) "Building C object CMakeFiles/lem-in.dir/libft/ft_printf/ft_unistr.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem-in.dir/libft/ft_printf/ft_unistr.c.o   -c /Users/vchechai/work/lem-in/libft/ft_printf/ft_unistr.c
 
 CMakeFiles/lem-in.dir/libft/ft_printf/ft_unistr.c.i: cmake_force
@@ -2051,7 +2075,7 @@ CMakeFiles/lem-in.dir/libft/ft_printf/ft_unistr.c.o.provides.build: CMakeFiles/l
 
 CMakeFiles/lem-in.dir/libft/ft_printf/ft_unitoa_base.c.o: CMakeFiles/lem-in.dir/flags.make
 CMakeFiles/lem-in.dir/libft/ft_printf/ft_unitoa_base.c.o: ../libft/ft_printf/ft_unitoa_base.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_84) "Building C object CMakeFiles/lem-in.dir/libft/ft_printf/ft_unitoa_base.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_85) "Building C object CMakeFiles/lem-in.dir/libft/ft_printf/ft_unitoa_base.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem-in.dir/libft/ft_printf/ft_unitoa_base.c.o   -c /Users/vchechai/work/lem-in/libft/ft_printf/ft_unitoa_base.c
 
 CMakeFiles/lem-in.dir/libft/ft_printf/ft_unitoa_base.c.i: cmake_force
@@ -2075,7 +2099,7 @@ CMakeFiles/lem-in.dir/libft/ft_printf/ft_unitoa_base.c.o.provides.build: CMakeFi
 
 CMakeFiles/lem-in.dir/libft/ft_printf/ft_power.c.o: CMakeFiles/lem-in.dir/flags.make
 CMakeFiles/lem-in.dir/libft/ft_printf/ft_power.c.o: ../libft/ft_printf/ft_power.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_85) "Building C object CMakeFiles/lem-in.dir/libft/ft_printf/ft_power.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_86) "Building C object CMakeFiles/lem-in.dir/libft/ft_printf/ft_power.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem-in.dir/libft/ft_printf/ft_power.c.o   -c /Users/vchechai/work/lem-in/libft/ft_printf/ft_power.c
 
 CMakeFiles/lem-in.dir/libft/ft_printf/ft_power.c.i: cmake_force
@@ -2099,7 +2123,7 @@ CMakeFiles/lem-in.dir/libft/ft_printf/ft_power.c.o.provides.build: CMakeFiles/le
 
 CMakeFiles/lem-in.dir/libft/ft_printf/ft_unitoa_uppbase.c.o: CMakeFiles/lem-in.dir/flags.make
 CMakeFiles/lem-in.dir/libft/ft_printf/ft_unitoa_uppbase.c.o: ../libft/ft_printf/ft_unitoa_uppbase.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_86) "Building C object CMakeFiles/lem-in.dir/libft/ft_printf/ft_unitoa_uppbase.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_87) "Building C object CMakeFiles/lem-in.dir/libft/ft_printf/ft_unitoa_uppbase.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem-in.dir/libft/ft_printf/ft_unitoa_uppbase.c.o   -c /Users/vchechai/work/lem-in/libft/ft_printf/ft_unitoa_uppbase.c
 
 CMakeFiles/lem-in.dir/libft/ft_printf/ft_unitoa_uppbase.c.i: cmake_force
@@ -2128,6 +2152,7 @@ lem__in_OBJECTS = \
 "CMakeFiles/lem-in.dir/ft_exit.c.o" \
 "CMakeFiles/lem-in.dir/parse_links.c.o" \
 "CMakeFiles/lem-in.dir/get_ways.c.o" \
+"CMakeFiles/lem-in.dir/check_ways.c.o" \
 "CMakeFiles/lem-in.dir/new_node.c.o" \
 "CMakeFiles/lem-in.dir/arr_del.c.o" \
 "CMakeFiles/lem-in.dir/parse_rooms.c.o" \
@@ -2218,6 +2243,7 @@ lem-in: CMakeFiles/lem-in.dir/read_file.c.o
 lem-in: CMakeFiles/lem-in.dir/ft_exit.c.o
 lem-in: CMakeFiles/lem-in.dir/parse_links.c.o
 lem-in: CMakeFiles/lem-in.dir/get_ways.c.o
+lem-in: CMakeFiles/lem-in.dir/check_ways.c.o
 lem-in: CMakeFiles/lem-in.dir/new_node.c.o
 lem-in: CMakeFiles/lem-in.dir/arr_del.c.o
 lem-in: CMakeFiles/lem-in.dir/parse_rooms.c.o
@@ -2301,7 +2327,7 @@ lem-in: CMakeFiles/lem-in.dir/libft/ft_printf/ft_power.c.o
 lem-in: CMakeFiles/lem-in.dir/libft/ft_printf/ft_unitoa_uppbase.c.o
 lem-in: CMakeFiles/lem-in.dir/build.make
 lem-in: CMakeFiles/lem-in.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_87) "Linking C executable lem-in"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_88) "Linking C executable lem-in"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/lem-in.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -2314,6 +2340,7 @@ CMakeFiles/lem-in.dir/requires: CMakeFiles/lem-in.dir/read_file.c.o.requires
 CMakeFiles/lem-in.dir/requires: CMakeFiles/lem-in.dir/ft_exit.c.o.requires
 CMakeFiles/lem-in.dir/requires: CMakeFiles/lem-in.dir/parse_links.c.o.requires
 CMakeFiles/lem-in.dir/requires: CMakeFiles/lem-in.dir/get_ways.c.o.requires
+CMakeFiles/lem-in.dir/requires: CMakeFiles/lem-in.dir/check_ways.c.o.requires
 CMakeFiles/lem-in.dir/requires: CMakeFiles/lem-in.dir/new_node.c.o.requires
 CMakeFiles/lem-in.dir/requires: CMakeFiles/lem-in.dir/arr_del.c.o.requires
 CMakeFiles/lem-in.dir/requires: CMakeFiles/lem-in.dir/parse_rooms.c.o.requires

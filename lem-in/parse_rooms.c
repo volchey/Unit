@@ -16,16 +16,33 @@ static t_room	set_room(char *str, char status)
 {
 	t_room	room;
 	char	**arr;
+	char 	*buf;
 
 	room.status = status;
-	arr = ft_strsplit(str, ' ');
+	buf = ft_strtrim(str);
+	arr = ft_strsplit(buf, ' ');
+	ft_strdel(&buf);
 	room.name = ft_strdup(arr[0]);
 	room.x = ft_atoi(arr[1]);
 	room.y = ft_atoi(arr[2]);
-	arr_del(arr);
+	ft_strdel(&arr[0]);
+	ft_strdel(&arr[1]);
+	ft_strdel(&arr[2]);
+	free(arr);
 	return (room);
 }
-
+//static int		validate(char *str)
+//{
+//	int count;
+//	char *buf;
+//
+//	buf = ft_strtrim(str);
+//	count = ft_count_word(buf, ' ');
+//	ft_strdel(&buf);
+//	if (count != 3)
+//		return (0);
+//	return (1);
+//}
 static int		validate(char *str)
 {
 	int		i;
@@ -118,6 +135,6 @@ t_room			*parse_rooms(t_list *list)
 			check_command(str, &list, &rooms, &i);
 		list = list->next;
 	}
-	rooms[i] = set_room("-1 -1 -1", '0');
+	rooms[i] = set_room("0 0 0", '0');
 	return (rooms);
 }

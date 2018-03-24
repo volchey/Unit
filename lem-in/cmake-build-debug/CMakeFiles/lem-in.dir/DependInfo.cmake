@@ -5,6 +5,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
   "/Users/vchechai/work/lem-in/arr_del.c" "/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles/lem-in.dir/arr_del.c.o"
+  "/Users/vchechai/work/lem-in/check_ways.c" "/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles/lem-in.dir/check_ways.c.o"
   "/Users/vchechai/work/lem-in/ft_exit.c" "/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles/lem-in.dir/ft_exit.c.o"
   "/Users/vchechai/work/lem-in/get_ways.c" "/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles/lem-in.dir/get_ways.c.o"
   "/Users/vchechai/work/lem-in/libft/ft_arrlen.c" "/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles/lem-in.dir/libft/ft_arrlen.c.o"

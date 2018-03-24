@@ -34,6 +34,7 @@ t_link		set_link(char *str, t_room *rooms)
 	i = 0;
 	buf = ft_strtrim(str);
 	arr = ft_strsplit(buf, '-');
+	ft_strdel(&buf);
 	while (rooms[i].status != '0' && ft_strcmp(rooms[i].name, arr[0]))
 		i++;
 	if (rooms[i].status == '0')
@@ -60,7 +61,7 @@ static int 	validate(char *str, t_room *rooms)
 	i = 0;
 	buf = ft_strtrim(str);
 	arr = ft_strsplit(buf, '-');
-	free(buf);
+	ft_strdel(&buf);
 	if (ft_arrlen(arr) != 2)
 	{
 		arr_del(arr);

@@ -42,16 +42,14 @@ static void		copy_and_add(t_ways *list, int room)
 {
 	t_way		*buf;
     t_way		*way;
+	t_ways		*new;
 
 	way = list->way;
-	while (list->next)
-		list = list->next;
-	list->next = (t_ways*)malloc(sizeof(t_ways));
-	list->next->next = NULL;
-	list->next->way = new_node(way->room);
-	list = list->next;
+	new = (t_ways*)malloc(sizeof(t_ways));
+	new->way = new_node(way->room);
+	new->next = NULL;
 	way = way->next;
-	buf = list->way;
+	buf = new->way;
 	while (way)
 	{
 		buf->next = new_node(way->room);
@@ -59,16 +57,19 @@ static void		copy_and_add(t_ways *list, int room)
 		way = way->next;
 	}
 	buf->next = new_node(room);
+	while (list->next)
+		list = list->next;
+	list->next = new;
 }
 
-static t_ways	*del_way(t_ways *way, t_ways *list, t_ways **ways)
+t_ways	*del_way(t_ways *way, t_ways *list, t_ways **head)
 {
 	t_way	*buf;
 
 	if (list->way == way->way)
 	{
 		list->next = way->next;
-		*ways = list->next;
+		*head = list->next;
 	}
 	else
 	{
@@ -106,6 +107,7 @@ static t_ways		*set_room(t_room **rooms, t_link *links, t_ways *list)
 			while (room_links[++i] != -1)
 				copy_and_add(list, room_links[i]);
 			list = del_way(list, buf, &buf);
+			free(room_links);
 		}
 		else
 			list = list->next;
