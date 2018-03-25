@@ -41,6 +41,12 @@ typedef struct 		s_ways
 	struct s_ways	*next;
 }					t_ways;
 
+typedef struct 		s_ant
+{
+	int 			ant;
+	int 			room;
+}					t_ant;
+
 t_list				*read_file();
 t_room				*parse_rooms(t_list *list);
 t_link				*parse_links(t_list *list, t_room *rooms);
@@ -51,5 +57,6 @@ t_way				*last_node(t_way *way);
 void				arr_del(char **arr);
 t_ways				*check_ways(t_ways *list, t_room *rooms);
 t_ways				*del_way(t_ways *way, t_ways *list, t_ways **head);
+void				lets_go(t_ant **ways, int count, t_room *rooms);
 
 #endif

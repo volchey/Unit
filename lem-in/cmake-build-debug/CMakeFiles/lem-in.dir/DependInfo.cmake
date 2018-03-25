@@ -8,6 +8,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "/Users/vchechai/work/lem-in/check_ways.c" "/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles/lem-in.dir/check_ways.c.o"
   "/Users/vchechai/work/lem-in/ft_exit.c" "/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles/lem-in.dir/ft_exit.c.o"
   "/Users/vchechai/work/lem-in/get_ways.c" "/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles/lem-in.dir/get_ways.c.o"
+  "/Users/vchechai/work/lem-in/lets_go.c" "/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles/lem-in.dir/lets_go.c.o"
   "/Users/vchechai/work/lem-in/libft/ft_arrlen.c" "/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles/lem-in.dir/libft/ft_arrlen.c.o"
   "/Users/vchechai/work/lem-in/libft/ft_atoi.c" "/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles/lem-in.dir/libft/ft_atoi.c.o"
   "/Users/vchechai/work/lem-in/libft/ft_bzero.c" "/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles/lem-in.dir/libft/ft_bzero.c.o"

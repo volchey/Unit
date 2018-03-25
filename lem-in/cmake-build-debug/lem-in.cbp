@@ -102,6 +102,9 @@
 		<Unit filename="/Users/vchechai/work/lem-in/lem-in.h">
 			<Option target="lem-in"/>
 		</Unit>
+		<Unit filename="/Users/vchechai/work/lem-in/lets_go.c">
+			<Option target="lem-in"/>
+		</Unit>
 		<Unit filename="/Users/vchechai/work/lem-in/libft/ft_arrlen.c">
 			<Option target="lem-in"/>
 		</Unit>

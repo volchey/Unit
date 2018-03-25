@@ -15,7 +15,7 @@ NAME	=	lem-in
 MAKE	=	@make
 
 SRC     =   parse_rooms.c parse_links.c read_file.c ft_exit.c get_ways.c \
-            new_node.c arr_del.c check_ways.c
+            new_node.c arr_del.c check_ways.c lets_go.c
 
 FLAGS	=	-Wall -Wextra -Werror
 
