@@ -28,24 +28,21 @@ t_link		set_link(char *str, t_room *rooms)
 {
 	t_link	link;
 	char	**arr;
-	char	*buf;
 	int 	i;
 
 	i = 0;
-	buf = ft_strtrim(str);
-	arr = ft_strsplit(buf, '-');
-	ft_strdel(&buf);
+	arr = ft_strsplit(str, '-');
 	while (rooms[i].status != '0' && ft_strcmp(rooms[i].name, arr[0]))
 		i++;
 	if (rooms[i].status == '0')
-		ft_exit();
+		ft_exit("now room to whith the same name");
 	else
 		link.room1 = i;
 	i = 0;
 	while (rooms[i].status != '0' && ft_strcmp(rooms[i].name, arr[1]))
 		i++;
 	if (rooms[i].status == '0')
-		ft_exit();
+		ft_exit("now room to whith the same name");
 	else
 		link.room2 = i;
 	arr_del(arr);
@@ -55,13 +52,10 @@ t_link		set_link(char *str, t_room *rooms)
 static int 	validate(char *str, t_room *rooms)
 {
 	int		i;
-	char 	*buf;
 	char	**arr;
 
 	i = 0;
-	buf = ft_strtrim(str);
-	arr = ft_strsplit(buf, '-');
-	ft_strdel(&buf);
+	arr = ft_strsplit(str, '-');
 	if (ft_arrlen(arr) != 2)
 	{
 		arr_del(arr);
@@ -70,17 +64,17 @@ static int 	validate(char *str, t_room *rooms)
 	while (rooms[i].status != '0' && !ft_strcmp(arr[0], rooms[i].name))
 		i++;
 	if (rooms[i].status == '0')
-		ft_exit();
+		ft_exit("no room to whith the same name");
 	i = 0;
 	while (rooms[i].status != '0' && !ft_strcmp(arr[1], rooms[i].name))
 		i++;
 	if (rooms[i].status == '0')
-		ft_exit();
+		ft_exit("no room to whith the same name");
 	arr_del(arr);
 	return (1);
 }
 
-static int 	count_links(t_list	*list, t_room *rooms)
+static int 	count_links(t_file	*list, t_room *rooms)
 {
 	char	*str;
 	int		count;
@@ -88,7 +82,7 @@ static int 	count_links(t_list	*list, t_room *rooms)
 	count = 0;
 	while (list)
 	{
-		str = (char*)list->content;
+		str = list->content;
 		if (str[0] != '#')
 		{
 			if (validate(str, rooms))
@@ -99,7 +93,7 @@ static int 	count_links(t_list	*list, t_room *rooms)
 	return (count);
 }
 
-t_link	*parse_links(t_list *list, t_room *rooms)
+t_link	*parse_links(t_file *list, t_room *rooms)
 {
 	t_link	*links;
 	char	*str;
@@ -108,11 +102,12 @@ t_link	*parse_links(t_list *list, t_room *rooms)
 
 	i = 0;
 	list = list->next;
-	size = count_links(list, rooms);
+	if (!(size = count_links(list, rooms)))
+		ft_exit("no links");
 	links = (t_link*)malloc(sizeof(t_link) * (size + 1));
 	while (list)
 	{
-		str = (char*)list->content;
+		str = list->content;
 		if (str[0] != '#')
 			if (validate(str, rooms))
 				links[i++] = set_link(str, rooms);

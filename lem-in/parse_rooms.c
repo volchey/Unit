@@ -16,12 +16,9 @@ static t_room	set_room(char *str, char status)
 {
 	t_room	room;
 	char	**arr;
-	char 	*buf;
 
 	room.status = status;
-	buf = ft_strtrim(str);
-	arr = ft_strsplit(buf, ' ');
-	ft_strdel(&buf);
+	arr = ft_strsplit(str, ' ');
 	room.name = ft_strdup(arr[0]);
 	room.x = ft_atoi(arr[1]);
 	room.y = ft_atoi(arr[2]);
@@ -31,45 +28,52 @@ static t_room	set_room(char *str, char status)
 	free(arr);
 	return (room);
 }
-//static int		validate(char *str)
-//{
-//	int count;
-//	char *buf;
-//
-//	buf = ft_strtrim(str);
-//	count = ft_count_word(buf, ' ');
-//	ft_strdel(&buf);
-//	if (count != 3)
-//		return (0);
-//	return (1);
-//}
-static int		validate(char *str)
+
+static int 		is_unique(char **arr, t_room *rooms, int size)
+{
+	int x;
+	int y;
+
+	x = ft_atoi(arr[1]);
+	y = ft_atoi(arr[2]);
+	while (size - 1)
+	{
+		if (ft_strcmp(arr[0], rooms[size - 1].name) == 0 || (x == rooms[size - 1].x
+			&& y == rooms[size - 1].y))
+			return (0);
+		size--;
+	}
+	return (1);
+}
+
+static int		validate(char *str, t_room *rooms, int size)
 {
 	int		i;
-	char 	*buf;
 	char	**arr;
 
-	buf = ft_strtrim(str);
-	arr = ft_strsplit(buf, ' ');
-	ft_strdel(&buf);
+	arr = ft_strsplit(str, ' ');
 	if (ft_arrlen(arr) != 3)
 	{
 		arr_del(arr);
 		return (0);
 	}
+	if (arr[0][0] == 'L')
+		ft_exit("room with L");
 	i = 0;
 	while (arr[1][i])
-		if (!ft_isalnum(arr[1][i++]))
-			ft_exit();
+		if (!(ft_isdigit(arr[1][i++])))
+			ft_exit("coordinate x is not valid");
 	i = 0;
 	while (arr[2][i])
-		if (!ft_isalnum(arr[2][i++]))
-			ft_exit();
+		if (!(ft_isdigit(arr[2][i++])))
+			ft_exit("coord y is not valid");
+	if (size && !is_unique(arr, rooms, size))
+		ft_exit("not unique name of room");
 	arr_del(arr);
 	return (1);
 }
 
-static int		count_rooms(t_list	*list)
+static int		count_rooms(t_file	*list)
 {
 	char	*str;
 	int		count;
@@ -77,10 +81,10 @@ static int		count_rooms(t_list	*list)
 	count = 0;
 	while (list)
 	{
-		str = (char*)list->content;
+		str = list->content;
 		if (str[0] != '#')
 		{
-			if (validate(str))
+			if (validate(str, 0, 0))
 				count++;
 		}
 		list = list->next;
@@ -88,31 +92,33 @@ static int		count_rooms(t_list	*list)
 	return (count);
 }
 
-static void		check_command(char *str, t_list **list, t_room **rooms, int *i)
+static void		check_command(char *str, t_file **list, t_room **rooms, int *i)
 {
 	char	*buf;
 
 	*list = (*list)->next;
-	buf = (char*)(*list)->content;
-	if ((ft_strcmp(str, "##start\n")) == 0)
+	buf = (*list)->content;
+	if ((ft_strcmp(str, "##start")) == 0)
 	{
-		if (validate(buf))
+		if (validate(buf, *rooms, *i))
 			(*rooms)[(*i)++] = set_room(buf, 's');
 		else
-			ft_exit();
+			ft_exit("not valid room after start");
 	}
-	else if ((ft_strcmp(str, "##end\n")) == 0)
+	else if ((ft_strcmp(str, "##end")) == 0)
 	{
-		if (validate(buf))
+		if (validate(buf, *rooms, *i))
 			(*rooms)[(*i)++] = set_room(buf, 'e');
 		else
-			ft_exit();
+			ft_exit("not valid room after end");
 	}
-	else if (validate(buf))
+	else if (str[2] == '#')
+		ft_exit("not valid comment");
+	else if (validate(buf, *rooms, *i))
 		(*rooms)[(*i)++] = set_room(buf, 'd');
 }
 
-t_room			*parse_rooms(t_list *list)
+t_room			*parse_rooms(t_file *list)
 {
 	t_room	*rooms;
 	char	*str;
@@ -125,13 +131,13 @@ t_room			*parse_rooms(t_list *list)
 	rooms = (t_room*)malloc(sizeof(t_room) * (size + 1));
 	while (list)
 	{
-		str = (char*)list->content;
+		str = list->content;
 		if (str[0] != '#')
 		{
-			if (validate(str))
+			if (validate(str, rooms, i))
 				rooms[i++] = set_room(str, 'd');
 		}
-		else
+		else if (list->next)
 			check_command(str, &list, &rooms, &i);
 		list = list->next;
 	}

@@ -6,6 +6,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_C
   "/Users/vchechai/work/lem-in/arr_del.c" "/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles/lem-in.dir/arr_del.c.o"
   "/Users/vchechai/work/lem-in/check_ways.c" "/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles/lem-in.dir/check_ways.c.o"
+  "/Users/vchechai/work/lem-in/draw_farm.c" "/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles/lem-in.dir/draw_farm.c.o"
+  "/Users/vchechai/work/lem-in/draw_line.c" "/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles/lem-in.dir/draw_line.c.o"
   "/Users/vchechai/work/lem-in/ft_exit.c" "/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles/lem-in.dir/ft_exit.c.o"
   "/Users/vchechai/work/lem-in/get_ways.c" "/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles/lem-in.dir/get_ways.c.o"
   "/Users/vchechai/work/lem-in/lets_go.c" "/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles/lem-in.dir/lets_go.c.o"

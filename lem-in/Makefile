@@ -15,7 +15,7 @@ NAME	=	lem-in
 MAKE	=	@make
 
 SRC     =   parse_rooms.c parse_links.c read_file.c ft_exit.c get_ways.c \
-            new_node.c arr_del.c check_ways.c lets_go.c
+            new_node.c arr_del.c check_ways.c lets_go.c draw_farm.c draw_line.c
 
 FLAGS	=	-Wall -Wextra -Werror
 
@@ -28,7 +28,8 @@ all: $(NAME)
 
 $(NAME): $(SRC) main.c
 		make -C libft
-		gcc $(SRC) main.c -L libft -I libft -lft -o $(NAME)
+		gcc $(SRC) main.c -lmlx -framework OpenGL -framework AppKit \
+                          		-L libft -I libft -lft -o $(NAME)
 
 clean:
 	$(MAKE) clean -C libft

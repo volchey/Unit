@@ -121,10 +121,15 @@ t_ways			*get_ways(t_link *links, t_room *rooms)
 	int		room;
 
 	room = 0;
-	while (rooms[room].status != 's')
+	while (rooms[room].status != '0' && rooms[room].status != 's')
 		room++;
+	if (rooms[room].status != 's')
+		ft_exit("no start room");
 	ways = (t_ways*)malloc(sizeof(t_ways));
 	ways->way = new_node(room);
 	ways->next = NULL;
-	return (set_room(&rooms, links, ways));
+	ways = set_room(&rooms, links, ways);
+	if (!ways)
+		ft_exit("no way found");
+	return (ways);
 }

@@ -13,6 +13,22 @@
 #include <locale.h>
 #include "lem-in.h"
 
+static void	validate(t_file *file)
+{
+	int count;
+
+	count = 0;
+	while (file)
+	{
+		if (!ft_strcmp(file->content, "##start")
+			|| !ft_strcmp(file->content, "##end"))
+			count++;
+		file = file->next;
+	}
+	if (count != 2)
+		ft_exit("multiple ##start or ##end");
+}
+
 t_ant	*get_way(t_way *way)
 {
 	int 	size;
@@ -27,7 +43,10 @@ t_ant	*get_way(t_way *way)
 		way = way->next;
 	}
 	ants = (t_ant*)malloc(sizeof(t_ant) * (size + 1));
-	size = 0;
+	ants[0].ant = size;
+	ants[0].room = head->room;
+	head = head->next;
+	size = 1;
 	while (head)
 	{
 		ants[size].room = head->room;
@@ -67,13 +86,15 @@ int	main(void)
 {
 	t_room	*rooms;
 	t_link	*links;
-	t_list	*list;
-	t_list	*buf;
+	t_file	*list;
+	t_file	*buf;
 	t_ways	*ways;
+	t_way	*way;
 	t_ant	**ants;
 
 	setlocale(LC_ALL, "");
 	list = read_file();
+	validate(list);
 	rooms = parse_rooms(list);
 	links = parse_links(list, rooms);
 	ways = get_ways(links, rooms);
@@ -82,15 +103,16 @@ int	main(void)
 	buf = list;
 	while (list)
 	{
-		ft_printf("%s", list->content);
+		ft_printf("%s\n", list->content);
 		list = list->next;
 	}
 	ft_printf("\n");
 	lets_go(ants, ft_atoi(buf->content), rooms);
+//	draw_farm(rooms, ants, links);
 //	buf = ways;
-//	while (ways)
+//	for (int i = 0; ways; i++)
 //	{
-//		ft_printf("\nway = ");
+//		ft_printf("\n [%d] way = ", i);
 //		way = ways->way;
 //		while (way)
 //		{

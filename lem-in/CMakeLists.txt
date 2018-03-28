@@ -36,7 +36,9 @@ add_executable(lem-in
 		parse_links.c
 		get_ways.c
 		check_ways.c
+		draw_farm.c
 		lets_go.c
+		draw_line.c
 		new_node.c
 		arr_del.c
 		parse_rooms.c

@@ -13,8 +13,9 @@
 #include "lem-in.h"
 #include <stdlib.h>
 
-void	ft_exit()
+void	ft_exit(char *str)
 {
-	ft_printf("%S%S\n", L"Упсс, щось пішло не так", L"😨");
+//	ft_printf("%s\n", str);
+	ft_printf("ERROR\n");
 	exit(1);
 }

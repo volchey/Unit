@@ -39,10 +39,10 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /private/var/folders/zz/zyxvpxvq6csfxvn_n0000mlh00054w/T/AppTranslocation/EBCDEDD9-EBB0-4C26-A733-0F0B2ED7BE4E/d/CLion.app/Contents/bin/cmake/bin/cmake
+CMAKE_COMMAND = /private/var/folders/zz/zyxvpxvq6csfxvn_n0000mlh00054w/T/AppTranslocation/61820957-78F9-4120-89DB-53CF04449364/d/CLion.app/Contents/bin/cmake/bin/cmake
 
 # The command to remove a file.
-RM = /private/var/folders/zz/zyxvpxvq6csfxvn_n0000mlh00054w/T/AppTranslocation/EBCDEDD9-EBB0-4C26-A733-0F0B2ED7BE4E/d/CLion.app/Contents/bin/cmake/bin/cmake -E remove -f
+RM = /private/var/folders/zz/zyxvpxvq6csfxvn_n0000mlh00054w/T/AppTranslocation/61820957-78F9-4120-89DB-53CF04449364/d/CLion.app/Contents/bin/cmake/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -59,7 +59,7 @@ CMAKE_BINARY_DIR = /Users/vchechai/work/lem-in/cmake-build-debug
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/private/var/folders/zz/zyxvpxvq6csfxvn_n0000mlh00054w/T/AppTranslocation/EBCDEDD9-EBB0-4C26-A733-0F0B2ED7BE4E/d/CLion.app/Contents/bin/cmake/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/private/var/folders/zz/zyxvpxvq6csfxvn_n0000mlh00054w/T/AppTranslocation/61820957-78F9-4120-89DB-53CF04449364/d/CLion.app/Contents/bin/cmake/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -70,7 +70,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/private/var/folders/zz/zyxvpxvq6csfxvn_n0000mlh00054w/T/AppTranslocation/EBCDEDD9-EBB0-4C26-A733-0F0B2ED7BE4E/d/CLion.app/Contents/bin/cmake/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	/private/var/folders/zz/zyxvpxvq6csfxvn_n0000mlh00054w/T/AppTranslocation/61820957-78F9-4120-89DB-53CF04449364/d/CLion.app/Contents/bin/cmake/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -176,6 +176,60 @@ check_ways.s: check_ways.c.s
 check_ways.c.s:
 	$(MAKE) -f CMakeFiles/lem-in.dir/build.make CMakeFiles/lem-in.dir/check_ways.c.s
 .PHONY : check_ways.c.s
+
+draw_farm.o: draw_farm.c.o
+
+.PHONY : draw_farm.o
+
+# target to build an object file
+draw_farm.c.o:
+	$(MAKE) -f CMakeFiles/lem-in.dir/build.make CMakeFiles/lem-in.dir/draw_farm.c.o
+.PHONY : draw_farm.c.o
+
+draw_farm.i: draw_farm.c.i
+
+.PHONY : draw_farm.i
+
+# target to preprocess a source file
+draw_farm.c.i:
+	$(MAKE) -f CMakeFiles/lem-in.dir/build.make CMakeFiles/lem-in.dir/draw_farm.c.i
+.PHONY : draw_farm.c.i
+
+draw_farm.s: draw_farm.c.s
+
+.PHONY : draw_farm.s
+
+# target to generate assembly for a file
+draw_farm.c.s:
+	$(MAKE) -f CMakeFiles/lem-in.dir/build.make CMakeFiles/lem-in.dir/draw_farm.c.s
+.PHONY : draw_farm.c.s
+
+draw_line.o: draw_line.c.o
+
+.PHONY : draw_line.o
+
+# target to build an object file
+draw_line.c.o:
+	$(MAKE) -f CMakeFiles/lem-in.dir/build.make CMakeFiles/lem-in.dir/draw_line.c.o
+.PHONY : draw_line.c.o
+
+draw_line.i: draw_line.c.i
+
+.PHONY : draw_line.i
+
+# target to preprocess a source file
+draw_line.c.i:
+	$(MAKE) -f CMakeFiles/lem-in.dir/build.make CMakeFiles/lem-in.dir/draw_line.c.i
+.PHONY : draw_line.c.i
+
+draw_line.s: draw_line.c.s
+
+.PHONY : draw_line.s
+
+# target to generate assembly for a file
+draw_line.c.s:
+	$(MAKE) -f CMakeFiles/lem-in.dir/build.make CMakeFiles/lem-in.dir/draw_line.c.s
+.PHONY : draw_line.c.s
 
 ft_exit.o: ft_exit.c.o
 
@@ -2514,6 +2568,12 @@ help:
 	@echo "... check_ways.o"
 	@echo "... check_ways.i"
 	@echo "... check_ways.s"
+	@echo "... draw_farm.o"
+	@echo "... draw_farm.i"
+	@echo "... draw_farm.s"
+	@echo "... draw_line.o"
+	@echo "... draw_line.i"
+	@echo "... draw_line.s"
 	@echo "... ft_exit.o"
 	@echo "... ft_exit.i"
 	@echo "... ft_exit.s"
