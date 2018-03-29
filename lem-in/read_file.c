@@ -10,9 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "lem-in.h"
+#include "lem_in.h"
 
-t_file			*new_element(char *str)
+static t_file	*new_element(char *str)
 {
 	t_file	*new;
 
@@ -45,7 +45,7 @@ static int		valid_room(char *str)
 	return (1);
 }
 
-static int 	valid_link(char *str)
+static int		valid_link(char *str)
 {
 	char	**arr;
 
@@ -59,7 +59,7 @@ static int 	valid_link(char *str)
 	return (1);
 }
 
-void		check_ants_count(char *line)
+static void		check_ants_count(char *line)
 {
 	int	i;
 
@@ -76,12 +76,12 @@ void		check_ants_count(char *line)
 		ft_exit("not valid ants count");
 }
 
-t_file	*read_file()
+t_file			*read_file(void)
 {
 	t_file	*ptr;
 	t_file	*head;
 	char	*line;
-	char 	*buf;
+	char	*buf;
 
 	if (get_next_line(0, &line) <= 0)
 		ft_exit("first read error");

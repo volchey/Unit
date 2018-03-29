@@ -10,9 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "lem-in.h"
+#include "lem_in.h"
 
-int 		get_min_waylen(t_ant **ways)
+int			get_min_waylen(t_ant **ways)
 {
 	int i;
 	int min;
@@ -28,36 +28,38 @@ int 		get_min_waylen(t_ant **ways)
 	return (min);
 }
 
-int 		get_max_waylen(t_ant **ways)
+int			no_ants_in_ways(t_ant **ways)
 {
-	int i;
-	int max;
+	int	i;
+	int j;
 
 	i = 0;
-	max = 0;
 	while (ways[i])
 	{
-		if (ways[i][0].ant > max)
-			max = ways[i][0].ant;
+		j = 1;
+		while (j < ways[i][0].ant)
+		{
+			if (ways[i][j].ant != 0)
+				return (0);
+			j++;
+		}
 		i++;
 	}
-	return (max);
+	return (1);
 }
 
 void		put_new_ant(t_ant **way, t_coord total, int *count, t_room *rooms)
 {
 	int size;
 
-	size = 0;
-	while ((*way)[size].ant != -1)
-		size++;
+	size = (*way)[0].ant;
 	if (*count < size - (size - total.y) - 2 && size != total.y)
 		;
 	else
 	{
 		(*way)[1].ant = total.x - *count + 1;
 		ft_printf("L%d-%s ", (*way)[1].ant,
-				  rooms[(*way)[1].room].name);
+	rooms[(*way)[1].room].name);
 		(*count)--;
 	}
 }
@@ -82,17 +84,17 @@ static void	move_ants(t_ant **way, t_coord total, int *count, t_room *rooms)
 		{
 			(*way)[size].ant = (*way)[size - 1].ant;
 			(*way)[size - 1].ant = 0;
-			ft_printf("L%d-%s ", (*way)[size].ant, rooms[(*way)[size].room].name);
+			ft_printf("L%d-%s ", (*way)[size].ant,
+	rooms[(*way)[size].room].name);
 		}
 		size--;
 	}
 }
 
-void	lets_go(t_ant **ways, int count, t_room *rooms)
+void		lets_go(t_ant **ways, int count, t_room *rooms)
 {
 	int		i;
 	t_coord j;
-	int		max;
 	int		amount;
 
 	amount = 0;
@@ -100,8 +102,7 @@ void	lets_go(t_ant **ways, int count, t_room *rooms)
 		amount++;
 	j.x = count;
 	j.y = get_min_waylen(ways);
-	max = j.y + ((int)j.x > amount ? (int)j.x / amount : (int)j.x);
-	while (max - 1)
+	while (1)
 	{
 		i = 0;
 		while (ways[i])
@@ -109,7 +110,8 @@ void	lets_go(t_ant **ways, int count, t_room *rooms)
 			move_ants(&ways[i], j, &count, rooms);
 			i++;
 		}
+		if (no_ants_in_ways(ways))
+			break ;
 		ft_printf("\n");
-		max--;
 	}
 }

@@ -39,10 +39,10 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /private/var/folders/zz/zyxvpxvq6csfxvn_n0000mlh00054w/T/AppTranslocation/61820957-78F9-4120-89DB-53CF04449364/d/CLion.app/Contents/bin/cmake/bin/cmake
+CMAKE_COMMAND = /private/var/folders/zz/zyxvpxvq6csfxvn_n0000mlh00054w/T/AppTranslocation/1700A7B5-EC20-4B11-A287-9A5F8523BA59/d/CLion.app/Contents/bin/cmake/bin/cmake
 
 # The command to remove a file.
-RM = /private/var/folders/zz/zyxvpxvq6csfxvn_n0000mlh00054w/T/AppTranslocation/61820957-78F9-4120-89DB-53CF04449364/d/CLion.app/Contents/bin/cmake/bin/cmake -E remove -f
+RM = /private/var/folders/zz/zyxvpxvq6csfxvn_n0000mlh00054w/T/AppTranslocation/1700A7B5-EC20-4B11-A287-9A5F8523BA59/d/CLion.app/Contents/bin/cmake/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -59,7 +59,7 @@ CMAKE_BINARY_DIR = /Users/vchechai/work/lem-in/cmake-build-debug
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/private/var/folders/zz/zyxvpxvq6csfxvn_n0000mlh00054w/T/AppTranslocation/61820957-78F9-4120-89DB-53CF04449364/d/CLion.app/Contents/bin/cmake/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/private/var/folders/zz/zyxvpxvq6csfxvn_n0000mlh00054w/T/AppTranslocation/1700A7B5-EC20-4B11-A287-9A5F8523BA59/d/CLion.app/Contents/bin/cmake/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -70,7 +70,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/private/var/folders/zz/zyxvpxvq6csfxvn_n0000mlh00054w/T/AppTranslocation/61820957-78F9-4120-89DB-53CF04449364/d/CLion.app/Contents/bin/cmake/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	/private/var/folders/zz/zyxvpxvq6csfxvn_n0000mlh00054w/T/AppTranslocation/1700A7B5-EC20-4B11-A287-9A5F8523BA59/d/CLion.app/Contents/bin/cmake/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -1068,32 +1068,32 @@ libft/ft_printf/ft_get_address.c.s:
 	$(MAKE) -f CMakeFiles/lem-in.dir/build.make CMakeFiles/lem-in.dir/libft/ft_printf/ft_get_address.c.s
 .PHONY : libft/ft_printf/ft_get_address.c.s
 
-libft/ft_printf/ft_itoa.o: libft/ft_printf/ft_itoa.c.o
+libft/ft_printf/ft_itoa_pf.o: libft/ft_printf/ft_itoa_pf.c.o
 
-.PHONY : libft/ft_printf/ft_itoa.o
+.PHONY : libft/ft_printf/ft_itoa_pf.o
 
 # target to build an object file
-libft/ft_printf/ft_itoa.c.o:
-	$(MAKE) -f CMakeFiles/lem-in.dir/build.make CMakeFiles/lem-in.dir/libft/ft_printf/ft_itoa.c.o
-.PHONY : libft/ft_printf/ft_itoa.c.o
+libft/ft_printf/ft_itoa_pf.c.o:
+	$(MAKE) -f CMakeFiles/lem-in.dir/build.make CMakeFiles/lem-in.dir/libft/ft_printf/ft_itoa_pf.c.o
+.PHONY : libft/ft_printf/ft_itoa_pf.c.o
 
-libft/ft_printf/ft_itoa.i: libft/ft_printf/ft_itoa.c.i
+libft/ft_printf/ft_itoa_pf.i: libft/ft_printf/ft_itoa_pf.c.i
 
-.PHONY : libft/ft_printf/ft_itoa.i
+.PHONY : libft/ft_printf/ft_itoa_pf.i
 
 # target to preprocess a source file
-libft/ft_printf/ft_itoa.c.i:
-	$(MAKE) -f CMakeFiles/lem-in.dir/build.make CMakeFiles/lem-in.dir/libft/ft_printf/ft_itoa.c.i
-.PHONY : libft/ft_printf/ft_itoa.c.i
+libft/ft_printf/ft_itoa_pf.c.i:
+	$(MAKE) -f CMakeFiles/lem-in.dir/build.make CMakeFiles/lem-in.dir/libft/ft_printf/ft_itoa_pf.c.i
+.PHONY : libft/ft_printf/ft_itoa_pf.c.i
 
-libft/ft_printf/ft_itoa.s: libft/ft_printf/ft_itoa.c.s
+libft/ft_printf/ft_itoa_pf.s: libft/ft_printf/ft_itoa_pf.c.s
 
-.PHONY : libft/ft_printf/ft_itoa.s
+.PHONY : libft/ft_printf/ft_itoa_pf.s
 
 # target to generate assembly for a file
-libft/ft_printf/ft_itoa.c.s:
-	$(MAKE) -f CMakeFiles/lem-in.dir/build.make CMakeFiles/lem-in.dir/libft/ft_printf/ft_itoa.c.s
-.PHONY : libft/ft_printf/ft_itoa.c.s
+libft/ft_printf/ft_itoa_pf.c.s:
+	$(MAKE) -f CMakeFiles/lem-in.dir/build.make CMakeFiles/lem-in.dir/libft/ft_printf/ft_itoa_pf.c.s
+.PHONY : libft/ft_printf/ft_itoa_pf.c.s
 
 libft/ft_printf/ft_power.o: libft/ft_printf/ft_power.c.o
 
@@ -2526,6 +2526,33 @@ parse_rooms.c.s:
 	$(MAKE) -f CMakeFiles/lem-in.dir/build.make CMakeFiles/lem-in.dir/parse_rooms.c.s
 .PHONY : parse_rooms.c.s
 
+put_ways.o: put_ways.c.o
+
+.PHONY : put_ways.o
+
+# target to build an object file
+put_ways.c.o:
+	$(MAKE) -f CMakeFiles/lem-in.dir/build.make CMakeFiles/lem-in.dir/put_ways.c.o
+.PHONY : put_ways.c.o
+
+put_ways.i: put_ways.c.i
+
+.PHONY : put_ways.i
+
+# target to preprocess a source file
+put_ways.c.i:
+	$(MAKE) -f CMakeFiles/lem-in.dir/build.make CMakeFiles/lem-in.dir/put_ways.c.i
+.PHONY : put_ways.c.i
+
+put_ways.s: put_ways.c.s
+
+.PHONY : put_ways.s
+
+# target to generate assembly for a file
+put_ways.c.s:
+	$(MAKE) -f CMakeFiles/lem-in.dir/build.make CMakeFiles/lem-in.dir/put_ways.c.s
+.PHONY : put_ways.c.s
+
 read_file.o: read_file.c.o
 
 .PHONY : read_file.o
@@ -2667,9 +2694,9 @@ help:
 	@echo "... libft/ft_printf/ft_get_address.o"
 	@echo "... libft/ft_printf/ft_get_address.i"
 	@echo "... libft/ft_printf/ft_get_address.s"
-	@echo "... libft/ft_printf/ft_itoa.o"
-	@echo "... libft/ft_printf/ft_itoa.i"
-	@echo "... libft/ft_printf/ft_itoa.s"
+	@echo "... libft/ft_printf/ft_itoa_pf.o"
+	@echo "... libft/ft_printf/ft_itoa_pf.i"
+	@echo "... libft/ft_printf/ft_itoa_pf.s"
 	@echo "... libft/ft_printf/ft_power.o"
 	@echo "... libft/ft_printf/ft_power.i"
 	@echo "... libft/ft_printf/ft_power.s"
@@ -2829,6 +2856,9 @@ help:
 	@echo "... parse_rooms.o"
 	@echo "... parse_rooms.i"
 	@echo "... parse_rooms.s"
+	@echo "... put_ways.o"
+	@echo "... put_ways.i"
+	@echo "... put_ways.s"
 	@echo "... read_file.o"
 	@echo "... read_file.i"
 	@echo "... read_file.s"

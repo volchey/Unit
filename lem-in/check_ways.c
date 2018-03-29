@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "lem-in.h"
+#include "lem_in.h"
 
 static int	is_unique(t_ways *way, t_ways *list, t_room *rooms)
 {
@@ -25,7 +25,8 @@ static int	is_unique(t_ways *way, t_ways *list, t_room *rooms)
 			buf = way->way->next;
 			while (buf)
 			{
-				if (buf->room == current->room && rooms[buf->room].status != 'e')
+				if (buf->room == current->room
+					&& rooms[buf->room].status != 'e')
 					return (0);
 				buf = buf->next;
 			}

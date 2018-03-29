@@ -39,7 +39,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "/Users/vchechai/work/lem-in/libft/ft_memset.c" "/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles/lem-in.dir/libft/ft_memset.c.o"
   "/Users/vchechai/work/lem-in/libft/ft_printf/ft_chrjoin.c" "/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles/lem-in.dir/libft/ft_printf/ft_chrjoin.c.o"
   "/Users/vchechai/work/lem-in/libft/ft_printf/ft_get_address.c" "/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles/lem-in.dir/libft/ft_printf/ft_get_address.c.o"
-  "/Users/vchechai/work/lem-in/libft/ft_printf/ft_itoa.c" "/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles/lem-in.dir/libft/ft_printf/ft_itoa.c.o"
+  "/Users/vchechai/work/lem-in/libft/ft_printf/ft_itoa_pf.c" "/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles/lem-in.dir/libft/ft_printf/ft_itoa_pf.c.o"
   "/Users/vchechai/work/lem-in/libft/ft_printf/ft_power.c" "/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles/lem-in.dir/libft/ft_printf/ft_power.c.o"
   "/Users/vchechai/work/lem-in/libft/ft_printf/ft_printf.c" "/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles/lem-in.dir/libft/ft_printf/ft_printf.c.o"
   "/Users/vchechai/work/lem-in/libft/ft_printf/ft_set_chr.c" "/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles/lem-in.dir/libft/ft_printf/ft_set_chr.c.o"
@@ -93,6 +93,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "/Users/vchechai/work/lem-in/new_node.c" "/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles/lem-in.dir/new_node.c.o"
   "/Users/vchechai/work/lem-in/parse_links.c" "/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles/lem-in.dir/parse_links.c.o"
   "/Users/vchechai/work/lem-in/parse_rooms.c" "/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles/lem-in.dir/parse_rooms.c.o"
+  "/Users/vchechai/work/lem-in/put_ways.c" "/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles/lem-in.dir/put_ways.c.o"
   "/Users/vchechai/work/lem-in/read_file.c" "/Users/vchechai/work/lem-in/cmake-build-debug/CMakeFiles/lem-in.dir/read_file.c.o"
   )
 set(CMAKE_C_COMPILER_ID "AppleClang")

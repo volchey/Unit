@@ -21,7 +21,7 @@ set(SUB_SOURCE libft/ libft/ft_memset.c libft/ft_bzero.c libft/ft_memcpy.c libft
 		libft/ft_lstmap.c libft/ft_count_word.c libft/ft_isupper.c libft/ft_islower.c
 		libft/ft_strlwr.c libft/ft_strupr.c libft/ft_printf/ft_printf.c
 		libft/ft_printf/get_farg.c libft/ft_printf/set_arg.c libft/ft_printf/ft_chrjoin.c
-		libft/ft_printf/ft_get_address.c libft/ft_printf/ft_itoa.c libft/ft_printf/ft_set_chr.c
+		libft/ft_printf/ft_get_address.c libft/ft_printf/ft_itoa_pf.c libft/ft_printf/ft_set_chr.c
 		libft/ft_printf/ft_set_str.c libft/ft_printf/ft_unichar.c libft/ft_printf/ft_unistr.c
 		libft/ft_printf/ft_unitoa_base.c libft/ft_printf/ft_power.c
 		libft/ft_printf/ft_unitoa_uppbase.c)
@@ -29,8 +29,9 @@ set(SUB_SOURCE libft/ libft/ft_memset.c libft/ft_bzero.c libft/ft_memcpy.c libft
 include_directories(libft .)
 
 add_executable(lem-in
-		lem-in.h
+		lem_in.h
 		main.c
+		put_ways.c
 		read_file.c
 		ft_exit.c
 		parse_links.c

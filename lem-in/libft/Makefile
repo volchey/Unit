@@ -30,7 +30,7 @@ SRC		=	ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c ft_memmove.c \
 
 OSRC	=	$(SRC:.c=.o)
 
-PF_SRC	=	ft_printf.c ft_itoa.c set_arg.c ft_chrjoin.c ft_set_str.c \
+PF_SRC	=	ft_printf.c ft_itoa_pf.c set_arg.c ft_chrjoin.c ft_set_str.c \
 			ft_get_address.c ft_unichar.c ft_power.c ft_unistr.c \
 			get_farg.c ft_set_chr.c \
 			ft_unitoa_base.c \

@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/lem-in.dir/main.c.o"
+  "CMakeFiles/lem-in.dir/put_ways.c.o"
   "CMakeFiles/lem-in.dir/read_file.c.o"
   "CMakeFiles/lem-in.dir/ft_exit.c.o"
   "CMakeFiles/lem-in.dir/parse_links.c.o"
@@ -81,7 +82,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/lem-in.dir/libft/ft_printf/set_arg.c.o"
   "CMakeFiles/lem-in.dir/libft/ft_printf/ft_chrjoin.c.o"
   "CMakeFiles/lem-in.dir/libft/ft_printf/ft_get_address.c.o"
-  "CMakeFiles/lem-in.dir/libft/ft_printf/ft_itoa.c.o"
+  "CMakeFiles/lem-in.dir/libft/ft_printf/ft_itoa_pf.c.o"
   "CMakeFiles/lem-in.dir/libft/ft_printf/ft_set_chr.c.o"
   "CMakeFiles/lem-in.dir/libft/ft_printf/ft_set_str.c.o"
   "CMakeFiles/lem-in.dir/libft/ft_printf/ft_unichar.c.o"

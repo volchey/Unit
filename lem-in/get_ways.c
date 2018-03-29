@@ -10,9 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "lem-in.h"
+#include "lem_in.h"
 
-static int		*get_room_links(t_link *links, int room, t_room *rooms)
+int			*get_room_links(t_link *links, int room, t_room *rooms)
 {
 	int			*room_links;
 	int			i;
@@ -41,7 +41,7 @@ static int		*get_room_links(t_link *links, int room, t_room *rooms)
 static void		copy_and_add(t_ways *list, int room)
 {
 	t_way		*buf;
-    t_way		*way;
+	t_way		*way;
 	t_ways		*new;
 
 	way = list->way;
@@ -62,7 +62,7 @@ static void		copy_and_add(t_ways *list, int room)
 	list->next = new;
 }
 
-t_ways	*del_way(t_ways *way, t_ways *list, t_ways **head)
+t_ways			*del_way(t_ways *way, t_ways *list, t_ways **head)
 {
 	t_way	*buf;
 
@@ -87,17 +87,17 @@ t_ways	*del_way(t_ways *way, t_ways *list, t_ways **head)
 	return (list->next);
 }
 
-static t_ways		*set_room(t_room **rooms, t_link *links, t_ways *list)
+static t_ways		*put_room(t_room **rooms, t_link *links, t_ways *list)
 {
-	int 	*room_links;
-    int     i;
+	int		*room_links;
+	int		i;
 	t_way	*way;
 	t_ways	*buf;
 
 	buf = list;
-    while (list)
-    {
-        way = last_node(list->way);
+	while (list)
+	{
+		way = last_node(list->way);
 		if ((*rooms)[way->room].status != 'e')
 		{
 			room_links = get_room_links(links, way->room, *rooms);
@@ -128,7 +128,7 @@ t_ways			*get_ways(t_link *links, t_room *rooms)
 	ways = (t_ways*)malloc(sizeof(t_ways));
 	ways->way = new_node(room);
 	ways->next = NULL;
-	ways = set_room(&rooms, links, ways);
+	ways = put_room(&rooms, links, ways);
 	if (!ways)
 		ft_exit("no way found");
 	return (ways);

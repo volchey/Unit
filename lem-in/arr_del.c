@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include "lem-in.h"
+#include "lem_in.h"
 
 void	arr_del(char **arr)
 {

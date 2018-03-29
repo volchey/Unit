@@ -105,7 +105,7 @@
 		<Unit filename="/Users/vchechai/work/lem-in/get_ways.c">
 			<Option target="lem-in"/>
 		</Unit>
-		<Unit filename="/Users/vchechai/work/lem-in/lem-in.h">
+		<Unit filename="/Users/vchechai/work/lem-in/lem_in.h">
 			<Option target="lem-in"/>
 		</Unit>
 		<Unit filename="/Users/vchechai/work/lem-in/lets_go.c">
@@ -195,7 +195,7 @@
 		<Unit filename="/Users/vchechai/work/lem-in/libft/ft_printf/ft_get_address.c">
 			<Option target="lem-in"/>
 		</Unit>
-		<Unit filename="/Users/vchechai/work/lem-in/libft/ft_printf/ft_itoa.c">
+		<Unit filename="/Users/vchechai/work/lem-in/libft/ft_printf/ft_itoa_pf.c">
 			<Option target="lem-in"/>
 		</Unit>
 		<Unit filename="/Users/vchechai/work/lem-in/libft/ft_printf/ft_power.c">
@@ -358,6 +358,9 @@
 			<Option target="lem-in"/>
 		</Unit>
 		<Unit filename="/Users/vchechai/work/lem-in/parse_rooms.c">
+			<Option target="lem-in"/>
+		</Unit>
+		<Unit filename="/Users/vchechai/work/lem-in/put_ways.c">
 			<Option target="lem-in"/>
 		</Unit>
 		<Unit filename="/Users/vchechai/work/lem-in/read_file.c">

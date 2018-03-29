@@ -10,26 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "lem-in.h"
+#include "lem_in.h"
 
-static t_room	set_room(char *str, char status)
-{
-	t_room	room;
-	char	**arr;
-
-	room.status = status;
-	arr = ft_strsplit(str, ' ');
-	room.name = ft_strdup(arr[0]);
-	room.x = ft_atoi(arr[1]);
-	room.y = ft_atoi(arr[2]);
-	ft_strdel(&arr[0]);
-	ft_strdel(&arr[1]);
-	ft_strdel(&arr[2]);
-	free(arr);
-	return (room);
-}
-
-static int 		is_unique(char **arr, t_room *rooms, int size)
+static int		is_unique(char **arr, t_room *rooms, int size)
 {
 	int x;
 	int y;
@@ -38,8 +21,9 @@ static int 		is_unique(char **arr, t_room *rooms, int size)
 	y = ft_atoi(arr[2]);
 	while (size - 1)
 	{
-		if (ft_strcmp(arr[0], rooms[size - 1].name) == 0 || (x == rooms[size - 1].x
-			&& y == rooms[size - 1].y))
+		if (ft_strcmp(arr[0], rooms[size - 1].name) == 0
+	|| (x == rooms[size - 1].x
+	&& y == rooms[size - 1].y))
 			return (0);
 		size--;
 	}
@@ -73,7 +57,7 @@ static int		validate(char *str, t_room *rooms, int size)
 	return (1);
 }
 
-static int		count_rooms(t_file	*list)
+static int		count_rooms(t_file *list)
 {
 	char	*str;
 	int		count;
@@ -122,8 +106,8 @@ t_room			*parse_rooms(t_file *list)
 {
 	t_room	*rooms;
 	char	*str;
-	int 	size;
-	int 	i;
+	int		size;
+	int		i;
 
 	list = list->next;
 	i = 0;

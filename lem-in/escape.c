@@ -1,21 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_exit.c                                          :+:      :+:    :+:   */
+/*   escape.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vchechai <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/03/10 20:26:11 by vchechai          #+#    #+#             */
-/*   Updated: 2018/03/10 20:27:11 by vchechai         ###   ########.fr       */
+/*   Created: 2018/03/29 19:38:03 by vchechai          #+#    #+#             */
+/*   Updated: 2018/03/29 19:38:05 by vchechai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "lem_in.h"
 #include <stdlib.h>
 
-void	ft_exit(char *str)
+int	escape(int key)
 {
-	ft_printf("%s\n", str);
-//	ft_printf("ERROR\n");
-	exit(1);
+	if (key == 53)
+		exit(1);
+	return (0);
 }

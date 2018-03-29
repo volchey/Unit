@@ -10,8 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <locale.h>
-#include "lem-in.h"
+#include "lem_in.h"
 
 static void	validate(t_file *file)
 {
@@ -29,9 +28,9 @@ static void	validate(t_file *file)
 		ft_exit("multiple ##start or ##end");
 }
 
-t_ant	*get_way(t_way *way)
+t_ant		*get_way(t_way *way)
 {
-	int 	size;
+	int		size;
 	t_way	*head;
 	t_ant	*ants;
 
@@ -58,7 +57,7 @@ t_ant	*get_way(t_way *way)
 	return (ants);
 }
 
-t_ant	**parse_ways(t_ways *list)
+t_ant		**parse_ways(t_ways *list)
 {
 	t_ant	**ways;
 	t_ways	*head;
@@ -82,17 +81,23 @@ t_ant	**parse_ways(t_ways *list)
 	return (ways);
 }
 
-int	main(void)
+void		put_map(t_file *list)
+{
+	while (list)
+	{
+		ft_printf("%s\n", list->content);
+		list = list->next;
+	}
+}
+
+int			main(int ac, char **av)
 {
 	t_room	*rooms;
 	t_link	*links;
 	t_file	*list;
-	t_file	*buf;
 	t_ways	*ways;
-	t_way	*way;
 	t_ant	**ants;
 
-	setlocale(LC_ALL, "");
 	list = read_file();
 	validate(list);
 	rooms = parse_rooms(list);
@@ -100,27 +105,15 @@ int	main(void)
 	ways = get_ways(links, rooms);
 	ways = check_ways(ways, rooms);
 	ants = parse_ways(ways);
-	buf = list;
-	while (list)
-	{
-		ft_printf("%s\n", list->content);
-		list = list->next;
-	}
+	put_map(list);
 	ft_printf("\n");
-	lets_go(ants, ft_atoi(buf->content), rooms);
-//	draw_farm(rooms, ants, links);
-//	buf = ways;
-//	for (int i = 0; ways; i++)
-//	{
-//		ft_printf("\n [%d] way = ", i);
-//		way = ways->way;
-//		while (way)
-//		{
-//			ft_printf(" %s ->", rooms[way->room].name);
-//			way = way->next;
-//		}
-//		ways = ways->next;
-//	}
+	lets_go(ants, ft_atoi(list->content), rooms);
+	if (ac > 1 && (!ft_strcmp(av[1], "-w")
+		|| (ac > 2 && !ft_strcmp(av[2], "-w"))))
+		put_ways(ways, rooms);
+	if (ac > 1 && (!ft_strcmp(av[1], "-v")
+		|| (ac > 2 && !ft_strcmp(av[2], "-v"))))
+		draw_farm(rooms, ants, links);
 //	for (int k = 0; ants[k]; k++)
 //	{
 //		ft_printf("\nway = ");

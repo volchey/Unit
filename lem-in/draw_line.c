@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "lem-in.h"
+#include "lem_in.h"
 #include <mlx.h>
 
 void	draw_line_left(t_coord st_xy, t_coord end_xy, t_mlx c)
