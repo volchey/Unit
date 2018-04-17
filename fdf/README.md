@@ -4,7 +4,7 @@ The subject is to create voluminous picture from file.
 Program read a file with numbers that determine the altitude of image:
 ![alt text](https://github.com/volchey/Unit/tree/master/fdf/test_maps/42.fdf)
 Than parse it and draw image in new window:
-![alt text](https://github.com/volchey/Unit/tree/master/fdf/42map_result)
+![alt text](https://github.com/volchey/Unit/tree/master/fdf/42map_result.png)
 ## About project
 FDF is written on Mac OS and compiled with clang. It use Makefile to compile project. It contains graphic library minilibx which is used to open new window and put a pixel to it.
 ## Installing
