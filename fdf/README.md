@@ -2,7 +2,7 @@
 This is first project in graphic branch.
 The subject is to create voluminous picture from file.
 Program read a file with numbers that determine the altitude of image:
-![alt text](https://github.com/volchey/Unit/tree/master/fdf/test_maps/42.fdf)
+![alt text](https://github.com/volchey/Unit/tree/master/fdf/42map.png?raw=true)
 Than parse it and draw image in new window:
 ![alt text](https://github.com/volchey/Unit/blob/master/fdf/42map_result.png?raw=true)
 ## About project
