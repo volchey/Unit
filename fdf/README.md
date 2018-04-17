@@ -14,7 +14,8 @@ You should download minilibx library which is present in file sources.tgz .
 To use this program you need to type **make re** in your terminal. This command create a binary file which call fdf.
 To run this binary file you need to type **./fdf** and name of file you want to read.
 Some maps are included in test_maps dir.
-### Full example to run this program:
+
+**Full example to run this program:**
 ```
 git clone https://github.com/volchey/Unit.git fdf
 cd fdf
