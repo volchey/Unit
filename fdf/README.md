@@ -9,11 +9,11 @@ Than parse it and draw image in new window:
 ## About project
 FDF is written on Mac OS and compiled with clang. It use Makefile to compile project. It contain graphic library minilibx which is used to open new window and put a pixel to it.
 ## Installing
-You should download minilibx library which is present in my file sources.tgz .
+You should download minilibx library which is present in file sources.tgz .
 
 To use this program you need to type **make re** in your terminal. This command create a binary file which call fdf.
 To run this binary file you need to type **./fdf** and name of file you want to read.
-Some maps included in test_maps dir.
+Some maps are included in test_maps dir.
 ### Full example to run this program:
 ```
 git clone https://github.com/volchey/Unit.git fdf
