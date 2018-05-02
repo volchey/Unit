@@ -93,11 +93,14 @@ t_xy	*ft_posible_position(t_map map, t_map piece)
 t_xy	ft_get_coord(t_map map, t_map piece, int p)
 {
 	t_xy	*psbl_xy;
+	t_xy	xy;
 	int		i;
 
 	psbl_xy = ft_posible_position(map, piece);
 	if (psbl_xy->player == -1)
 		return (*psbl_xy);
 	i = ft_set_position(map, psbl_xy, p, piece);
-	return (psbl_xy[i]);
+	xy = psbl_xy[i];
+	free(psbl_xy);
+	return (xy);
 }

@@ -89,16 +89,17 @@ int		ft_read(int key, t_mlx *mlx)
 	mlx->img_ptr = mlx_new_image(mlx->mlx_ptr, 800, 800);
 	get_next_line(0, &line);
 	map = ft_parse_map(line);
+	ft_strdel(&line);
 	ft_draw_map(map, mlx->img_ptr);
 	mlx_put_image_to_window(mlx->mlx_ptr, mlx->win_ptr, mlx->img_ptr, 0, 0);
 	coord = ft_parse_piece(map, mlx->p);
+	ft_free_map(&map);
 	if (coord.player == -1)
 	{
 		ft_printf("%d %d\n", 0, 0);
 		exit(1);
 	}
 	ft_printf("%d %d\n", coord.y, coord.x);
-	ft_strdel(&line);
 	return (0);
 }
 

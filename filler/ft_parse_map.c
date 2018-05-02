@@ -61,6 +61,7 @@ t_xy			ft_parse_piece(t_map map, int p)
 	t_map	piece;
 	int		i;
 	int		width;
+	t_xy	xy;
 
 	get_next_line(0, &line);
 	piece.height = ft_atoi(line + 6);
@@ -78,7 +79,9 @@ t_xy			ft_parse_piece(t_map map, int p)
 		ft_strdel(&line);
 		i++;
 	}
-	return (ft_get_coord(map, piece, p));
+	xy = ft_get_coord(map, piece, p);
+	ft_free_map(&piece);
+	return (xy);
 }
 
 t_map			ft_parse_map(char *buf)

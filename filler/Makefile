@@ -14,7 +14,7 @@ NAME	=	vchechai.filler
 
 MAKE	=	@make
 
-SRC     =   ft_parse_map.c ft_get_coord.c ft_set_position.c
+SRC     =   ft_parse_map.c ft_get_coord.c ft_set_position.c ft_to_enemy.c
 
 FDF_SRC	=	ft_draw_map.c
 
@@ -25,13 +25,13 @@ FLAGS	=	-Wall -Wextra -Werror
 .PHONY: all clean fclean re
 
 %.o: %.c
-	gcc $(FLAGS) -c $< -Ilibft
+	gcc -c $< -Ilibft
 
 all: $(NAME)
 
 $(NAME): $(OBJECTS) main.c $(FDF_SRC)
 		make -C libft
-		gcc $(FLAGS) $(SRC) -I /usr/locale/include main.c $(FDF_SRC) -L \
+		gcc $(SRC) -I /usr/locale/include main.c $(FDF_SRC) -L \
 		/usr/local/lib/ -lmlx -framework OpenGL -framework AppKit \
 		-L libft -I libft -lft -o $(NAME)
 

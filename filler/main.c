@@ -14,12 +14,23 @@
 #include <mlx.h>
 #include <locale.h>
 
+void	ft_free_map(t_map *map)
+{
+	int i;
+
+	i = 0;
+	while (i < map->height)
+	{
+		free(map->map[i].row);
+		i++;
+	}
+	free(map->map);
+}
+
 int	ft_getplayer(char *line)
 {
 	int		p;
 
-	setlocale(LC_ALL, "");
-	p = 0;
 	if (ft_strstr(line, "$$$ exec p") && ft_strstr(line, "vchechai.filler"))
 		p = line[10] - '0';
 	else
@@ -37,6 +48,7 @@ int	main(void)
 	void	*mlx_ptr;
 	void	*win_ptr;
 
+	setlocale(LC_ALL, "");
 	mlx_ptr = mlx_init();
 	win_ptr = mlx_new_window(mlx_ptr, 800, 900, "filler in da house");
 	if (get_next_line(0, &line) <= 0)

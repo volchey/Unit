@@ -1,5 +1,5 @@
-seed = 2157
-X: error on input
-./vchechai.filler won
+seed = 896
+O: timedout
+resources/players/grati.filler won
 Score:
-0AGAINST17
+47AGAINST70

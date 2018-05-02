@@ -42,6 +42,8 @@ typedef struct		s_mlx
 	int				p;
 }					t_mlx;
 
+int					ft_move(t_map map, t_xy *psbl_xy, int p, t_map piece);
+void				ft_free_map(t_map *map);
 void				ft_start_mlx(void *mlx_ptr, void *win_ptr, int p);
 t_map				ft_parse_map(char *buf);
 t_xy				ft_get_coord(t_map map, t_map piece, int p);
