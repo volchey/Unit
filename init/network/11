@@ -1,0 +1,3 @@
+script: ./10 | grep ' 2 ' | awk '{print $2}';
+
+result: 178.214.196.33
