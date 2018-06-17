@@ -1,0 +1,14 @@
+FILE="/var/log/update_script.log"
+
+if ! sudo crontab -l | grep "home/user/02"
+	then
+	sudo crontab -l > cronbuf
+	sudo echo "0 4 * * 3 /home/user/02" >> cronbuf
+	sudo crontab cronbuf
+	rm cronbuf
+fi
+
+sudo touch $FILE
+sudo chmod 777 $FILE
+sudo apt-get update > $FILE
+sudo apt-get upgrade >> $FILE

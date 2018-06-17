@@ -1,0 +1,21 @@
+BUF="/home/user/crontab_key"
+
+if ! sudo crontab -l | grep "/home/user/04/"
+	then
+		sudo crontab -l > cronbuf
+		sudo echo "0 0 * * * /home/user/04/" >> cronbuf
+		sudo crontab cronbuf
+		rm cronbuf
+fi
+
+if [ ! -f /home/user/crontab_key ]
+	then
+		touch $BUF
+		md5sum /etc/crontab > $BUF
+	else
+		if ! md5sum -c $BUF | grep "OK"
+			then
+				mail -s "/etc/crontab" root <<< "File was modified!"
+		fi
+		md5sum /etc/crontab > $BUF
+fi
