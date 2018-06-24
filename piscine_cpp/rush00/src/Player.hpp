@@ -20,6 +20,7 @@ public:
 	void	moveLeft();
 	void	moveDown(int maxY);
 	void	moveUp(int maxY);
+	void	display();
 
 private:
 	int	health;

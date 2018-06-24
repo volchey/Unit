@@ -12,7 +12,7 @@ Rocket::~Rocket()
 
 void Rocket::update()
 {
-	this->y--;
+	this->y -= 2;
 	if (y <= 1)
 	{
 		this->mark = ' ';

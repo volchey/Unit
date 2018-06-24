@@ -17,7 +17,7 @@ Player::~Player()
 {}
 
 int Player::getHealth()
-{ return this->health;}
+{ return this->health; }
 
 void Player::takeDamage()
 {
@@ -44,12 +44,14 @@ void Player::fire()
 
 void Player::updateRockets(Field &asteroides)
 {
-	for (int i = 0; i < 5; i++)
+	for (int i = 0; i < 3; i++)
 	{
 		if (rockets[i].getUsage())
 		{
 			rockets[i].update();
+			attron(COLOR_PAIR(4));
 			mvaddch(rockets[i].getY(), rockets[i].getX(), rockets[i].getMark());
+			attron(COLOR_PAIR(1));
 		}
 		for (int a = 0; a < (int)asteroides.getSize(); a++)
 		{
@@ -58,12 +60,23 @@ void Player::updateRockets(Field &asteroides)
 				|| rockets[i].getX() - 1 == asteroides.getAsteroides()[a].getX())
 				&& (rockets[i].getY() == asteroides.getAsteroides()[a].getY()
 				|| rockets[i].getY() + 1 == asteroides.getAsteroides()[a].getY()
-				|| rockets[i].getY() - 1 == asteroides.getAsteroides()[a].getY()))
+				|| rockets[i].getY() - 1 == asteroides.getAsteroides()[a].getY())
+				&& rockets[i].getMark() != ' ')
 			 {
+				 rockets[i].setMark(' ');
 				 asteroides.getAsteroides()[a].setMark(' ');
 			 }
 		}
 	}
+}
+
+void Player::display()
+{
+	attron(COLOR_PAIR(2));
+	mvaddch(this->y, this->x + 1, '>');
+	mvaddch(this->y, this->x - 1, '<');
+	mvaddch(this->y, this->x, this->mark);
+	attron(COLOR_PAIR(1));
 }
 
 void Player::moveDown(int maxY)

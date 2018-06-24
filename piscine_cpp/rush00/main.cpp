@@ -1,13 +1,10 @@
-#include <iostream>
-#include <ncurses.h>
-#include <string>
+
 #include "src/Game.hpp"
-#include "src/Entity.hpp"
 
 int main()
 {
 	Game	game;
-	game.run();
+	game.start();
 
     return 0;
 }

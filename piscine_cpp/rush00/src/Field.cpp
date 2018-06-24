@@ -28,7 +28,9 @@ bool	Field::update(size_t count, int playerX, int playerY)
 		if (field[i].getMark() != ' ')
 		{
 			field[i].update(this->maxX, this->maxY);
+			attron(COLOR_PAIR(3));
 			mvaddch(field[i].getY(), field[i].getX(), field[i].getMark());
+			attron(COLOR_PAIR(1));
 			if (field[i].getY() == playerY && (field[i].getX() == playerX
 					|| field[i].getX() + 1 == playerX
 											   || field[i].getX() - 1 == playerX))
