@@ -8,6 +8,9 @@ Asteroid::Asteroid()
 	this->mark = ' ';
 }
 
+Asteroid::Asteroid(Asteroid &copy)
+{ *this = copy;}
+
 Asteroid::Asteroid(int x, int y, char mark)
 {
 	this->x = x;
@@ -17,6 +20,9 @@ Asteroid::Asteroid(int x, int y, char mark)
 
 Asteroid::~Asteroid()
 {}
+
+Asteroid &Asteroid::operator=(const Asteroid &)
+{ return *this;}
 
 void Asteroid::update(int maxX, int maxY)
 {

@@ -8,8 +8,10 @@ class Rocket : public Entity
 {
 public:
 	Rocket();
+	Rocket(Rocket &);
 	~Rocket();
 
+	Rocket	&operator=(Rocket &);
 	void	update();
 	bool	getUsage();
 	void 	setUsage(bool);

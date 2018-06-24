@@ -10,9 +10,11 @@ class Field
 {
 public:
 	Field();
+	Field(Field &);
 	Field(size_t, WINDOW *wnd);
 	~Field();
 
+	Field		&operator=(Field &);
 	bool		update(size_t, int playerX, int p);
 	size_t		getSize();
 	Asteroid	*getAsteroides();

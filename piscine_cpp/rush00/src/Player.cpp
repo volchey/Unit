@@ -1,13 +1,20 @@
 #include <ncurses.h>
+#include <cstdlib>
 #include "Player.hpp"
 
 Player::Player()
 {
-	health = 1;
+	health = 5;
+	level = 1;
 }
+
+Player::Player(Player &copy)
+{ *this = copy;}
 
 Player::Player(int x, int y, char mark)
 {
+	health = 5;
+	level = 1;
 	this->x = x;
 	this->y = y;
 	this->mark = mark;
@@ -16,28 +23,50 @@ Player::Player(int x, int y, char mark)
 Player::~Player()
 {}
 
+Player	&Player::operator=(const Player &copy)
+{
+	this->health = copy.health;
+	this->level = copy.level;
+	return *this;
+}
+
 int Player::getHealth()
 { return this->health; }
 
 void Player::takeDamage()
 {
-	if (health > 0)
+	if (this->health > 0)
 	{
-		health--;
+		this->health--;
 	}
+}
+
+int Player::getLevel()
+{ return this->level;}
+
+bool Player::levelup(int &time)
+{
+	if (time == level * 200)
+	{
+		level++;
+		time = 0;
+		return true;
+	}
+	return false;
 }
 
 void Player::fire()
 {
-	for (int i = 0; i < 5; i++)
+	for (int i = 0; i < 3; i++)
 	{
 		if (!rockets[i].getUsage())
 		{
+			system("afplay music/Beep6.wav &");
 			rockets[i].setUsage(true);
 			rockets[i].setMark('!');
 			rockets[i].setX(this->x);
 			rockets[i].setY(this->y);
-			return;
+			break;
 		}
 	}
 }
@@ -70,12 +99,14 @@ void Player::updateRockets(Field &asteroides)
 	}
 }
 
-void Player::display()
+void Player::display(int maxX, int maxY)
 {
 	attron(COLOR_PAIR(2));
 	mvaddch(this->y, this->x + 1, '>');
 	mvaddch(this->y, this->x - 1, '<');
 	mvaddch(this->y, this->x, this->mark);
+	mvprintw(maxY - 1, 0, "level: %d", level);
+	mvprintw(maxY - 1, maxX - 10, "health: %d", health);
 	attron(COLOR_PAIR(1));
 }
 

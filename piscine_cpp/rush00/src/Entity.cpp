@@ -7,6 +7,9 @@ Entity::Entity()
 	this->mark = '>';
 }
 
+Entity::Entity(Entity &copy)
+{ *this = copy;}
+
 Entity::Entity(int x, int y, char mark)
 {
 	this->x = x;
@@ -16,6 +19,14 @@ Entity::Entity(int x, int y, char mark)
 
 Entity::~Entity()
 {}
+
+Entity	&Entity::operator=(const Entity &copy)
+{
+	this->x = copy.x;
+	this->y = copy.y;
+	this->mark = copy.mark;
+	return *this;
+}
 
 int		Entity::getX()
 { return this->x;}

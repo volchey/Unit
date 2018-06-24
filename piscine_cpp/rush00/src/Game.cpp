@@ -33,6 +33,11 @@ Game::Game()
 	attroff(A_BOLD);
 }
 
+Game::Game(Game &copy)
+{
+	*this = copy;
+}
+
 Game::~Game()
 {
 	endwin();
@@ -42,13 +47,8 @@ void Game::start()
 {
 	int	maxX = getmaxx(wnd);
 	int maxY = getmaxy(wnd);
-	std::string text= "Welcome to our awesome Space Game;)";
 
-	move(maxY / 2, maxX / 3);
-	for (int i = 0; i < (int)text.size(); i++)
-	{
-		addch(text[i]);
-	}
+	mvprintw(maxY / 2, maxX / 3, "Welcome to our awesome Space Game;)");
 	refresh();
 	usleep(1000000);
 	erase();
@@ -70,8 +70,8 @@ void Game::start()
 void Game::run(int const maxX, int const maxY)
 {
 	Player	player(maxX / 2, maxY / 2, 'A');
-	Field	asteroids(200, wnd);
-
+	Field*	asteroids = new Field(40, wnd);
+	int 	time = 0;
 	refresh();
 
 	mvaddch(player.getY(), player.getX(), player.getMark());
@@ -79,7 +79,7 @@ void Game::run(int const maxX, int const maxY)
 
 	bool	exit = false;
 	int 	input;
-	while (1)
+	while (42)
 	{
 		input = getch();
 		switch (input)
@@ -99,30 +99,46 @@ void Game::run(int const maxX, int const maxY)
 				break;
 		}
 		if (exit)
-			break;
-		werase(wnd);
-		player.display();
-		player.updateRockets(asteroids);
-		if (!(asteroids.update(1, player.getX(), player.getY())))
-			if (!gameOver())
-				break;
-		usleep(100000);
+			break;	time++;
+		erase();
+		player.display(maxX, maxY);
 		refresh();
+		player.updateRockets(*asteroids);
+		refresh();
+		if (!(asteroids->update(1, player.getX(), player.getY())))
+			if (!gameOver(player))
+				break;
+		refresh();
+		if (player.levelup(time))
+		{
+			mvprintw(getmaxy(wnd) / 2, getmaxx(wnd) / 2 - 2, "Level Up");
+			refresh();
+			usleep(1000000);
+			delete asteroids;
+			asteroids = new Field(50 + player.getLevel() * 20, wnd);
+		}
+		usleep(80000);
 	}
+	delete asteroids;
 }
 
-bool	Game::gameOver()
+bool	Game::gameOver(Player &player)
 {
 	int input;
 	int maxY = getmaxy(wnd);
 	int maxX = getmaxx(wnd);
 
-	mvprintw(maxY / 2 - 2, maxX / 4, "_____");
-	mvprintw(maxY / 2 - 1, maxX / 4, "| ___/ __ _  _ __ ___    ___    ___  __   __ ___  _ __");
-	mvprintw(maxY / 2, maxX / 4, "| | _     |_ | '_ ` _ \\\\  / _ \\\\   /     \\\\\\\\   // _ \\\\| |__|");
-	mvprintw(maxY / 2 + 1, maxX / 4, "| |_\\\\\\\\| (_| || | | | | ||  __/  | (_) |\\\\ V /|  __/| |   ");
-	mvprintw(maxY / 2 + 2, maxX / 4, "\\\\____/ \\\\__,_||_| |_| |_| \\\\___| \\\\___/  \\\\_/  \\\\___||_|   ");
-	mvprintw(maxY / 2 + 5, maxX / 4, "Press \'q\' to quit or \'r\' to resume");
+	if (player.getHealth() > 0)
+	{
+		player.takeDamage();
+		return true;
+	}
+	mvprintw(maxY / 2 - 2, maxX / 5, "_____");
+	mvprintw(maxY / 2 - 1, maxX / 5, "| ___/ __ _  _ __ ___    ___    ___  __   __ ___  _ __");
+	mvprintw(maxY / 2, maxX / 5, "| | _     |_ | '_ ` _ \\\\  / _ \\\\   /     \\\\\\\\   // _ \\\\| |__|");
+	mvprintw(maxY / 2 + 1, maxX / 5, "| |_\\\\\\\\| (_| || | | | | ||  __/  | (_) |\\\\ V /|  __/| |   ");
+	mvprintw(maxY / 2 + 2, maxX / 5, "\\\\____/ \\\\__,_||_| |_| |_| \\\\___| \\\\___/  \\\\_/  \\\\___||_|   ");
+	mvprintw(maxY / 2 + 5, maxX / 5, "Press \'q\' to quit or \'r\' to resume");
 	while (1)
 	{
 		input = wgetch(wnd);
@@ -130,7 +146,9 @@ bool	Game::gameOver()
 		{
 			case 'q':
 				return false;
-			case 'r':
+			case 'r': run(maxX, maxY);
+				return false;
+			case 'n':
 				return true;
 			default:
 				break;

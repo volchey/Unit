@@ -7,12 +7,22 @@ Rocket::Rocket()
 	this->mark = ' ';
 	used = false;
 }
+
+Rocket::Rocket(Rocket &copy)
+{ *this = copy; }
+
 Rocket::~Rocket()
 {}
 
+Rocket	&Rocket::operator=(Rocket &copy)
+{
+	this->used = copy.used;
+	return *this;
+}
+
 void Rocket::update()
 {
-	this->y -= 2;
+	this->y -= 1;
 	if (y <= 1)
 	{
 		this->mark = ' ';

@@ -6,6 +6,10 @@
 
 Field::Field()
 {}
+
+Field::Field(Field &copy)
+{ *this = copy;}
+
 Field::Field(size_t count, WINDOW *wnd)
 {
 	this->size = count;
@@ -17,6 +21,15 @@ Field::Field(size_t count, WINDOW *wnd)
 Field::~Field()
 {
 	delete [] this->field;
+}
+
+Field	&Field::operator=(Field &copy)
+{
+	this->maxX = copy.maxX;
+	this->maxY = copy.maxY;
+	this->size = copy.size;
+	this->field = copy.field;
+	return *this;
 }
 
 bool	Field::update(size_t count, int playerX, int playerY)
@@ -34,7 +47,10 @@ bool	Field::update(size_t count, int playerX, int playerY)
 			if (field[i].getY() == playerY && (field[i].getX() == playerX
 					|| field[i].getX() + 1 == playerX
 											   || field[i].getX() - 1 == playerX))
+			{
+				system("afplay music/Explosion6.wav &");
 				return false;
+			}
 		}
 		else if (k < (int)count)
 		{
