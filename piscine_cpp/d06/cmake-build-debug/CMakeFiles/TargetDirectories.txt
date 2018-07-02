@@ -1,0 +1,3 @@
+/Users/vchechai/work/cpp_piscine/d06/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/vchechai/work/cpp_piscine/d06/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/vchechai/work/cpp_piscine/d06/cmake-build-debug/CMakeFiles/d06.dir
