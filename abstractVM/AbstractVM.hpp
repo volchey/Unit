@@ -19,7 +19,7 @@ public:
 
 	std::list<IOperand *>			getStack() const;
 	std::map<std::string, func_t >	getFunc() const;
-	static void	                    push(std::string str);
+	static void	                    push(std::string str) throw(std::exception);
 	static void						pop(std::string str);
 	static void	                    dump(std::string str);
 	static void	                    assert(std::string str);
@@ -31,12 +31,18 @@ public:
 	static void					    print(std::string str);
 	static void	            		exit(std::string str);
 
+class	BadArgumentException : public std::exception
+{
+	virtual const char *what() const throw()
+	{ return ("Invalid argument"); }
+};
+
     AbstractVM &operator=(AbstractVM const & obj );
 
 private:
 	std::list<IOperand *>			stack;
 	std::map<std::string, func_t>	functions;
-//	OperandFactory					factory;
+	static OperandFactory			factory;
 
 };
 

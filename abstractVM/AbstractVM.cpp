@@ -17,8 +17,25 @@ AbstractVM::AbstractVM(const AbstractVM &obj)
 AbstractVM::~AbstractVM()
 {}
 
-void	AbstractVM::push(std::string str)
+void	AbstractVM::push(std::string str) throw(std::exception)
 {
+	std::string		types[] = {"int8", "int16", "int32", "float", "double"};
+	std::size_t 	l_bracket = 0;
+	std::size_t		r_bracket = 0;
+	std::string		type;
+	std::string		value;
+
+	l_bracket = str.find('(');
+	r_bracket = str.find(')');
+
+	if (l_bracket == std::string::npos || r_bracket == std::string::npos)
+		throw BadArgumentException();
+
+	type = str.substr(0, l_bracket);
+	value = str.substr(l_bracket, r_bracket - l_bracket);
+	for (int i = 0; i <= Double; i++)
+		if (types[i] == type)
+			factory.createOperand(eOperandType(i), value);
 	std::cout << "push called with argument: " << str << std::endl;
 }
 

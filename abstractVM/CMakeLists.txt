@@ -11,5 +11,5 @@ add_executable(abstractVM
         CmdLine.hpp
         CmdLine.cpp
         AbstractVM.cpp
-        Command.hpp
-        Command.cpp)
+        Argument.hpp
+        Argument.cpp)
