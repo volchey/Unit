@@ -7,7 +7,7 @@ class OperandFactory
 {
 public:
     OperandFactory();
-    OperandFactory(const OperandFactory *obj);
+    OperandFactory(const OperandFactory &);
     ~OperandFactory();
     IOperand const * createOperand( eOperandType type, std::string const & value ) const;
 

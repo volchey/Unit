@@ -2,7 +2,7 @@
 #ifndef ABSTRACTVM_HPP
 #define ABSTRACTVM_HPP
 
-#include <list>
+#include <stack>
 #include <map>
 #include "IOperand.hpp"
 #include "stdlib.h"
@@ -12,14 +12,15 @@ typedef std::function<void(std::string)> func_t;
 
 class AbstractVM
 {
+
 public:
 	AbstractVM();
     AbstractVM(const AbstractVM &obj);
 	~AbstractVM();
 
-	std::list<IOperand *>			getStack() const;
+	std::stack<IOperand *>			getStack() const;
 	std::map<std::string, func_t >	getFunc() const;
-	static void	                    push(std::string str) throw(std::exception);
+	static void	                    push(std::string str);
 	static void						pop(std::string str);
 	static void	                    dump(std::string str);
 	static void	                    assert(std::string str);
@@ -31,7 +32,7 @@ public:
 	static void					    print(std::string str);
 	static void	            		exit(std::string str);
 
-class	BadArgumentException : public std::exception
+	class	BadArgumentException : public std::exception
 {
 	virtual const char *what() const throw()
 	{ return ("Invalid argument"); }
@@ -40,10 +41,8 @@ class	BadArgumentException : public std::exception
     AbstractVM &operator=(AbstractVM const & obj );
 
 private:
-	std::list<IOperand *>			stack;
+	std::stack<IOperand *>			stack;
 	std::map<std::string, func_t>	functions;
-	static OperandFactory			factory;
-
 };
 
 #endif

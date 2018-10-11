@@ -2,7 +2,6 @@
 #define IOPERAND_HPP
 
 #include <string>
-#include "AbstractVM.hpp"
 
 enum eOperandType {Int8, Int16, Int32, Float, Double};
 

@@ -4,7 +4,7 @@ MAIN = main.cpp
 
 COMP = g++ -std=c++11
 
-SRC = CmdLine.cpp AbstractVM.cpp
+SRC = CmdLine.cpp AbstractVM.cpp OperandFactory.cpp Operand.cpp
 
 FLAGS = -Wall -Wextra -Werror
 

@@ -8,8 +8,9 @@ add_executable(abstractVM
         IOperand.hpp
         abstractVM.hpp
         OperandFactory.hpp
+        OperandFactory.cpp
         CmdLine.hpp
         CmdLine.cpp
         AbstractVM.cpp
-        Argument.hpp
-        Argument.cpp)
+        Operand.hpp
+        Operand.cpp)

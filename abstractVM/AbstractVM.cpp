@@ -3,9 +3,18 @@
 
 AbstractVM::AbstractVM()
 {
-	functions = {{"push", push}, {"pop", pop}, {"dump", dump}, {"assert", assert},
-				 {"add", add}, {"sub", sub}, {"mul", mul}, {"div", div},
-				 {"mod", mod}, {"print", print}, {"exit", exit}, {";;", exit}};
+	functions = {{"push", push},
+			  {"pop", pop},
+			  {"dump", dump},
+			  {"assert", assert},
+			  {"add", add},
+			  {"sub", sub},
+			  {"mul", mul},
+			  {"div", div},
+			  {"mod", mod},
+			  {"print", print},
+			  {"exit", exit},
+			  {";;", exit}};
 }
 
 AbstractVM::AbstractVM(const AbstractVM &obj)
@@ -17,8 +26,9 @@ AbstractVM::AbstractVM(const AbstractVM &obj)
 AbstractVM::~AbstractVM()
 {}
 
-void	AbstractVM::push(std::string str) throw(std::exception)
+void	AbstractVM::push(std::string str)
 {
+	OperandFactory	factory;
 	std::string		types[] = {"int8", "int16", "int32", "float", "double"};
 	std::size_t 	l_bracket = 0;
 	std::size_t		r_bracket = 0;
@@ -30,13 +40,18 @@ void	AbstractVM::push(std::string str) throw(std::exception)
 
 	if (l_bracket == std::string::npos || r_bracket == std::string::npos)
 		throw BadArgumentException();
-
 	type = str.substr(0, l_bracket);
 	value = str.substr(l_bracket, r_bracket - l_bracket);
-	for (int i = 0; i <= Double; i++)
+	for (int i = 0; i <= Double; ++i)
+	{
 		if (types[i] == type)
+		{
 			factory.createOperand(eOperandType(i), value);
-	std::cout << "push called with argument: " << str << std::endl;
+			return;
+		}
+	}
+
+	throw BadArgumentException();
 }
 
 void	AbstractVM::pop(std::string str)
@@ -83,7 +98,7 @@ std::map<std::string, func_t > AbstractVM::getFunc() const
 	return (functions);
 }
 
-std::list<IOperand *>	AbstractVM::getStack() const
+std::stack<IOperand *>	AbstractVM::getStack() const
 {
 	return (stack);
 }
