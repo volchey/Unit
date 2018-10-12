@@ -2,29 +2,31 @@
 #define OPERAND_HPP
 
 #include "IOperand.hpp"
+#include "OperandFactory.hpp"
 
-template <class T>
-class Operand : protected IOperand
+//template <class T>
+class Operand : public IOperand
 {
 public:
 	Operand();
-	Operand(T &, std::string &, eOperandType &);
+	Operand(std::string, eOperandType);
 	Operand(const Operand &);
-	~Operand() = default;
+	~Operand( void );
 
-	int getPrecision();
-	eOperandType getType();
-	IOperand const * operator+( Operand const & rhs );
-	IOperand const * operator-( IOperand const & rhs );
-	IOperand const * operator*( IOperand const & rhs );
-	IOperand const * operator/( IOperand const & rhs );
-	IOperand const * operator%( IOperand const & rhs );
-	std::string const & toString();
+	int getPrecision( void ) const;
+	eOperandType getType( void ) const;
+	IOperand const * operator+( IOperand const & rhs ) const;
+	IOperand const * operator-( IOperand const & rhs ) const;
+	IOperand const * operator*( IOperand const & rhs ) const;
+	IOperand const * operator/( IOperand const & rhs ) const;
+	IOperand const * operator%( IOperand const & rhs ) const;
+	std::string const & toString( void ) const;
 
+//	Operand & operator=( Operand const & rhs );
 private:
-	T				value;
 	eOperandType	type;
-	std::string		str;
+	std::string		value;
+	OperandFactory	factory;
 };
 
 #endif

@@ -28,10 +28,10 @@ void 		CmdLine::validate(std::map<std::string, func_t> &func_map) throw(std::exc
 	}
 }
 
-void CmdLine::call()
+void CmdLine::call(AbstractVM &vm)
 {
 	if (_cmdFunc)
-		_cmdFunc(_argument);
+		(vm.*_cmdFunc)(_argument);
 }
 
 std::string	CmdLine::getCmdStr() const

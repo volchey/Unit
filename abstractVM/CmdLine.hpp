@@ -6,6 +6,8 @@
 #include <map>
 #include "AbstractVM.hpp"
 
+typedef void (AbstractVM::*func_t)(std::string);
+
 class   CmdLine
 {
 public:
@@ -22,7 +24,7 @@ public:
 	};
 
 	void			validate(std::map<std::string, func_t> &) throw(std::exception);
-	void			call();
+	void			call(AbstractVM &);
     std::string		getCmdStr() const;
 	CmdLine &operator=(const CmdLine &);
 private:

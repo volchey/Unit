@@ -1,39 +1,61 @@
 #include "Operand.hpp"
 
-template <class T> Operand<T>::Operand() : value(0), str(0), type(Int8)
+extern OperandFactory factory;
+
+Operand::Operand() : value(nullptr), type(Int8)
 {}
 
-template <class T> Operand<T>::Operand(T &v, std::string &s, eOperandType &t):
-value(v), str(s), type(t)
+Operand::Operand(std::string s, eOperandType t) : value(s), type(t)
 {}
 
-template <class T> Operand<T>::Operand(const Operand &obj)
+Operand::Operand(const Operand &obj)
 {
-	value = obj.value;
 	type = obj.type;
-	str = obj.str;
+	value = obj.value;
 }
-
-template <class T> int Operand<T>::getPrecision()
+Operand::~Operand()
 {}
 
-template <class T> eOperandType Operand<T>::getType()
+int Operand::getPrecision() const
 { return type; }
 
-template <class T> IOperand const* Operand<T>::operator+(Operand const &rhs)
-{ return (value + rhs.value); }
+eOperandType Operand::getType() const
+{ return type; }
 
-template <class T> IOperand const* Operand<T>::operator-(IOperand const &rhs)
-{}
+IOperand const* Operand::operator+(IOperand const &rhs) const
+{
+	eOperandType	new_type = type > rhs.getType() ? type : rhs.getType();
+	std::string		new_value = std::to_string(std::stod(value) + std::stod(rhs.toString()));
+	return (factory.createOperand(new_type, new_value));
+}
 
-template <class T> IOperand const* Operand<T>::operator*(IOperand const &rhs)
-{}
+IOperand const* Operand::operator-(IOperand const &rhs) const
+{
+	eOperandType	new_type = type > rhs.getType() ? type : rhs.getType();
+	std::string		new_value = std::to_string(std::stod(value) - std::stod(rhs.toString()));
+	return (factory.createOperand(new_type, new_value));
+}
 
-template <class T> IOperand const* Operand<T>::operator/(IOperand const &rhs)
-{}
+IOperand const* Operand::operator*(IOperand const &rhs) const
+{
+	eOperandType	new_type = type > rhs.getType() ? type : rhs.getType();
+	std::string		new_value = std::to_string(std::stod(value) * std::stod(rhs.toString()));
+	return (factory.createOperand(new_type, new_value));
+}
 
-template <class T> IOperand const* Operand<T>::operator%(IOperand const &rhs)
-{}
+IOperand const* Operand::operator/(IOperand const &rhs) const
+{
+	eOperandType	new_type = type > rhs.getType() ? type : rhs.getType();
+	std::string		new_value = std::to_string(std::stod(value) / std::stod(rhs.toString()));
+	return (factory.createOperand(new_type, new_value));
+}
 
-template <class T> std::string const& Operand<T>::toString()
-{}
+IOperand const* Operand::operator%(IOperand const &rhs) const
+{
+	eOperandType	new_type = type > rhs.getType() ? type : rhs.getType();
+	std::string		new_value = std::to_string(std::stoi(value) % std::stoi(rhs.toString()));
+	return (factory.createOperand(new_type, new_value));
+}
+
+std::string const& Operand::toString() const
+{ return (value); }

@@ -4,33 +4,32 @@
 
 #include <stack>
 #include <map>
-#include "IOperand.hpp"
+#include <list>
 #include "stdlib.h"
 #include "OperandFactory.hpp"
 
-typedef std::function<void(std::string)> func_t;
-
 class AbstractVM
 {
-
 public:
 	AbstractVM();
     AbstractVM(const AbstractVM &obj);
 	~AbstractVM();
 
-	std::stack<IOperand *>			getStack() const;
+	typedef void (AbstractVM::*func_t)(std::string);
+
+	std::list<IOperand const *>			getStack() const;
 	std::map<std::string, func_t >	getFunc() const;
-	static void	                    push(std::string str);
-	static void						pop(std::string str);
-	static void	                    dump(std::string str);
-	static void	                    assert(std::string str);
-	static void	                    add(std::string str);
-	static void	                    sub(std::string str);
-	static void					    mul(std::string str);
-	static void	            		div(std::string str);
-	static void	                    mod(std::string str);
-	static void					    print(std::string str);
-	static void	            		exit(std::string str);
+	void	                    push(std::string str);
+	void						pop(std::string str);
+	void	                    dump(std::string str);
+	void	                    assert(std::string str);
+	void	                    add(std::string str);
+	void	                    sub(std::string str);
+	void					    mul(std::string str);
+	void	            		div(std::string str);
+	void	                    mod(std::string str);
+	void					    print(std::string str);
+	void	            		exit(std::string str);
 
 	class	BadArgumentException : public std::exception
 {
@@ -41,8 +40,9 @@ public:
     AbstractVM &operator=(AbstractVM const & obj );
 
 private:
-	std::stack<IOperand *>			stack;
+	std::list<IOperand const *>		stack;
 	std::map<std::string, func_t>	functions;
+	OperandFactory					factory;
 };
 
 #endif

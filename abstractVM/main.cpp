@@ -16,7 +16,7 @@ void    read_from_file(char *file, AbstractVM &vm)
 		try
 		{
 			line.validate(func_map);
-			line.call();
+			line.call(vm);
 		}
 		catch(std::exception &e)
 		{

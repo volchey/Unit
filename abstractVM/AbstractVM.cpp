@@ -1,20 +1,23 @@
 #include <iostream>
 #include "AbstractVM.hpp"
+#include "Operand.hpp"
+
+typedef void (AbstractVM::*func_t)(std::string);
 
 AbstractVM::AbstractVM()
 {
-	functions = {{"push", push},
-			  {"pop", pop},
-			  {"dump", dump},
-			  {"assert", assert},
-			  {"add", add},
-			  {"sub", sub},
-			  {"mul", mul},
-			  {"div", div},
-			  {"mod", mod},
-			  {"print", print},
-			  {"exit", exit},
-			  {";;", exit}};
+	functions = {{"push", &AbstractVM::push},
+			  {"pop", &AbstractVM::pop},
+			  {"dump", &AbstractVM::dump},
+			  {"assert", &AbstractVM::assert},
+			  {"add", &AbstractVM::add},
+			  {"sub", &AbstractVM::sub},
+			  {"mul", &AbstractVM::mul},
+			  {"div", &AbstractVM::div},
+			  {"mod", &AbstractVM::mod},
+			  {"print", &AbstractVM::print},
+			  {"exit", &AbstractVM::exit},
+			  {";;", &AbstractVM::exit}};
 }
 
 AbstractVM::AbstractVM(const AbstractVM &obj)
@@ -28,7 +31,6 @@ AbstractVM::~AbstractVM()
 
 void	AbstractVM::push(std::string str)
 {
-	OperandFactory	factory;
 	std::string		types[] = {"int8", "int16", "int32", "float", "double"};
 	std::size_t 	l_bracket = 0;
 	std::size_t		r_bracket = 0;
@@ -41,12 +43,12 @@ void	AbstractVM::push(std::string str)
 	if (l_bracket == std::string::npos || r_bracket == std::string::npos)
 		throw BadArgumentException();
 	type = str.substr(0, l_bracket);
-	value = str.substr(l_bracket, r_bracket - l_bracket);
+	value = str.substr(l_bracket + 1, r_bracket - l_bracket - 1);
 	for (int i = 0; i <= Double; ++i)
 	{
 		if (types[i] == type)
 		{
-			factory.createOperand(eOperandType(i), value);
+			stack.push_back(factory.createOperand(eOperandType(i), value));
 			return;
 		}
 	}
@@ -60,7 +62,14 @@ void	AbstractVM::pop(std::string str)
 }
 
 void	AbstractVM::dump(std::string str)
-{std::cout << "dump called with argument: " << str << std::endl;}
+{
+	auto i = stack.end();
+	while (i != stack.begin())
+	{
+		std::cout << (*i)->toString() << std::endl;
+		i--;
+	}
+}
 
 void	AbstractVM::assert(std::string str)
 {std::cout << "assert called with argument: " << str << std::endl;}
@@ -98,7 +107,7 @@ std::map<std::string, func_t > AbstractVM::getFunc() const
 	return (functions);
 }
 
-std::stack<IOperand *>	AbstractVM::getStack() const
+std::list<IOperand const *>	AbstractVM::getStack() const
 {
 	return (stack);
 }
