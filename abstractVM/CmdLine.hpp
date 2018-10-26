@@ -16,13 +16,6 @@ public:
     CmdLine(const std::string &new_line);
     ~CmdLine();
 
-	class	BadCommandException : public std::exception
-	{
-	public:
-		virtual const char *what() const throw()
-		{ return ("Invalid command"); }
-	};
-
 	void			validate(std::map<std::string, func_t> &) throw(std::exception);
 	void			call(AbstractVM &);
     std::string		getCmdStr() const;

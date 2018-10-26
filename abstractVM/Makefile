@@ -13,7 +13,7 @@ FLAGS = -Wall -Wextra -Werror
 all: $(NAME)
 
 $(NAME): $(SRC) $(MAIN)
-	$(COMP) $(MAIN) $(SRC) -o $(NAME)
+	$(COMP) $(FLAGS) $(MAIN) $(SRC) -o $(NAME)
 
 clean:
 	@rm -f *.o

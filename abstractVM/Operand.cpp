@@ -1,61 +1,92 @@
 #include "Operand.hpp"
+#include "Exception.hpp"
 
-extern OperandFactory factory;
-
-Operand::Operand() : value(nullptr), type(Int8)
+template <class T> Operand<T>::Operand() :type(Int8), value(nullptr)
 {}
 
-Operand::Operand(std::string s, eOperandType t) : value(s), type(t)
-{}
+template <class T> Operand<T>::Operand(T val, eOperandType t) : type(t)
+{
+	value = std::to_string(val);
+//	auto i = value.size() - 1;
 
-Operand::Operand(const Operand &obj)
+//	while (val != 0 && value[i] == '0')
+//	{
+//		value.erase(i);
+//		--i;
+//	}
+//	if (value[i] == '.')
+//		value.erase(i);
+}
+
+template <class T> Operand<T>::Operand(const Operand &obj)
 {
 	type = obj.type;
 	value = obj.value;
+	factory = obj.factory;
 }
-Operand::~Operand()
+template <class T> Operand<T>::~Operand()
 {}
 
-int Operand::getPrecision() const
+template <class T> int Operand<T>::getPrecision() const
 { return type; }
 
-eOperandType Operand::getType() const
+template <class T> eOperandType Operand<T>::getType() const
 { return type; }
 
-IOperand const* Operand::operator+(IOperand const &rhs) const
+template <class T> IOperand const* Operand<T>::operator+(IOperand const &rhs) const
 {
 	eOperandType	new_type = type > rhs.getType() ? type : rhs.getType();
 	std::string		new_value = std::to_string(std::stod(value) + std::stod(rhs.toString()));
 	return (factory.createOperand(new_type, new_value));
 }
 
-IOperand const* Operand::operator-(IOperand const &rhs) const
+template <class T> IOperand const* Operand<T>::operator-(IOperand const &rhs) const
 {
 	eOperandType	new_type = type > rhs.getType() ? type : rhs.getType();
 	std::string		new_value = std::to_string(std::stod(value) - std::stod(rhs.toString()));
 	return (factory.createOperand(new_type, new_value));
 }
 
-IOperand const* Operand::operator*(IOperand const &rhs) const
+template <class T> IOperand const* Operand<T>::operator*(IOperand const &rhs) const
 {
 	eOperandType	new_type = type > rhs.getType() ? type : rhs.getType();
 	std::string		new_value = std::to_string(std::stod(value) * std::stod(rhs.toString()));
 	return (factory.createOperand(new_type, new_value));
 }
 
-IOperand const* Operand::operator/(IOperand const &rhs) const
+template <class T> IOperand const* Operand<T>::operator/(IOperand const &rhs) const
 {
 	eOperandType	new_type = type > rhs.getType() ? type : rhs.getType();
-	std::string		new_value = std::to_string(std::stod(value) / std::stod(rhs.toString()));
+	double 			denominator = std::stod(rhs.toString());
+	if (denominator == 0)
+		throw Exception::DivisionByZero();
+	std::string		new_value = std::to_string(std::stod(value) / denominator);
 	return (factory.createOperand(new_type, new_value));
 }
 
-IOperand const* Operand::operator%(IOperand const &rhs) const
+template <class T> IOperand const* Operand<T>::operator%(IOperand const &rhs) const
 {
 	eOperandType	new_type = type > rhs.getType() ? type : rhs.getType();
-	std::string		new_value = std::to_string(std::stoi(value) % std::stoi(rhs.toString()));
+	int 			denominator = std::stoi(rhs.toString());
+	if (denominator == 0)
+		throw Exception::DivisionByZero();
+	std::string		new_value = std::to_string(std::stoi(value) % denominator);
 	return (factory.createOperand(new_type, new_value));
 }
 
-std::string const& Operand::toString() const
+template <class T> Operand<T>& Operand<T>::operator=(Operand const &rhs)
+{
+	type = rhs.type;
+	value = rhs.value;
+	factory = rhs.factory;
+	return (*this);
+}
+
+template <class T> std::string const& Operand<T>::toString() const
 { return (value); }
+
+template class Operand<int8_t>;
+template class Operand<int16_t>;
+template class Operand<int32_t>;
+template class Operand<float>;
+template class Operand<double>;

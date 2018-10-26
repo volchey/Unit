@@ -1,6 +1,7 @@
 #include <sstream>
 #include <iostream>
 #include "CmdLine.hpp"
+#include "Exception.hpp"
 
 CmdLine::CmdLine(const std::string &new_line) : _cmdFunc(NULL)
 {
@@ -20,10 +21,11 @@ CmdLine::~CmdLine()
 
 void 		CmdLine::validate(std::map<std::string, func_t> &func_map) throw(std::exception)
 {
-	if (_cmdStr.compare(";") && !_cmdStr.empty())
+
+	if (_cmdStr[0] != ';' && !_cmdStr.empty())
 	{
 		if (!func_map.count(_cmdStr))
-			throw BadCommandException();
+			throw Exception::BadCommandException();
 		_cmdFunc = func_map[_cmdStr];
 	}
 }

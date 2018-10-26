@@ -1,6 +1,7 @@
 #include <iostream>
 #include "AbstractVM.hpp"
 #include "Operand.hpp"
+#include "Exception.hpp"
 
 typedef void (AbstractVM::*func_t)(std::string);
 
@@ -27,7 +28,13 @@ AbstractVM::AbstractVM(const AbstractVM &obj)
 }
 
 AbstractVM::~AbstractVM()
-{}
+{
+	for (auto i = stack.end(); i != stack.begin();)
+	{
+		--i;
+		delete *i;
+	}
+}
 
 void	AbstractVM::push(std::string str)
 {
@@ -41,7 +48,7 @@ void	AbstractVM::push(std::string str)
 	r_bracket = str.find(')');
 
 	if (l_bracket == std::string::npos || r_bracket == std::string::npos)
-		throw BadArgumentException();
+		throw Exception::BadArgumentException();
 	type = str.substr(0, l_bracket);
 	value = str.substr(l_bracket + 1, r_bracket - l_bracket - 1);
 	for (int i = 0; i <= Double; ++i)
@@ -53,47 +60,150 @@ void	AbstractVM::push(std::string str)
 		}
 	}
 
-	throw BadArgumentException();
+	throw Exception::BadArgumentException();
 }
 
 void	AbstractVM::pop(std::string str)
 {
-	std::cout << "pop called with argument: " << str << std::endl;
+    if (!str.empty())
+        throw Exception::BadArgumentException();
+	if (stack.empty())
+		throw Exception::PopFromEmptyStack();
+	stack.pop_back();
 }
 
 void	AbstractVM::dump(std::string str)
 {
 	auto i = stack.end();
+
+    if (!str.empty())
+        throw Exception::BadArgumentException();
+	i--;
 	while (i != stack.begin())
 	{
 		std::cout << (*i)->toString() << std::endl;
 		i--;
 	}
+	std::cout << (*i)->toString() << std::endl;
 }
 
 void	AbstractVM::assert(std::string str)
-{std::cout << "assert called with argument: " << str << std::endl;}
+{
+	push(std::move(str));
+	std::string argument = stack.back()->toString();
+	stack.pop_back();
+	if (argument != stack.back()->toString())
+		throw Exception::NotEqual(argument, stack.front()->toString());
+}
 
 void	AbstractVM::add(std::string str)
-{std::cout << "add called with argument: " << str << std::endl;}
+{
+	IOperand const *first;
+	IOperand const *second;
+
+    if (!str.empty())
+        throw Exception::BadArgumentException();
+	if (stack.empty())
+		throw Exception::PopFromEmptyStack();
+	first = stack.back();
+	stack.pop_back();
+	if (stack.empty())
+		throw Exception::PopFromEmptyStack();
+	second = stack.back();
+	stack.pop_back();
+	stack.push_back(*first + *second);
+}
 
 void	AbstractVM::sub(std::string str)
-{std::cout << "sub called with argument: " << str << std::endl;}
+{
+	IOperand const *first;
+	IOperand const *second;
+
+    if (!str.empty())
+        throw Exception::BadArgumentException();
+	if (stack.empty())
+		throw Exception::PopFromEmptyStack();
+	first = stack.back();
+	stack.pop_back();
+	if (stack.empty())
+		throw Exception::PopFromEmptyStack();
+	second = stack.back();
+	stack.pop_back();
+	stack.push_back(*second - *first);
+}
 
 void	AbstractVM::mul(std::string str)
-{std::cout << "mul called with argument: " << str << std::endl;}
+{
+	IOperand const *first;
+	IOperand const *second;
+
+    if (!str.empty())
+        throw Exception::BadArgumentException();
+	if (stack.empty())
+		throw Exception::PopFromEmptyStack();
+	first = stack.back();
+	stack.pop_back();
+	if (stack.empty())
+		throw Exception::PopFromEmptyStack();
+	second = stack.back();
+	stack.pop_back();
+	stack.push_back(*first * *second);
+}
 
 void	AbstractVM::div(std::string str)
-{std::cout << "div called with argument: " << str << std::endl;}
+{
+	IOperand const *first;
+	IOperand const *second;
+
+    if (!str.empty())
+        throw Exception::BadArgumentException();
+	if (stack.empty())
+		throw Exception::PopFromEmptyStack();
+	first = stack.back();
+	stack.pop_back();
+	if (stack.empty())
+		throw Exception::PopFromEmptyStack();
+	second = stack.back();
+	stack.pop_back();
+	stack.push_back(*second / *first);
+}
 
 void	AbstractVM::mod(std::string str)
-{std::cout << "mod called with argument: " << str << std::endl;}
+{
+	IOperand const *first;
+	IOperand const *second;
+
+    if (!str.empty())
+        throw Exception::BadArgumentException();
+	if (stack.empty())
+		throw Exception::PopFromEmptyStack();
+	first = stack.back();
+	stack.pop_back();
+	if (stack.empty())
+		throw Exception::PopFromEmptyStack();
+	second = stack.back();
+	stack.pop_back();
+	stack.push_back(*second % *first);
+}
 
 void	AbstractVM::print(std::string str)
-{std::cout << "print called with argument: " << str << std::endl;}
+{
+	IOperand const *var = stack.back();
+
+    if (!str.empty())
+        throw Exception::BadArgumentException();
+	if (var->getPrecision() == Int8)
+		std::cout << var->toString() << std::endl;
+	else
+		throw std::exception();
+}
 
 void	AbstractVM::exit(std::string str)
-{std::cout << "exit called with argument: " << str << std::endl;}
+{
+    if (!str.empty())
+        throw Exception::BadArgumentException();
+	std::exit(1);
+}
 
 AbstractVM &AbstractVM::operator=(AbstractVM const &obj)
 {
@@ -106,9 +216,3 @@ std::map<std::string, func_t > AbstractVM::getFunc() const
 {
 	return (functions);
 }
-
-std::list<IOperand const *>	AbstractVM::getStack() const
-{
-	return (stack);
-}
-

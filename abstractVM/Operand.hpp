@@ -4,14 +4,14 @@
 #include "IOperand.hpp"
 #include "OperandFactory.hpp"
 
-//template <class T>
+template <class T>
 class Operand : public IOperand
 {
 public:
-	Operand();
-	Operand(std::string, eOperandType);
-	Operand(const Operand &);
-	~Operand( void );
+	Operand<T>();
+	Operand<T>(T, eOperandType);
+	Operand<T>(const Operand<T> &);
+	~Operand<T>( void );
 
 	int getPrecision( void ) const;
 	eOperandType getType( void ) const;
@@ -22,7 +22,7 @@ public:
 	IOperand const * operator%( IOperand const & rhs ) const;
 	std::string const & toString( void ) const;
 
-//	Operand & operator=( Operand const & rhs );
+	Operand & operator=( Operand const & rhs );
 private:
 	eOperandType	type;
 	std::string		value;
