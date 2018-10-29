@@ -76,6 +76,8 @@ void	AbstractVM::dump(std::string str)
 {
 	auto i = stack.end();
 
+	if (stack.empty())
+		throw Exception::PopFromEmptyStack();
     if (!str.empty())
         throw Exception::BadArgumentException();
 	i--;
@@ -202,6 +204,7 @@ void	AbstractVM::exit(std::string str)
 {
     if (!str.empty())
         throw Exception::BadArgumentException();
+    AbstractVM::~AbstractVM();
 	std::exit(1);
 }
 
