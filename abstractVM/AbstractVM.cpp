@@ -91,6 +91,8 @@ void	AbstractVM::dump(std::string str)
 
 void	AbstractVM::assert(std::string str)
 {
+	if (stack.empty())
+		throw Exception::PopFromEmptyStack();
 	push(std::move(str));
 	std::string argument = stack.back()->toString();
 	stack.pop_back();
@@ -192,10 +194,12 @@ void	AbstractVM::print(std::string str)
 {
 	IOperand const *var = stack.back();
 
+	if (stack.empty())
+		throw Exception::PopFromEmptyStack();
     if (!str.empty())
         throw Exception::BadArgumentException();
 	if (var->getPrecision() == Int8)
-		std::cout << var->toString() << std::endl;
+		std::cout << static_cast<char>(stoi(var->toString())) << std::endl;
 	else
 		throw std::exception();
 }

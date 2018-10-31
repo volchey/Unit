@@ -32,17 +32,23 @@ void    read_from_stdin(AbstractVM &vm)
 {
     std::string		str;
     auto			func_map = vm.getFunc();
+	bool	exit = false;
 
-    for (int line_count = 1; std::getline(std::cin, str); line_count++)
+	for (int line_count = 1; std::getline(std::cin, str); line_count++)
     {
         CmdLine line(str);
+        std::string	cmd;
 
         try
         {
             line.validate(func_map);
-			if (line.getCmdStr()[0] == ';' && line.getCmdStr()[1] == ';')
+            cmd = line.getCmdStr();
+			if (cmd[0] == ';' && cmd[1] == ';')
 				break;
-            line.call(vm);
+			if (cmd == "exit")
+				exit = true;
+			if (!exit)
+				line.call(vm);
         }
         catch(std::exception &e)
         {
@@ -52,6 +58,8 @@ void    read_from_stdin(AbstractVM &vm)
             break;
         }
     }
+    if (!exit)
+		std::cout << "error: no exit command found" << std::endl;
 }
 
 int main(int argc, char **argv)
