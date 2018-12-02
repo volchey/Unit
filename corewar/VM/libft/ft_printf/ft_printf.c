@@ -3,133 +3,80 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vchechai <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: vfil <vfil@student.unit.ua>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/01/11 17:01:23 by vchechai          #+#    #+#             */
-/*   Updated: 2018/01/11 17:51:35 by vchechai         ###   ########.fr       */
+/*   Created: 2018/01/12 17:42:46 by vfil              #+#    #+#             */
+/*   Updated: 2018/02/11 22:55:47 by vfil             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "libftprintf.h"
 
-int				set_width(const char *s, t_format *format, va_list ap)
+int		prntf_parse(t_list **res, char *format, va_list ap)
 {
-	int			i;
-	int			x;
-	char		*sub;
+	t_spec_elem		spec;
+	int				step;
+	int				i;
+	const t_conv	conv[] = {{'s', &convert_str}, {'S', &convert_unistr}, \
+	{'p', &convert_ptr}, {'d', &convert_dibd}, {'D', &convert_dibd}, \
+	{'i', &convert_dibd}, {'o', &convert_unsigned}, {'O', &convert_bou}, \
+	{'u', &convert_unsigned}, {'U', &convert_bou}, {'x', &convert_unsigned}, \
+	{'X', &convert_unsigned}, {'c', &convert_chr}, {'C', &convert_unichr}, \
+	{'%', &convert_chr}, {'0', NULL}};
 
+	step = check_init_specification(format, &spec, ap);
 	i = 0;
-	if (*s == '*' && !format->width)
-	{
-		x = va_arg(ap, int);
-		format->width = x < 0 ? (x * -1) : x;
-		format->minus = (x < 0 || format->minus) ? 1 : 0;
-		return (1);
-	}
-	while (ft_isdigit(s[i]))
+	while (conv[i].letter != spec.cletter && conv[i].letter != '0')
 		i++;
-	sub = ft_strsub(s, 0, i);
-	format->width = ft_atoi(sub);
-	ft_strdel(&sub);
-	return (i);
+	if (conv[i].letter == spec.cletter)
+		conv[i].make(res, spec, ap);
+	else if (spec.cletter != '\0')
+		convert_chr(res, spec, ap);
+	return (step);
 }
 
-int				set_precision(const char *s, t_format *format, va_list ap)
+void	prntf_runner(t_list **res, char *format, va_list ap, int *fd)
 {
-	int			i;
-	int			x;
-	char		*sub;
+	int		step;
 
-	i = 0;
-	s++;
-	if (*s == '*')
+	while (*format)
 	{
-		x = va_arg(ap, int);
-		x = x == 0 ? -1 : x;
-		format->precision = (x < 0 && x != -1) ? 0 : x;
-		return (1);
-	}
-	if (!ft_isdigit(s[i]) || s[i] == '0')
-	{
-		format->precision = -1;
-		return (0);
-	}
-	while (ft_isdigit(s[i]))
-		i++;
-	sub = ft_strsub(s, 0, i);
-	format->precision = ft_atoi(sub);
-	ft_strdel(&sub);
-	return (i);
-}
-
-void			set_struct(const char **s, t_format *format, va_list ap)
-{
-	if ((ft_isdigit(**s) && **s != '0') || (**s == '*'))
-	{
-		*s += set_width(*s, format, ap);
-		set_struct(s, format, ap);
-	}
-	else if (**s == '#' || **s == '-' || **s == '+' || **s == ' ' || **s == '0')
-	{
-		if (**s == '-')
-			format->minus = 1;
-		if (**s == '+')
-			format->plus = 1;
-		if (**s == ' ')
-			format->space = 1;
-		if (**s == '0')
-			format->zero = 1;
-		if (**s == '#')
-			format->hesh = 1;
-		*s += 1;
-		set_struct(s, format, ap);
-	}
-	else if (**s == '.')
-	{
-		*s += set_precision(*s, format, ap) + 1;
-		set_struct(s, format, ap);
-	}
-}
-
-void			get_str(const char *s, t_list **str, va_list ap)
-{
-	t_format	*format;
-
-	format = malloc(sizeof(t_format));
-	while (*s)
-	{
-		if (*s == '%')
+		if (*format == '%')
 		{
-			s++;
-			if (*s)
+			format++;
+			step = prntf_parse(res, format, ap);
+			format += step;
+			if (!step)
+				return ;
+		}
+		else if (*format)
+		{
+			while (*format == '{')
+				format += check_color(res, format, fd, ap);
+			if (*format && *format != '%')
 			{
-				clear_struct(format);
-				set_struct(&s, format, ap);
-				format->variable = s;
-				s += set_arg(str, ap, format);
+				fill_buf_chr(res, *format);
+				format++;
 			}
 		}
-		if (str && *s && (*s != '%'))
-			ft_chrjoin(str, *s);
-		if (*s && *s != '%')
-			s++;
 	}
-	free(format);
 }
 
-int				ft_printf(const char *restrict format, ...)
+int		ft_printf(const char *restrict format, ...)
 {
-	va_list		ap;
-	t_list		*str;
-	t_list		*head;
-	int			size;
+	va_list ap;
+	t_list	*res;
+	t_list	*buf;
+	int		len;
+	int		fd;
 
-	str = ft_lstnew("", BUFF_SIZE_PF);
-	str->content_size = 0;
-	head = str;
+	fd = 1;
+	res = ft_lstnew("", BUF_SIZE_PF);
+	res->content_size = 0;
+	buf = res;
 	va_start(ap, format);
-	get_str(format, &str, ap);
+	prntf_runner(&buf, (char*)format, ap, &fd);
 	va_end(ap);
-	size = ft_put_del_lst(&head);
-	return (size);
+	len = print_buf(&res, fd);
+	return (len);
 }

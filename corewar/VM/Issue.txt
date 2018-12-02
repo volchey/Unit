@@ -1,0 +1,4 @@
+1. Fix colors in infobar
+2. ERROR management
+3. Fix LIVE color
+4. Add -n flag

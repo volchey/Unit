@@ -3,65 +3,59 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: vchechai <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: vfil <marvin@42.fr>                        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2017/11/06 11:14:54 by vchechai          #+#    #+#              #
-#    Updated: 2017/11/09 11:22:54 by vchechai         ###   ########.fr        #
+#    Created: 2017/10/26 15:07:48 by vfil              #+#    #+#              #
+#    Updated: 2018/01/11 17:02:13 by vfil             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	=	libft.a
+NAME	=	libftprintf.a
 
-SRC		=	ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c ft_memmove.c \
+LSRC    =	ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c ft_memmove.c \
 			ft_memchr.c ft_memcmp.c ft_strlen.c ft_strdup.c ft_strcpy.c \
-			ft_strncpy.c ft_strcat.c get_next_line.c ft_sqrt.c ft_arrlen.c \
-			ft_strncat.c ft_strlcat.c ft_strchr.c ft_strrchr.c ft_strstr.c \
-			ft_strnstr.c ft_strcmp.c ft_strncmp.c ft_atoi.c ft_isalpha.c \
-			ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c ft_toupper.c \
-			ft_tolower.c ft_memalloc.c ft_memdel.c ft_strnew.c ft_strdel.c \
-			ft_strclr.c ft_striter.c ft_striteri.c ft_strmap.c ft_strmapi.c \
-			ft_itoa.c ft_putchar.c ft_putstr.c ft_putendl.c \
-			ft_putnbr.c ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c \
-			ft_strequ.c ft_strnequ.c ft_strsub.c ft_strjoin.c ft_strtrim.c \
-			ft_strsplit.c ft_putnbr_fd.c ft_lstnew.c ft_lstdelone.c \
-			ft_lstdel.c \
-			ft_lstadd.c ft_lstiter.c ft_lstmap.c ft_count_word.c \
-			ft_isupper.c ft_islower.c ft_strlwr.c ft_strupr.c
+			ft_strncpy.c ft_strcat.c ft_strncat.c ft_strlcat.c ft_strchr.c \
+			ft_strrchr.c ft_strstr.c ft_strnstr.c ft_strcmp.c ft_strncmp.c \
+			ft_atoi.c ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c \
+			ft_isprint.c ft_toupper.c ft_tolower.c ft_memalloc.c ft_memdel.c \
+			ft_strnew.c ft_strdel.c ft_strclr.c ft_striter.c ft_striteri.c \
+			ft_strmap.c ft_strmapi.c ft_strequ.c ft_strnequ.c ft_strsub.c \
+			ft_strjoin.c ft_strtrim.c ft_strsplit.c ft_arriter.c ft_itoa.c \
+			ft_putchar.c ft_putstr.c ft_putendl.c ft_putnbr.c ft_putchar_fd.c \
+			ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c ft_lstnew.c \
+			ft_lstdelone.c ft_print_list.c ft_lstdel.c ft_lstadd.c \
+			ft_lstiter.c ft_lstmap.c ft_lstdelcont.c ft_strrev.c \
+			ft_itoa_base.c get_next_line.c ft_chrjoin_free.c ft_strjoin_free.c \
+			ft_llitoa.c ft_ulltoa.c ft_llitoa_base.c ft_ullitoa_base.c \
+			ft_pow.c ft_lstappend.c
 
-OSRC	=	$(SRC:.c=.o)
+SRC	=	    ft_printf.c check_init_specification.c check_init_specification2.c \
+            is_spec_elem.c prntf_chrstr.c prntf_numb.c prntf_unicode.c \
+            prntf_unicode2.c buf_manager.c flag_manager.c ulltoa_base_buf.c \
+            lltoa_buf.c check_color.c
 
-PF_SRC	=	ft_printf.c ft_itoa_pf.c set_arg.c ft_chrjoin.c ft_set_str.c \
-			ft_get_address.c ft_unichar.c ft_power.c ft_unistr.c \
-			get_farg.c ft_set_chr.c \
-			ft_unitoa_base.c \
-			ft_unitoa_uppbase.c ft_numlen.c \
+PFSRC    =   $(addprefix ft_printf/, $(SRC))
 
-SRC_PF	=	$(addprefix ft_printf/, $(PF_SRC))
+OSRC   =   $(SRC:.c=.o)
 
-PF_OSRC	=	$(PF_SRC:.c=.o)
-
-MAKE	=	@make
+LOSRC	=	$(LSRC:.c=.o)
 
 FLAGS	=	-Wall -Wextra -Werror
 
-%.o: %.c
-	gcc $(FLAGS) -c $<
-
 .PHONY: all clean fclean re
-
 all: $(NAME)
 
-$(NAME): $(SRC) $(SRC_PF)
-	@gcc $(FLAGS) -c $(SRC)
-	@gcc $(FLAGS) -c $(SRC_PF)
-	@ar rc $(NAME) $(OSRC) $(PF_OSRC)
+$(NAME): $(LSRC) $(PFSRC)
+	gcc $(FLAGS) -c $(LSRC) $(PFSRC)
+	ar rc $(NAME) $(LOSRC) $(OSRC)
+
+%.o : %.c
+	gcc $(FLAGS) -c $<
 
 clean:
-	@rm -f *.o
+	rm -f *.o
 
 fclean: clean
-	@rm -f $(NAME)
+	rm -f $(NAME)
 
-re: 
-	$(MAKE) fclean 
-	$(MAKE) all
+re: fclean all

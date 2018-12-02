@@ -22,7 +22,6 @@ void	get_name(int fd, t_bot *bot)
 	tmp = 1;
 	if ((read(fd, &tmp, 4)) < 4 || tmp != 0)
 		ft_exit("Incorrect binary format");
-	ft_printf("OK, name = %s\n", bot->name);
 }
 
 void	get_bot_size(int fd, t_bot *bot)
@@ -32,7 +31,6 @@ void	get_bot_size(int fd, t_bot *bot)
 	if ((read(fd, buf, 4)) < 4)
 		ft_exit("Incorrect binary format");
 	bot->size = swap_4bits(buf);
-	ft_printf("Bot size = %u\n", bot->size);
 	if (bot->size <= 0 || bot->size > CHAMP_MAX_SIZE)
 		ft_exit("Incorrect binary format");
 }
@@ -47,7 +45,6 @@ void	get_comment(int fd, t_bot *bot)
 	tmp = 1;
 	if ((read(fd, &tmp, 4)) < 4 || tmp != 0)
 		ft_exit("Incorrect binary format");
-	ft_printf("Bot comment = %s\n", bot->comment);
 }
 
 void	get_bot_code(int fd, t_bot *bot)
@@ -64,22 +61,14 @@ void	get_bot_code(int fd, t_bot *bot)
 		bot->code[i] = (unsigned char)(two_bytes >> 8);
 		bot->code[i + 1] = (unsigned char)two_bytes;
 		i += 2;
+		if (i >= CHAMP_MAX_SIZE)
+			ft_exit("Error: File champs/42.cor has too large a code");
 	}
 	if (ret == 1)
 		bot->code[i] = buf[0];
 	if (ret < 0)
 		ft_exit("Can't read from file");
 	bot->code[bot->size] = '\0';
-//	i = 1;
-//	while (i <= bot->size)
-//	{
-//		ft_printf("%02hx", bot->code[i - 1]);
-//		if (i % 2 == 0)
-//			ft_printf(" ");
-//		if (i % 16 == 0)
-//			ft_printf("\n");
-//		i++;
-//	}
 }
 
 t_bot	parse_bot(char *bot_name)
@@ -98,6 +87,8 @@ t_bot	parse_bot(char *bot_name)
 	get_bot_size(fd, &bot);
 	get_comment(fd, &bot);
 	get_bot_code(fd, &bot);
+	bot.last_life = 0;
+	bot.live = 0;
 	close(fd);
 	return (bot);
 }

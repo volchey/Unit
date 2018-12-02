@@ -3,37 +3,58 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strsplit.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vchechai <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: vfil <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/06 15:41:11 by vchechai          #+#    #+#             */
-/*   Updated: 2017/11/09 10:41:02 by vchechai         ###   ########.fr       */
+/*   Created: 2017/11/02 09:50:56 by vfil              #+#    #+#             */
+/*   Updated: 2017/11/04 18:19:59 by vfil             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+static int	ft_count_w(char const *s, char c)
+{
+	int	i;
+	int	counter;
+
+	i = 0;
+	counter = 0;
+	while (s[i] != '\0')
+	{
+		if (i == 0 && s[i++] != c)
+			counter++;
+		if (s[i - 1] == c && s[i] != c && s[i] != '\0')
+			counter++;
+		i++;
+	}
+	return (counter);
+}
+
 char		**ft_strsplit(char const *s, char c)
 {
-	int		i;
+	char	**new;
+	int		chr;
 	int		w;
-	int		start;
-	char	**str;
+	int		i;
 
-	if (!s)
-		return (0);
-	i = 0;
+	if ((((i = 0) == 0) && (!s || !c)) ||
+			!(new = (char**)malloc(sizeof(char*) * (ft_count_w(s, c) + 1))))
+		return (NULL);
 	w = 0;
-	if (!(str = (char**)malloc(sizeof(char*) * (ft_count_word(s, c) + 1))))
-		return (0);
-	while (s[i])
+	while (s[i] != '\0' && ((chr = 0) == 0))
 	{
 		while (s[i] == c)
 			i++;
-		start = i;
-		while (s[i] && s[i] != c)
+		while (s[i] != c && s[i])
+		{
+			chr++;
 			i++;
-		str[w++] = ft_strsub(s, start, (i - start));
+		}
+		if (chr && w < ft_count_w(s, c))
+			if (!(new[w++] = ft_strsub(&s[i - chr], 0, chr)))
+				ft_arriter(new - w, &free);
+		i++;
 	}
-	str[w] = 0;
-	return (str);
+	new[w] = 0;
+	return (new);
 }

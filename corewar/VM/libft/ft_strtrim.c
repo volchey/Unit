@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vchechai <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: vfil <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/06 15:38:47 by vchechai          #+#    #+#             */
-/*   Updated: 2017/11/06 15:41:00 by vchechai         ###   ########.fr       */
+/*   Created: 2017/10/31 18:13:15 by vfil              #+#    #+#             */
+/*   Updated: 2017/11/04 14:11:41 by vfil             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,28 +14,29 @@
 
 char	*ft_strtrim(char const *s)
 {
-	char	*res;
+	char	*new;
 	size_t	i;
 	size_t	j;
-	size_t	n;
+	size_t	len;
 
-	res = NULL;
+	new = NULL;
 	i = 0;
 	j = 0;
+	len = 0;
 	if (s)
 	{
-		n = ft_strlen(s);
+		len = ft_strlen(s);
 		while (s[i] == ' ' || s[i] == '\n' || s[i] == '\t')
 			i++;
-		if (i == n)
+		if (i == len)
 			return (ft_strnew(1));
-		while (s[n - 1] == ' ' || s[n - 1] == '\n' || s[n - 1] == '\t')
-			n--;
-		if ((res = (char*)malloc(sizeof(char) * (n - i + 1))) == NULL)
-			return (res);
-		while (i < n)
-			res[j++] = s[i++];
-		res[j] = '\0';
+		while (s[len - 1] == ' ' || s[len - 1] == '\n' || s[len - 1] == '\t')
+			len--;
+		if ((new = (char*)malloc(sizeof(char) * (len - i + 1))) == NULL)
+			return (new);
+		while (i < len)
+			new[j++] = s[i++];
+		new[j] = '\0';
 	}
-	return (res);
+	return (new);
 }

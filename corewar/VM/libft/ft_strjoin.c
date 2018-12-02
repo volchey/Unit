@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vchechai <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: vfil <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/06 15:37:07 by vchechai          #+#    #+#             */
-/*   Updated: 2017/11/06 15:38:31 by vchechai         ###   ########.fr       */
+/*   Created: 2017/10/31 17:00:52 by vfil              #+#    #+#             */
+/*   Updated: 2017/11/08 15:29:18 by vfil             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,28 +14,28 @@
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	char	*map;
+	char	*new;
 	int		i;
 
-	map = NULL;
+	new = NULL;
 	i = 0;
 	if (s1 && s2)
 	{
-		if ((map = (char*)malloc(sizeof(char)
+		if ((new = (char*)malloc(sizeof(char)
 						* (ft_strlen(s1) + ft_strlen(s2) + 1))))
 		{
 			while (*s1)
 			{
-				map[i++] = *s1;
+				new[i++] = *s1;
 				s1++;
 			}
 			while (*s2)
 			{
-				map[i++] = *s2;
+				new[i++] = *s2;
 				s2++;
 			}
-			map[i] = '\0';
+			new[i] = '\0';
 		}
 	}
-	return (map);
+	return (new);
 }

@@ -15,6 +15,10 @@
 ** On part du principe qu'un int fait 32 bits. Est-ce vrai chez vous ?
 */
 
+#ifndef OP_H
+# define OP_H
+
+
 #define IND_SIZE				2
 #define REG_SIZE				4
 #define DIR_SIZE				REG_SIZE
@@ -24,7 +28,7 @@
 # define DIR_CODE				2
 # define IND_CODE				3
 
-
+#define COLOR_GRAY				9
 #define MAX_ARGS_NUMBER			4
 #define MAX_PLAYERS				4
 #define MEM_SIZE				(4*1024)
@@ -67,10 +71,82 @@ typedef char	t_arg_type;
 # define COMMENT_LENGTH			(2048)
 # define COREWAR_EXEC_MAGIC		0xea83f3
 
-typedef struct		header_s
+typedef struct		s_maps
 {
-  unsigned int		magic;
-  char				prog_name[PROG_NAME_LENGTH + 1];
-  unsigned int		prog_size;
-  char				comment[COMMENT_LENGTH + 1];
-}					header_t;
+	unsigned char	*v_map;
+	unsigned char	*c_map;
+	unsigned char	*c_cycle;
+}					t_maps;
+
+typedef struct 		s_proc
+{
+	int				pc;
+	unsigned int	carry;
+	int				bot_id;
+	unsigned int	reg[REG_NUMBER + 1];
+	unsigned int	live;
+	unsigned int	last_live;
+	unsigned char	code;
+	unsigned int	cycles;
+	struct s_proc	*next;
+}					t_proc;
+
+typedef struct		s_op
+{
+	unsigned char 	code;
+//	char			func[PROG_NAME_LENGTH];
+	int				nb_params;
+	char			type[3];
+//	int				id;
+	unsigned int	cycles;
+//	int				codage;
+	int				label;
+}					t_op;
+
+typedef struct		s_bot
+{
+	unsigned char	name[PROG_NAME_LENGTH + 1];
+	unsigned char	comment[COMMENT_LENGTH + 1];
+	unsigned int	size;
+	unsigned char	code[CHAMP_MAX_SIZE + 1];
+	unsigned int	id;
+	unsigned int	last_life;
+	unsigned int	live;
+}					t_bot;
+
+typedef struct 		s_flag
+{
+	int 			n;
+	int 			d;
+	int 			v;
+}					t_flag;
+
+typedef struct		s_core
+{
+	t_maps			maps;
+	t_proc			*proc;
+	t_bot			*bots;
+	int				cycle;
+	t_flag 			flag;
+	int 			bots_count;
+	int 			cycle_to_die;
+	int 			new_reset;
+	unsigned int	decycle;
+	unsigned int	checks;
+	int 			info_row;
+//	t_op			*op_tab;
+}					t_core;
+
+typedef struct 		s_var
+{
+	unsigned int	speed;
+	char 			pause;
+	char 			s;
+	char 			end;
+}					t_var;
+
+typedef void		(*t_vm_func)(t_core *core, t_proc *proc);
+
+t_op				g_op_tab[17];
+
+#endif

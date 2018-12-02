@@ -10,35 +10,45 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include "inc/vm.h"
 
-unsigned char	*get_map(t_bot *bots, unsigned int amount)
+void	get_vm_func(t_vm_func *func2)
 {
-	unsigned int	i;
-	unsigned int	j;
-	unsigned int	k;
-	int 			step;
-	unsigned char	*map;
+	int 	i;
 
-	step = MEM_SIZE / amount;
-	i = 0;
-	j = 0;
-	map = (unsigned char*)malloc(sizeof(unsigned char) * (MEM_SIZE + 1));
-	map[MEM_SIZE] = '\0';
-	while (i < MEM_SIZE)
-		map[i++] = 0;
-	while (j < amount)
+	t_vm_func    func[17] =
 	{
-		k = 0;
-		while (k < bots[j].size)
+		&vm_live, &vm_ld, &vm_st, &vm_add, &vm_sub, &vm_and, &vm_or, \
+		&vm_xor, &vm_zjmp, &vm_ldi, &vm_sti, &vm_fork, &vm_lld, \
+		&vm_lldi, &vm_lfork, &vm_aff, &vm_undef
+	};
+	i = -1;
+	while (++i < 17)
+		func2[i] = func[i];
+}
+
+void			flag(char **argv, t_core *core)
+{
+	int i;
+
+	i = 0;
+	core->flag.v = 0;
+	core->flag.d = 0;
+	core->flag.n = 0;
+	while (argv[i])
+	{
+		if (ft_strcmp(argv[i], "-v") == 0)
+			core->flag.v = 1;
+		if (ft_strcmp(argv[i], "-d") == 0)
 		{
-			map[k + j * step] = bots[j].code[k];
-			k++;
+			if (argv[i + 1] && (ft_atoi(argv[i + 1]) > 0
+				|| ft_strcmp(argv[i + 1], "0") == 0))
+				core->flag.d = ft_atoi(argv[i + 1]);
+			else
+				ft_exit("Can't read source file -d\n");
 		}
-		j++;
+		i++;
 	}
-	return (map);
 }
 
 unsigned int	count_bots(int argc, char **argv)
@@ -59,40 +69,22 @@ unsigned int	count_bots(int argc, char **argv)
 	return (count);
 }
 
-t_bot			*get_bots(int argc, char **argv, unsigned int size)
-{
-	t_bot			*bots;
-	int				i;
-	unsigned int	count;
-
-	count = 0;
-	i = 1;
-	bots = (t_bot *)malloc(sizeof(t_bot) * size);
-	if (!bots)
-		ft_exit("Invalid number of players");
-	while (i < argc)
-	{
-		if (ft_strstr(argv[i], ".cor"))
-		{
-			bots[count] = parse_bot(argv[i]);
-			bots[count].id = count;
-			count++;
-		}
-		i++;
-	}
-	return (bots);
-}
-
 int				main(int argc, char **argv)
 {
-	t_bot			*bots;
-	unsigned int	bots_count;
-	unsigned char	*map;
+	t_core			core;
+	t_vm_func 		*vm_func;
 
-	bots_count = count_bots(argc, argv);
-	ft_printf("bots amount %d\n", bots_count);
-	bots = get_bots(argc, argv, bots_count);
-	map = get_map(bots, bots_count);
-	print_map(map);
-	return (0);
+	vm_func = (t_vm_func*)malloc(sizeof(t_vm_func) * 17);
+	get_vm_func(vm_func);
+	core.bots_count = count_bots(argc, argv);
+	core.bots = get_bots(argc, argv, core.bots_count);
+	get_map(core.bots, core.bots_count, &core.maps);
+	init_proceses(core.bots, core.bots_count, &core);
+	flag(argv, &core);
+	core.cycle_to_die = CYCLE_TO_DIE;
+	core.checks = 0;
+	core.decycle = 0;
+	core.cycle = 0;
+	core.new_reset = core.cycle_to_die;
+	run(core, vm_func);
 }

@@ -1,0 +1,22 @@
+Introducing contestants...
+* Player 1, weighing 325 bytes, 'Celebration Funebre v0.99pl42' ('Jour J')
+Contestant 1, Celebration Funebre v0.99pl42, has won !
+Process:         corewar [75482]
+Path:            /Users/vchechai/work/corewar/VM/corewar
+Load Address:    0x105ec5000
+Identifier:      corewar
+Version:         0
+Code Type:       X86-64
+Parent Process:  zsh [47189]
+
+Date/Time:       2018-07-25 20:06:24.211 +0300
+Launch Time:     2018-07-25 20:06:23.777 +0300
+OS Version:      Mac OS X 10.13.3 (17D47)
+Report Version:  7
+Analysis Tool:   /Applications/Xcode.app/Contents/Developer/usr/bin/leaks
+Analysis Tool Version:  Xcode 9.2 (9C40b)
+----
+
+leaks Report Version:  2.0
+Process 75482: 160 nodes malloced for 29 KB
+Process 75482: 0 leaks for 0 total leaked bytes.

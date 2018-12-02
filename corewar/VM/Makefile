@@ -14,7 +14,12 @@ NAME	=	corewar
 
 MAKE	=	@make
 
-SRC     =   src/*.c
+FILES   =   create_bots.c data_manip.c ft_exit.c get_arg.c manage_life.c mod.c \
+            parse_bot.c print_map.c vm_func_1.c vm_func_3.c create_proceses.c \
+            end_game.c game.c get_window.c maps_manip.c op_tab.c print_info.c \
+            swap_bites.c vm_func_2.c vm_func_4.c
+
+SRC 	=	$(addprefix src/, $(FILES))
 
 FLAGS	=	-Wall -Wextra -Werror
 
@@ -23,7 +28,7 @@ all: $(NAME)
 
 $(NAME): $(SRC) main.c
 		@make -C libft
-		gcc $(FLAGS) main.c $(SRC) -L libft -lft -o $(NAME)
+		gcc $(FLAGS) main.c $(SRC) -lncurses -L libft -lftprintf -o $(NAME)
 
 clean:
 	$(MAKE) clean -C libft
