@@ -26,9 +26,23 @@ docker inspect --format '{{range  .NetworkSettings.Networks}}{{.IPAddress}}{{end
 # 8. Launch a shell from an alpine container, and make sure that you can interact
 #directly with the container via your terminal, and that the container deletes itself
 #once the shell’s execution is done.
+docker pull alpine
 docker run -it --rm alpine /bin/sh
 # 9. From the shell of a debian container, install via the container’s package manager
 # everything you need to compile C source code and push it onto a git repo (of
 # course, make sure before that the package manager and the packages already in the
 # container are updated). For this exercise, you should only specify the commands
 # to be run directly in the container.
+docker pull debian
+docker run -it --rm debian /bin/bash
+apt update
+apt upgrade
+apt install gcc
+apt install git
+# 10. Create a volume named hatchery.
+# https://docs.docker.com/engine/reference/commandline/volume_create/
+# https://docs.docker.com/storage/volumes/
+docker volume create --name hatchery
+# 11. List all the Docker volumes created on the machine. Remember. VOLUMES.
+docker volume ls
+
