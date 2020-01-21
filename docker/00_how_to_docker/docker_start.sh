@@ -105,17 +105,16 @@ docker restart overlord
 # properly set up by accessing, via curl or a web browser, the IP address of your
 # virtual machine on the 3000 port.
 # You will also list all the necessary commands in your repository.
-docker run --name Abathur -dt -v /home:/root -p 3000:3000 python:2-slim
+docker run --name Abathur -dt -v ${HOME}:/root -p 3000:3000 python:2-slim
 docker exec Abathur pip install flask
-# put it into a file in home directory:
-    from flask import Flask
-    app = Flask(__name__)
-    
-    @app.route("/")
-    def hello():
-        return "Hello World!"
-    
-    if __name__ == "__main__":
-        app.run()
+echo -e 'from flask import Flask\r\napp = Flask(__name__)\r\n\r\n@app.route("/")\r\ndef hello():\r\n    return "Hello World"\r\n\r\nif __name__ == "__main__":\r\n    app.run(host='0.0.0.0', port=3000)' > ${HOME}/hello.py
+docker exec Abathur python root/hello.py
+# from flask import Flask
+# app = Flask(__name__)
 
-docker exec -e FLASK_APP=/root/hello.py Abathur flask run --host=0.0.0.0 --port 3000
+# @app.route("/")
+# def hello():
+#     return "Hello World!"
+
+# if __name__ == "__main__":
+#     app.run(host='0.0.0.0', port=3000)
