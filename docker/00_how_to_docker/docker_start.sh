@@ -118,3 +118,45 @@ docker exec Abathur python root/hello.py
 
 # if __name__ == "__main__":
 #     app.run(host='0.0.0.0', port=3000)
+
+# 20. Create a local swarm, the Char virtual machine should be its manager.
+docker swarm init # for Linux
+docker swarm init --advertise-addr $(docker-machine ip Char)
+# 21. Create another virtual machine with docker-machine using the virtualbox driver,
+# and name it Aiur.
+# 22. Turn Aiur into a slave of the local swarm in which Char is leader (the command to
+# take control of Aiur is not requested).
+# 23. Create an overlay-type internal network that you will name overmind.
+docker network create -d overlay overmind
+
+# 24. Launch a rabbitmq SERVICE that will be named orbital-command. You should
+# define a specific user and password for the RabbitMQ service, they can be whatever
+# you want. This service will be on the overmind network.
+docker service create -d --network overmind -e RABBITMQ_DEFAULT_USER=vchechai -e RABBITMQ_DEFAULT_PASS=specific --name orbital-command rabbitmq
+
+# 25. List all the services of the local swarm.
+docker service ls
+
+# 26. Launch a 42school/engineering-bay service in two replicas and make sure that
+# the service works properly (see the documentation provided at hub.docker.com).
+# This service will be named engineering-bay and will be on the overmind network.
+docker service create -d --network overmind --replicas 2 -e OC_USERNAME=vchechai -e OC_PASSWD=specific --name engineering-bay 42school/engineering-bay
+
+# 27. Get the real-time logs of one the tasks of the engineering-bay service.
+docker service logs -f engineering-bay
+
+# 28. ... Damn it, a group of zergs is attacking orbital-command, and shutting down
+# the engineering-bay service won’t help at all... You must send a troup of Marines
+# to eliminate the intruders. Launch a 42school/marine-squad in two replicas,
+# and make sure that the service works properly (see the documentation provided
+# at hub.docker.com). This service will be named... marines and will be on the
+# overmind network.
+# 29. Display all the tasks of the marines service.
+# 30. Increase the number of copies of the marines service up to twenty, because there’s
+# never enough Marines to eliminate Zergs. (Remember to take a look at the tasks
+# and logs of the service, you’ll see, it’s fun.)
+# 31. Force quit and delete all the services on the local swarm, in one command.
+# 32. Force quit and delete all the containers (whatever their status), in one command.
+# 33. Delete all the container images stored on the Char virtual machine, in one command
+# as well.
+# 34. Delete the Aiur virtual machine without using rm -rf.
