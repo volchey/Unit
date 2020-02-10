@@ -4,18 +4,18 @@ import psycopg2
 
 
 def ex00(request):
-    conn = psycopg2.connect(
-        database='formationdjango',
-        host='localhost',
-        user='djangouser',
-        password='secret'
-    )
 
     result = "OK"
-    curr = conn.cursor()
     try:
+        conn = psycopg2.connect(
+            database='formationdjango',
+            host='localhost',
+            user='djangouser',
+            password='secret'
+        )
+        curr = conn.cursor()
         curr.execute(""" CREATE TABLE IF NOT EXISTS ex00_movies (
-            title varchar(64) NOT NULL,
+            title varchar(64) UNIQUE NOT NULL,
             episode_nb integer PRIMARY KEY,
             opening_crawl text,
             director varchar(32) NOT NULL,
