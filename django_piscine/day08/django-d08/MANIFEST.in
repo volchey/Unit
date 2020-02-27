@@ -1,3 +1,0 @@
-include LICENSE
-recursive-include myimg/static *
-recursive-include myimg/templates *
