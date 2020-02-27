@@ -1,0 +1,57 @@
+[
+    {
+      "model": "ex00.Article",
+      "pk": 1,
+      "fields": {
+        "title": "Article1",
+        "author": 1,
+        "created": "2020-02-12",
+        "synopsis": "Synopsis1",
+        "content": "Content1"
+      }
+    },
+    {
+      "model": "ex00.Article",
+      "pk": 2,
+      "fields": {
+        "title": "Article2",
+        "author": 2,
+        "created": "2020-02-12",
+        "synopsis": "Synopsis2",
+        "content": "Content2"
+      }
+    },
+    {
+      "model": "ex00.Article",
+      "pk": 3,
+      "fields": {
+        "title": "Article3",
+        "author": 3,
+        "created": "2020-02-12",
+        "synopsis": "Synopsis3",
+        "content": "Content3"
+      }
+    },
+    {
+      "model": "ex00.Article",
+      "pk": 4,
+      "fields": {
+        "title": "Article4",
+        "author": 4,
+        "created": "2020-02-12",
+        "synopsis": "Synopsis4",
+        "content": "Content4"
+      }
+    },
+    {
+      "model": "ex00.Article",
+      "pk": 5,
+      "fields": {
+        "title": "Article5",
+        "author": 5,
+        "created": "2020-02-12",
+        "synopsis": "Synopsis5",
+        "content": "Content5"
+      }
+    }
+  ]
