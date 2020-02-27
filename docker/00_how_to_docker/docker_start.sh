@@ -120,12 +120,14 @@ docker exec Abathur python root/hello.py
 #     app.run(host='0.0.0.0', port=3000)
 
 # 20. Create a local swarm, the Char virtual machine should be its manager.
-docker swarm init # for Linux
 docker swarm init --advertise-addr $(docker-machine ip Char)
 # 21. Create another virtual machine with docker-machine using the virtualbox driver,
 # and name it Aiur.
+docker-machine create --driver virtualbox Aiur
 # 22. Turn Aiur into a slave of the local swarm in which Char is leader (the command to
 # take control of Aiur is not requested).
+docker-machine ssh Aiur "docker swarm join --token $(docker swarm join-token worker -q) $(docker-machine ip Char):2377"
+# docker node ls
 # 23. Create an overlay-type internal network that you will name overmind.
 docker network create -d overlay overmind
 
@@ -151,12 +153,19 @@ docker service logs -f engineering-bay
 # and make sure that the service works properly (see the documentation provided
 # at hub.docker.com). This service will be named... marines and will be on the
 # overmind network.
+docker service create -d --network overmind --replicas 2 -e OC_USERNAME=vchechai -e OC_PASSWD=specific --name marines 42school/marine-squad
 # 29. Display all the tasks of the marines service.
+docker service ps marines
 # 30. Increase the number of copies of the marines service up to twenty, because there’s
 # never enough Marines to eliminate Zergs. (Remember to take a look at the tasks
 # and logs of the service, you’ll see, it’s fun.)
+docker service scale marines=20
 # 31. Force quit and delete all the services on the local swarm, in one command.
+docker service rm $(docker service ls -q)
 # 32. Force quit and delete all the containers (whatever their status), in one command.
+docker container rm $(docker container ls -aq)
 # 33. Delete all the container images stored on the Char virtual machine, in one command
 # as well.
+docker rmi $(docker images -a -q)
 # 34. Delete the Aiur virtual machine without using rm -rf.
+docker-machine rm -y Aiur
