@@ -1,6 +1,6 @@
 # UNIT Factory projects
 Here you can find all projects that I made in 42 course.
-All projects are aimed at practice and created with C.
+All projects are aimed at practice and created with C, C++, Python.
 ## About projects
 Some of projects may have graphic visualisation but some will get output in terminal.
 **All project created on Mac OS and compiled with clang.**
